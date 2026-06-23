@@ -47,9 +47,10 @@ The build-level architecture and the staged M0–M5 plan are in [`docs/neural-mi
 
 ## 2. Quickstart — Tier A (CPU, no model, ~30 seconds)
 
-Requires only Python ≥ 3.9 and `numpy`. Reproduces the 24 deterministic test suites (19 core + 3 M5
-scheduler-owned-dynamic-k: `k_policy`, `k_cost`, `k_policy_ladder` — see §5 — + 2 fact-loop
-capability-multiplier: `fact_loop`, `fact_dispatch` — see §6).
+Requires only Python ≥ 3.9 and `numpy`. Reproduces the 28 deterministic test suites (19 core + the M5
+scheduler-owned-dynamic-k suites `k_policy`, `k_cost`, `k_policy_ladder` — see §5 — the fact-loop
+capability-multiplier suites `fact_loop`, `fact_dispatch` — see §6 — and the `mode_b`,
+`fact_dispatch_head`, `dynamic_k_seams`, and `proposer_k` suites).
 
 ```bash
 unzip neural-microkernel-bundle.zip && cd neural-microkernel-bundle
@@ -116,9 +117,10 @@ original repo, with `PYTHONPATH=scripts`.
 The split below is stated the same way in the paper (§2.4, §5.1, §6) and is the single most
 important thing to get right when describing the system:
 
-- **Proven to bit-exactness, in isolation:** the six forward-pass invariant batteries report
+- **Proven to bit-exactness, in isolation:** the eight forward-pass invariant batteries report
   residual ≡ 0 on the live North model — trap plane, KV park, switch-MLP isolation,
-  speculate/rollback, deterministic interrupt, and ring-cross rollback.
+  speculate/rollback, deterministic interrupt, ring-cross rollback, the Mode-B injector's disabled
+  identity, and the MoE-entropy tap's inertness.
 - **Integrated, but at whole-generation granularity:** the *running* loop schedules complete
   generations (it wraps `adapter.gen_fast`); it does not yet trap *every* forward pass in the hot
   path, and the in-model commit trap is exercised by its battery but not yet live-constructed inside
