@@ -1,0 +1,377 @@
+[
+  {
+    "id": "math_reasoning_01",
+    "domain": "math_reasoning",
+    "subtype": "arithmetic_word_problem",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A bakery sells muffins in boxes of 6 and croissants in boxes of 4. On Tuesday it sold 7 boxes of muffins and 5 boxes of croissants. How many individual pastries did it sell in total?",
+    "expected": "62",
+    "rubric": [
+      "Computes 7*6 = 42 muffins",
+      "Computes 5*4 = 20 croissants",
+      "Final answer is 62"
+    ]
+  },
+  {
+    "id": "math_reasoning_02",
+    "domain": "math_reasoning",
+    "subtype": "percentage",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A jacket originally costs $80. It is discounted by 25%, then an additional 10% is taken off the discounted price at checkout. What is the final price in dollars?",
+    "expected": "$54",
+    "rubric": [
+      "Applies 25% off: 80 -> 60",
+      "Applies 10% off 60 -> 54 (does not add discounts to 35%)",
+      "Final answer is $54 (or 54)"
+    ]
+  },
+  {
+    "id": "math_reasoning_03",
+    "domain": "math_reasoning",
+    "subtype": "linear_equation",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Solve for x:  3(x - 4) = 2x + 5.",
+    "expected": "x = 17",
+    "rubric": [
+      "Expands to 3x - 12 = 2x + 5",
+      "Final answer x = 17"
+    ]
+  },
+  {
+    "id": "math_reasoning_04",
+    "domain": "math_reasoning",
+    "subtype": "geometry_area",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A right triangle has legs of length 9 and 12. What is its area, and what is the length of its hypotenuse?",
+    "expected": "Area = 54; hypotenuse = 15",
+    "rubric": [
+      "Area = (1/2)*9*12 = 54",
+      "Hypotenuse = sqrt(81+144) = 15",
+      "Both values correct"
+    ]
+  },
+  {
+    "id": "math_reasoning_05",
+    "domain": "math_reasoning",
+    "subtype": "probability_basic",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A fair six-sided die is rolled once. What is the probability that the result is a prime number? Give the answer as a reduced fraction.",
+    "expected": "1/2",
+    "rubric": [
+      "Identifies primes on a die as 2, 3, 5 (3 outcomes)",
+      "Computes 3/6 reduced to 1/2"
+    ]
+  },
+  {
+    "id": "math_reasoning_06",
+    "domain": "math_reasoning",
+    "subtype": "rate_work",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Pump A can fill a tank in 6 hours. Pump B can fill the same tank in 9 hours. If both pumps run together, how long does it take to fill the tank? Give the answer in hours as a reduced fraction or decimal.",
+    "expected": "18/5 hours (3.6 hours)",
+    "rubric": [
+      "Combined rate = 1/6 + 1/9 = 5/18 tanks per hour",
+      "Time = 18/5 hours",
+      "Equivalent answer 3.6 hours accepted"
+    ]
+  },
+  {
+    "id": "math_reasoning_07",
+    "domain": "math_reasoning",
+    "subtype": "quadratic",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Find all real solutions of  2x^2 - 7x + 3 = 0.",
+    "expected": "x = 3 and x = 1/2",
+    "rubric": [
+      "Factors as (2x - 1)(x - 3) = 0 or uses quadratic formula correctly",
+      "Reports x = 3",
+      "Reports x = 1/2",
+      "No extraneous roots"
+    ]
+  },
+  {
+    "id": "math_reasoning_08",
+    "domain": "math_reasoning",
+    "subtype": "system_of_equations",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Solve the system:  x + 2y = 11  and  3x - y = 5.  Give x and y.",
+    "expected": "x = 3, y = 4",
+    "rubric": [
+      "Uses substitution or elimination correctly",
+      "x = 3",
+      "y = 4"
+    ]
+  },
+  {
+    "id": "math_reasoning_09",
+    "domain": "math_reasoning",
+    "subtype": "combinatorics",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A committee of 3 people is to be chosen from a group of 8. How many distinct committees are possible?",
+    "expected": "56",
+    "rubric": [
+      "Recognizes this as a combination C(8,3)",
+      "Computes 8!/(3!5!) = 56",
+      "Final answer 56"
+    ]
+  },
+  {
+    "id": "math_reasoning_10",
+    "domain": "math_reasoning",
+    "subtype": "probability_conditional",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A bag contains 4 red marbles and 6 blue marbles. Two marbles are drawn without replacement. What is the probability that both are red? Give the answer as a reduced fraction.",
+    "expected": "2/15",
+    "rubric": [
+      "First draw red probability 4/10",
+      "Second draw red probability 3/9",
+      "Multiplies to 12/90 = 2/15"
+    ]
+  },
+  {
+    "id": "math_reasoning_11",
+    "domain": "math_reasoning",
+    "subtype": "sequence_series",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "An arithmetic sequence has first term 7 and common difference 4. What is the sum of the first 20 terms?",
+    "expected": "900",
+    "rubric": [
+      "Identifies last term a_20 = 7 + 19*4 = 83",
+      "Sum = 20/2 * (7 + 83) = 10*90 = 900",
+      "Final answer 900"
+    ]
+  },
+  {
+    "id": "math_reasoning_12",
+    "domain": "math_reasoning",
+    "subtype": "number_theory_gcd",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Find the greatest common divisor (GCD) of 252 and 198.",
+    "expected": "18",
+    "rubric": [
+      "Applies Euclidean algorithm or factorization correctly",
+      "Final answer is 18"
+    ]
+  },
+  {
+    "id": "math_reasoning_13",
+    "domain": "math_reasoning",
+    "subtype": "geometry_circle",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A circular sector has radius 10 and central angle 72 degrees. What is the area of the sector? Give an exact expression in terms of pi.",
+    "expected": "20*pi",
+    "rubric": [
+      "Sector area = (72/360) * pi * 10^2",
+      "Simplifies (1/5)*100*pi = 20*pi",
+      "Exact answer 20*pi (approx 62.83 accepted if exact also shown)"
+    ]
+  },
+  {
+    "id": "math_reasoning_14",
+    "domain": "math_reasoning",
+    "subtype": "rate_distance",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Two trains leave the same station traveling in opposite directions. One travels at 60 km/h and the other at 90 km/h. After how many hours are they exactly 375 km apart?",
+    "expected": "2.5 hours",
+    "rubric": [
+      "Combined separation rate = 150 km/h",
+      "Time = 375/150 = 2.5",
+      "Final answer 2.5 hours"
+    ]
+  },
+  {
+    "id": "math_reasoning_15",
+    "domain": "math_reasoning",
+    "subtype": "exponential_growth",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A bacterial culture doubles every 3 hours. If it starts with 500 cells, how many cells are there after 12 hours?",
+    "expected": "8000",
+    "rubric": [
+      "Number of doublings = 12/3 = 4",
+      "500 * 2^4 = 500 * 16",
+      "Final answer 8000"
+    ]
+  },
+  {
+    "id": "math_reasoning_16",
+    "domain": "math_reasoning",
+    "subtype": "logarithm",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Solve for x:  log_2(x) + log_2(x - 6) = 4.",
+    "expected": "x = 8",
+    "rubric": [
+      "Combines to log_2(x(x-6)) = 4, so x(x-6) = 16",
+      "Solves x^2 - 6x - 16 = 0 -> x = 8 or x = -2",
+      "Rejects x = -2 (domain), final answer x = 8"
+    ]
+  },
+  {
+    "id": "math_reasoning_17",
+    "domain": "math_reasoning",
+    "subtype": "calculus_derivative",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Find the derivative of f(x) = x^3 * e^x with respect to x.",
+    "expected": "f'(x) = x^2 * e^x * (3 + x)  (equivalently 3x^2 e^x + x^3 e^x)",
+    "rubric": [
+      "Applies the product rule",
+      "Gets 3x^2 e^x + x^3 e^x",
+      "Factored form x^2 e^x (3 + x) also accepted"
+    ]
+  },
+  {
+    "id": "math_reasoning_18",
+    "domain": "math_reasoning",
+    "subtype": "calculus_integral",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Evaluate the definite integral of (2x + 1) / (x^2 + x + 1) dx from x = 0 to x = 1.",
+    "expected": "ln(3)",
+    "rubric": [
+      "Recognizes numerator 2x+1 is the derivative of denominator x^2+x+1",
+      "Antiderivative is ln|x^2 + x + 1|",
+      "Evaluates ln(3) - ln(1) = ln(3) (approx 1.0986)"
+    ]
+  },
+  {
+    "id": "math_reasoning_19",
+    "domain": "math_reasoning",
+    "subtype": "probability_expectation",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "You roll two fair six-sided dice. Let X be the absolute difference of the two faces. What is the expected value E[X]? Give the answer as a reduced fraction.",
+    "expected": "35/18",
+    "rubric": [
+      "Counts outcomes for each difference value 0..5 out of 36",
+      "Differences: 0 (6 ways),1(10),2(8),3(6),4(4),5(2)",
+      "E[X] = (0*6+1*10+2*8+3*6+4*4+5*2)/36 = 70/36 = 35/18"
+    ]
+  },
+  {
+    "id": "math_reasoning_20",
+    "domain": "math_reasoning",
+    "subtype": "geometry_3d",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A cone has base radius 6 and height 8. What is its total surface area (including the base)? Give an exact expression in terms of pi.",
+    "expected": "96*pi",
+    "rubric": [
+      "Computes slant height l = sqrt(6^2 + 8^2) = 10",
+      "Lateral area = pi*r*l = 60*pi; base = pi*r^2 = 36*pi",
+      "Total = 96*pi (approx 301.6)"
+    ]
+  },
+  {
+    "id": "math_reasoning_21",
+    "domain": "math_reasoning",
+    "subtype": "modular_arithmetic",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "What is the remainder when 7^100 is divided by 13?",
+    "expected": "9",
+    "rubric": [
+      "Uses Fermat's little theorem (7^12 = 1 mod 13) or finds the cycle of 7^k mod 13",
+      "Reduces exponent 100 mod 12 = 4",
+      "Computes 7^4 mod 13 = 9"
+    ]
+  },
+  {
+    "id": "math_reasoning_22",
+    "domain": "math_reasoning",
+    "subtype": "optimization",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A farmer has 240 meters of fencing and wants to enclose a rectangular field bordered on one side by a straight river (no fence needed along the river). What dimensions maximize the enclosed area, and what is that maximum area?",
+    "expected": "Width (perpendicular to river) = 60 m, length (parallel to river) = 120 m; maximum area = 7200 square meters",
+    "rubric": [
+      "Sets up area A = x(240 - 2x) where x is the side perpendicular to river",
+      "Maximizes to x = 60, length = 120",
+      "Maximum area = 7200 m^2"
+    ]
+  },
+  {
+    "id": "math_reasoning_23",
+    "domain": "math_reasoning",
+    "subtype": "proof_parity",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Prove that the sum of any two consecutive integers is odd.",
+    "expected": "Let the integers be n and n+1. Their sum is n + (n+1) = 2n + 1, which is of the form 2k+1 (with k = n), hence odd. QED.",
+    "rubric": [
+      "Represents consecutive integers as n and n+1",
+      "Computes the sum as 2n+1",
+      "States 2n+1 is odd by definition (form 2k+1), concluding the proof"
+    ]
+  },
+  {
+    "id": "math_reasoning_24",
+    "domain": "math_reasoning",
+    "subtype": "proof_irrationality",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Prove that the square root of 3 is irrational.",
+    "expected": "Assume sqrt(3) = a/b in lowest terms (gcd(a,b)=1). Then a^2 = 3b^2, so 3 | a^2, hence 3 | a. Write a = 3c; then 9c^2 = 3b^2, so b^2 = 3c^2, meaning 3 | b^2 and 3 | b. Then 3 divides both a and b, contradicting gcd(a,b)=1. Therefore sqrt(3) is irrational.",
+    "rubric": [
+      "Assumes for contradiction sqrt(3) = a/b in lowest terms",
+      "Derives a^2 = 3b^2 and uses that 3 | a^2 implies 3 | a (3 is prime)",
+      "Shows 3 also divides b, contradicting the lowest-terms assumption",
+      "Concludes sqrt(3) is irrational"
+    ]
+  },
+  {
+    "id": "math_reasoning_25",
+    "domain": "math_reasoning",
+    "subtype": "proof_induction",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Prove by induction that for every positive integer n, the sum 1 + 3 + 5 + ... + (2n - 1) equals n^2.",
+    "expected": "Base case n=1: LHS = 1 = 1^2. Inductive step: assume 1+3+...+(2k-1) = k^2. Then 1+3+...+(2k-1)+(2(k+1)-1) = k^2 + (2k+1) = (k+1)^2. By induction the statement holds for all positive integers n.",
+    "rubric": [
+      "Verifies the base case n = 1 (sum = 1 = 1^2)",
+      "States the inductive hypothesis for n = k",
+      "Adds the (k+1)th term (2k+1) and simplifies k^2 + 2k + 1 = (k+1)^2",
+      "Concludes by induction the formula holds for all positive integers"
+    ]
+  }
+]

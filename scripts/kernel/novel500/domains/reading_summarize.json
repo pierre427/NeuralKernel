@@ -1,0 +1,382 @@
+[
+  {
+    "id": "reading_summarize_01",
+    "domain": "reading_summarize",
+    "subtype": "one_sentence_summary",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Summarize the following passage in ONE sentence.\n\nThe town of Harlow's Bend installed a fleet of solar-powered streetlights last autumn, replacing the old sodium lamps that had flickered for two decades. Residents reported that the new lights were brighter and that their evening electricity bills dropped slightly because the lamps no longer drew from the municipal grid. The council estimated the project would pay for itself within seven years through energy savings.",
+    "expected": "Harlow's Bend replaced its old streetlights with solar-powered ones that are brighter, cut grid electricity use, and are expected to pay for themselves within about seven years.",
+    "rubric": [
+      "Mentions the switch to solar-powered streetlights",
+      "Notes a benefit (brighter and/or reduced electricity/grid use)",
+      "Is a single sentence"
+    ]
+  },
+  {
+    "id": "reading_summarize_02",
+    "domain": "reading_summarize",
+    "subtype": "main_idea",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "What is the main idea of this paragraph? Answer in one or two sentences.\n\nMany people believe that adding more lanes to a congested highway will reduce traffic. In practice, the opposite often happens. When a road is widened, driving becomes temporarily easier, which encourages more people to drive on it, until congestion returns to roughly its previous level. Transportation researchers call this effect 'induced demand.'",
+    "expected": "Widening highways usually fails to relieve congestion because the added capacity induces more people to drive (induced demand), restoring the original level of traffic.",
+    "rubric": [
+      "States that widening highways does not durably reduce congestion",
+      "Explains the cause: more capacity attracts more drivers (induced demand)"
+    ]
+  },
+  {
+    "id": "reading_summarize_03",
+    "domain": "reading_summarize",
+    "subtype": "key_points_extraction",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Read the announcement and list the key points a reader needs to know as a bulleted list.\n\nAttention all tenants of Maple Court: The water supply to the entire building will be shut off on Thursday, March 14, from 9:00 AM to approximately 4:00 PM so that the contractor can replace the corroded main riser. Please store enough drinking and washing water in advance. Elevators will continue to operate normally. The laundry room will be closed for the day. If the work finishes early, water service will be restored without further notice. For emergencies during the shutoff, call the building office at 555-0142.",
+    "expected": "Water will be shut off building-wide on Thursday March 14 from 9 AM to about 4 PM to replace the corroded main riser; tenants should store water in advance; elevators run normally but the laundry room is closed; service may return early without notice; emergencies call 555-0142.",
+    "rubric": [
+      "States the date (March 14) and time window (about 9 AM to 4 PM)",
+      "States the reason: replacing the corroded main riser",
+      "Advises storing water in advance",
+      "Notes laundry room closed (and/or elevators still working)",
+      "Includes the emergency contact number 555-0142"
+    ]
+  },
+  {
+    "id": "reading_summarize_04",
+    "domain": "reading_summarize",
+    "subtype": "inference",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Based only on the passage, what can you infer about Dr. Reyes's likely opinion of the new policy? Explain your reasoning in 1-2 sentences.\n\nDr. Reyes had spent eleven years studying how short-staffed night shifts led to medication errors in hospitals. When the administration announced it would cut two nurses from each overnight ward to save money, she immediately requested an emergency meeting with the board and began compiling her error-rate data.",
+    "expected": "Dr. Reyes likely opposes the policy; her research links understaffed night shifts to medication errors, and her urgent meeting request and data-gathering show she intends to argue against the cuts.",
+    "rubric": [
+      "Infers Dr. Reyes opposes/disapproves of the staffing cut",
+      "Grounds the inference in her research on understaffing and errors and/or her urgent reaction"
+    ]
+  },
+  {
+    "id": "reading_summarize_05",
+    "domain": "reading_summarize",
+    "subtype": "abstractive_summary",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Summarize the following passage in 2-3 sentences in your own words.\n\nThe Atacama Desert in northern Chile is one of the driest places on Earth; some weather stations there have never recorded rainfall. Yet the desert is far from lifeless. Specialized microbes survive by extracting moisture directly from the thin morning fog that rolls in from the Pacific. Because conditions in the Atacama resemble those on Mars, NASA has used the region as a testing ground for instruments designed to detect life on other planets. Studying how organisms endure such extreme dryness helps scientists understand the outer limits of where life can exist.",
+    "expected": "The Atacama Desert is extremely dry yet hosts microbes that draw water from coastal fog. Because its conditions resemble Mars, NASA tests life-detection instruments there, and studying these organisms reveals the limits of where life can survive.",
+    "rubric": [
+      "Captures that the Atacama is extremely dry but supports microbial life (fog-derived moisture)",
+      "Notes the Mars analogy / NASA testing of life-detection instruments",
+      "Mentions the scientific value: understanding limits of life",
+      "Is paraphrased, not copied verbatim"
+    ]
+  },
+  {
+    "id": "reading_summarize_06",
+    "domain": "reading_summarize",
+    "subtype": "extract_argument_and_evidence",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Identify (a) the author's main claim and (b) the single piece of evidence they use to support it.\n\nFour-day workweeks are not the productivity disaster critics feared. When a mid-sized software firm in Wellington trialed a four-day schedule with no reduction in pay, its managers tracked output across six months and found that completed project milestones actually rose by 8 percent compared with the prior year. Employees reported feeling less burned out, and turnover fell. The firm has since made the schedule permanent.",
+    "expected": "(a) Claim: four-day workweeks do not hurt productivity (they can even help). (b) Evidence: a Wellington software firm's six-month trial showed completed project milestones rose 8% versus the prior year (with lower burnout/turnover).",
+    "rubric": [
+      "States the main claim: four-day workweeks don't harm (or improve) productivity",
+      "Identifies the evidence: the Wellington firm's trial / 8% rise in completed milestones"
+    ]
+  },
+  {
+    "id": "reading_summarize_07",
+    "domain": "reading_summarize",
+    "subtype": "headline_generation",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Write a short, accurate news headline (under 12 words) for the following report.\n\nArchaeologists working near the village of Tellrook unearthed a 1,400-year-old hoard of 312 silver coins buried beneath a collapsed barn floor. The coins, minted under three different rulers, suggest the site sat along a busy trade route. The find is now being cataloged at the regional museum.",
+    "expected": "A headline capturing that a roughly 1,400-year-old hoard of silver coins was discovered near Tellrook, e.g. '1,400-Year-Old Silver Coin Hoard Unearthed Near Tellrook.'",
+    "rubric": [
+      "Conveys the discovery of an old silver coin hoard",
+      "Includes a key detail (age ~1,400 years, count 312, or location Tellrook)",
+      "Is under 12 words and headline-like"
+    ]
+  },
+  {
+    "id": "reading_summarize_08",
+    "domain": "reading_summarize",
+    "subtype": "numeric_extraction",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "From the passage, extract every numeric figure and state what each one refers to.\n\nThe community garden expanded this season. It now contains 48 plots, up from 30 last year. Membership dues rose from $25 to $40 annually, and the waiting list currently holds 17 families. Volunteers contributed roughly 600 hours of labor to build the new raised beds.",
+    "expected": "48 = current number of plots; 30 = plots last year; $25 = old annual dues; $40 = new annual dues; 17 = families on the waiting list; ~600 = volunteer hours of labor.",
+    "rubric": [
+      "Identifies 48 plots now and 30 last year",
+      "Identifies dues change from $25 to $40",
+      "Identifies 17 families on the waiting list",
+      "Identifies ~600 volunteer hours"
+    ]
+  },
+  {
+    "id": "reading_summarize_09",
+    "domain": "reading_summarize",
+    "subtype": "tone_and_purpose",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In one or two sentences, describe the author's tone and primary purpose in this excerpt.\n\nLet me be perfectly clear: the proposal to pave over Riverside Meadow is not 'progress,' as its backers keep insisting. It is the quiet erasure of the last open green space our children have. I have watched developers make these same promises in three other towns, and I have watched every one of those meadows vanish under concrete. We must not be fooled again.",
+    "expected": "The tone is passionate, indignant, and persuasive; the author's purpose is to rally readers to oppose paving Riverside Meadow by warning that the development would destroy the community's last green space.",
+    "rubric": [
+      "Identifies the tone as emotional/indignant/persuasive (or similar)",
+      "Identifies the purpose as opposing the development / persuading readers to resist it"
+    ]
+  },
+  {
+    "id": "reading_summarize_10",
+    "domain": "reading_summarize",
+    "subtype": "compress_to_word_limit",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Summarize the passage in NO MORE THAN 20 words.\n\nA new study tracked 2,000 office workers over three years and found that those who took a short walk after lunch reported better afternoon focus, fewer headaches, and improved sleep quality at night, regardless of their age, job type, or how much they exercised otherwise.",
+    "expected": "A three-year study of 2,000 workers found a short post-lunch walk improved focus, reduced headaches, and bettered sleep.",
+    "rubric": [
+      "Captures the post-lunch walk and its benefits (focus, headaches, and/or sleep)",
+      "References the study/scale (e.g., 2,000 workers or three years) if room allows",
+      "Is 20 words or fewer"
+    ]
+  },
+  {
+    "id": "reading_summarize_11",
+    "domain": "reading_summarize",
+    "subtype": "dialogue_summary",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Summarize what was decided in the following conversation in 2-3 sentences.\n\nPRIYA: We can't ship the app Friday. The payment module still fails on refunds.\nMARCUS: Friday is the date we promised marketing, though.\nPRIYA: Then we ship Friday without refunds enabled and turn that feature on next week once it's tested.\nMARCUS: I can live with that, as long as we put a clear notice in the release notes.\nPRIYA: Agreed. I'll write the notice and flag refunds as 'coming soon.'\nMARCUS: Good. I'll tell marketing the launch is still on for Friday.",
+    "expected": "They agreed to launch the app on Friday as planned but with the refund feature disabled because it still fails testing; refunds will be enabled the following week. Priya will add a release-note notice marking refunds as 'coming soon,' and Marcus will tell marketing the Friday launch is on.",
+    "rubric": [
+      "States the app ships Friday but without refunds enabled",
+      "States refunds will be turned on the following week after testing",
+      "Mentions the release-note notice / 'coming soon' for refunds"
+    ]
+  },
+  {
+    "id": "reading_summarize_12",
+    "domain": "reading_summarize",
+    "subtype": "cause_effect_chain",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Trace the cause-and-effect chain described in the passage, in order, as a short ordered list.\n\nAn unusually warm winter meant the lake never froze over. Without ice cover, sunlight kept reaching the water all season, so algae continued to grow instead of dying back. The thick algae bloom then consumed much of the dissolved oxygen as it later decomposed. By spring, the low oxygen levels had suffocated a large portion of the lake's fish, and local anglers reported the worst season in memory.",
+    "expected": "1) A warm winter prevented the lake from freezing. 2) No ice meant sunlight kept reaching the water. 3) Algae kept growing (a bloom) instead of dying back. 4) The decomposing algae consumed dissolved oxygen. 5) Low oxygen suffocated many fish. 6) Anglers had their worst season.",
+    "rubric": [
+      "Starts with warm winter -> no ice/no freeze",
+      "Connects sunlight reaching water -> continued algae growth/bloom",
+      "Connects decomposing algae -> oxygen depletion",
+      "Ends with low oxygen -> fish die-off (and poor angling)",
+      "Presents steps in correct causal order"
+    ]
+  },
+  {
+    "id": "reading_summarize_13",
+    "domain": "reading_summarize",
+    "subtype": "abstractive_summary",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Summarize the following passage in 3-4 sentences, capturing both the discovery and its significance.\n\nFor decades, biologists assumed that the giant kelp forests off the Pacific coast were sustained almost entirely by sunlight and nutrients rising from deep water. A research team has now documented a surprising second source: the daily migration of millions of tiny crustaceans called krill. Each night the krill rise toward the surface to feed, and each morning they sink back into deeper water, carrying nutrients downward in their bodies and waste. The team calculated that this vertical 'conveyor belt' delivers nearly a fifth of the nitrogen the kelp depends on. Because warming oceans are already disrupting krill migration patterns, the finding raises concern that kelp forests could decline even in places where sunlight and upwelling remain unchanged. The researchers argue that conservation models must now account for these animal-driven nutrient flows rather than treating kelp ecosystems as purely sunlight-and-current driven.",
+    "expected": "Researchers found that nightly vertical migrations of krill supply nearly a fifth of the nitrogen that Pacific kelp forests need, a source previously overlooked in favor of sunlight and upwelling. Because warming oceans disrupt krill migration, kelp forests could decline even where light and currents are unchanged. The authors conclude that conservation models must include animal-driven nutrient flows.",
+    "rubric": [
+      "States the discovery: krill migration supplies a major share (~1/5) of kelp's nitrogen",
+      "Notes this source was previously overlooked / assumed to be sunlight+upwelling only",
+      "Captures the significance: warming disrupts krill, threatening kelp even where light/currents are fine",
+      "Notes the implication for conservation models (include animal-driven nutrient flows)"
+    ]
+  },
+  {
+    "id": "reading_summarize_14",
+    "domain": "reading_summarize",
+    "subtype": "identify_unsupported_claim",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Summarize the passage's factual content in 1-2 sentences, then state which claim in it is an opinion rather than a verifiable fact.\n\nThe museum's new wing opened in April and added 12,000 square feet of gallery space. It houses 340 works on loan from private collectors and cost $14 million to build. Critics have praised the architecture. Without question, it is the finest museum in the entire country, and anyone who disagrees simply doesn't understand art.",
+    "expected": "Factual summary: The museum's new 12,000-square-foot wing opened in April, cost $14 million, and displays 340 loaned works that critics have praised. The opinion/unsupported claim is that it is 'the finest museum in the entire country' (and that dissenters don't understand art).",
+    "rubric": [
+      "Summarizes the verifiable facts (size, cost, opening, number of works)",
+      "Correctly identifies the 'finest museum in the country' statement (and/or the dismissal of dissenters) as opinion rather than fact"
+    ]
+  },
+  {
+    "id": "reading_summarize_15",
+    "domain": "reading_summarize",
+    "subtype": "tl_dr",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Write a one-line TL;DR for this email.\n\nHi team, just a heads-up that the office printer on the third floor is out of service until the replacement toner arrives, probably Wednesday. In the meantime, please send any print jobs to the second-floor printer instead. Sorry for the inconvenience. - Facilities",
+    "expected": "The third-floor printer is down until about Wednesday (awaiting toner); use the second-floor printer meanwhile.",
+    "rubric": [
+      "States the third-floor printer is out of service (until ~Wednesday / awaiting toner)",
+      "States to use the second-floor printer instead",
+      "Is a single concise line"
+    ]
+  },
+  {
+    "id": "reading_summarize_16",
+    "domain": "reading_summarize",
+    "subtype": "inference_implicit_relationship",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The passage never states the relationship between the two people directly. Infer it and explain the clues that support your inference, in 2-3 sentences.\n\nElena set two plates on the small table and reminded him, again, not to slouch. 'You'll thank me when your back doesn't ache at my age,' she said. He rolled his eyes the way teenagers do but straightened anyway. She slid the larger portion onto his plate, the way she had every night since he'd shot up four inches over the summer.",
+    "expected": "Elena is most likely the boy's mother (or a parental/guardian figure); clues include her nightly caretaking, giving him the larger portion, nagging about posture 'at my age,' and his teenage eye-roll-but-obey response, all suggesting a parent-child dynamic.",
+    "rubric": [
+      "Infers a parent/guardian-and-child (especially mother-son) relationship",
+      "Cites supporting clues such as nightly feeding, larger portion, posture nagging, or the teenage behavior"
+    ]
+  },
+  {
+    "id": "reading_summarize_17",
+    "domain": "reading_summarize",
+    "subtype": "structured_summary",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Summarize the passage using exactly three labeled lines: Problem:, Cause:, Solution:.\n\nFor months, the bakery's morning rush left customers waiting up to fifteen minutes for coffee. The owner realized the single espresso machine simply couldn't keep up with both the cafe orders and the to-go line at the same time. She bought a second, dedicated machine for the to-go counter, and wait times dropped to under three minutes.",
+    "expected": "Problem: Morning customers waited up to 15 minutes for coffee. Cause: One espresso machine couldn't handle both cafe and to-go orders at once. Solution: A second machine dedicated to the to-go counter cut waits to under three minutes.",
+    "rubric": [
+      "Problem line: long coffee waits (up to 15 minutes) during morning rush",
+      "Cause line: single espresso machine overwhelmed by both cafe and to-go orders",
+      "Solution line: added a second/dedicated machine, cutting waits to under three minutes",
+      "Uses the three required labels"
+    ]
+  },
+  {
+    "id": "reading_summarize_18",
+    "domain": "reading_summarize",
+    "subtype": "compare_two_views",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The passage presents two viewpoints. Summarize each side's position in one sentence, then state where they actually agree.\n\nIn the debate over the proposed bike-lane network, the Cyclists' Coalition argues that protected lanes will save lives, citing data showing that physically separated lanes cut cycling injuries dramatically; they say a few minutes of slower car traffic is a fair trade. The Merchants' Association counters that removing a lane of car traffic and dozens of parking spaces will choke deliveries and drive away customers who arrive by car, hurting small businesses. Notably, though, both groups have publicly stated they want more people visiting the downtown core and agree that the current intersection at Fifth and Main, where three serious crashes occurred last year, is dangerous and must be fixed.",
+    "expected": "Cyclists' Coalition: protected bike lanes will reduce injuries and save lives, worth slightly slower car traffic. Merchants' Association: removing a car lane and parking will hurt deliveries and drive away car-arriving customers, harming small businesses. Both agree they want more visitors downtown and that the dangerous Fifth-and-Main intersection must be fixed.",
+    "rubric": [
+      "Summarizes the Cyclists' Coalition view (protected lanes reduce injuries/save lives)",
+      "Summarizes the Merchants' Association view (lost lane/parking hurts deliveries and businesses)",
+      "Identifies the agreement: both want more downtown visitors and want the dangerous Fifth-and-Main intersection fixed"
+    ]
+  },
+  {
+    "id": "reading_summarize_19",
+    "domain": "reading_summarize",
+    "subtype": "extract_action_items",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Extract the action items from the meeting note as a list, including who is responsible for each.\n\nMeeting recap: We agreed the website redesign goes live July 1. Tomas will finalize the homepage copy by next Friday. Aisha is responsible for migrating the blog posts and should have a test environment ready before the copy is done. The whole team will review the staging site together on June 25. Finance still needs an updated invoice from the design vendor, which Bao will request this week.",
+    "expected": "Tomas: finalize homepage copy by next Friday. Aisha: migrate blog posts and have a test environment ready before the copy is done. Whole team: review the staging site on June 25. Bao: request an updated invoice from the design vendor this week. (Overall: site goes live July 1.)",
+    "rubric": [
+      "Tomas finalizes homepage copy by next Friday",
+      "Aisha migrates blog posts / prepares test environment",
+      "Team reviews staging site on June 25",
+      "Bao requests updated invoice from the vendor this week"
+    ]
+  },
+  {
+    "id": "reading_summarize_20",
+    "domain": "reading_summarize",
+    "subtype": "summarize_plus_titling",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Provide (1) a 5-word-or-fewer title and (2) a two-sentence summary of the passage.\n\nWhen a volcano in Iceland erupted in 2010, the ash cloud it threw into the atmosphere grounded most flights across Europe for nearly a week. Airlines lost an estimated 1.7 billion dollars, and travelers were stranded on every continent. The disruption pushed regulators to develop better ash-detection systems and clearer rules about when it is actually safe to fly through volcanic ash, so a similar eruption today would likely cause far less chaos.",
+    "expected": "Title (<=5 words): e.g., 'Iceland's 2010 Ash Cloud.' Summary: The 2010 Icelandic eruption's ash cloud grounded most European flights for nearly a week, costing airlines about $1.7 billion and stranding travelers worldwide. The crisis spurred better ash-detection systems and clearer safety rules, so a comparable eruption today would cause less disruption.",
+    "rubric": [
+      "Provides a title of five words or fewer that fits the passage",
+      "Summary mentions the 2010 Iceland eruption grounding European flights (and the ~$1.7B cost or stranded travelers)",
+      "Summary notes the outcome: improved ash detection / clearer rules / less future disruption",
+      "Summary is two sentences"
+    ]
+  },
+  {
+    "id": "reading_summarize_21",
+    "domain": "reading_summarize",
+    "subtype": "summary_with_omission_check",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write a 3-sentence summary that includes the result, the limitation the authors acknowledge, and what they recommend next.\n\nA pilot program gave 150 unhoused individuals in a single city a no-strings monthly cash payment for one year. By the end, recipients were significantly more likely to have stable housing and reported lower stress than a comparison group that received only standard services. However, the authors caution that the sample was small, drawn from one city with an unusually tight rental market, and that the one-year window may be too short to know whether the gains last. They recommend a larger, multi-city trial running at least three years before any city scales the approach into permanent policy.",
+    "expected": "The pilot found that unhoused recipients of a year of unconditional monthly cash were more likely to achieve stable housing and reported less stress than a comparison group. The authors caution the study was limited by a small, single-city sample with an unusual rental market and a possibly too-short one-year window. They recommend a larger, multi-city trial of at least three years before scaling the approach into policy.",
+    "rubric": [
+      "States the result: cash recipients had more stable housing / lower stress vs. comparison group",
+      "States the acknowledged limitation (small/single-city sample, unusual market, or short one-year window)",
+      "States the recommendation: a larger multi-city, longer (3+ year) trial before scaling",
+      "Is three sentences"
+    ]
+  },
+  {
+    "id": "reading_summarize_22",
+    "domain": "reading_summarize",
+    "subtype": "summarize_process_steps",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Summarize the process described below as a numbered list of the main steps (combine minor details).\n\nTo brew pour-over coffee, first heat your water to just off the boil. While it heats, place a paper filter in the cone and rinse it with hot water to remove any papery taste, then discard that rinse water. Add your ground coffee to the filter. Pour just enough water to wet all the grounds and wait about thirty seconds for them to bloom. Then pour the rest of the water slowly in circles. When the water has finished dripping through, remove the cone and serve.",
+    "expected": "1) Heat water to just off the boil. 2) Rinse the paper filter with hot water and discard the rinse. 3) Add the ground coffee. 4) Wet the grounds and let them bloom (~30 seconds). 5) Slowly pour the rest of the water in circles. 6) Remove the cone and serve when dripping finishes.",
+    "rubric": [
+      "Includes heating water and rinsing the filter",
+      "Includes adding coffee and the bloom step (wetting grounds, ~30s)",
+      "Includes the main pour and serving once drained",
+      "Steps are in correct order"
+    ]
+  },
+  {
+    "id": "reading_summarize_23",
+    "domain": "reading_summarize",
+    "subtype": "inference_what_happens_next",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Based on the passage, what is the most likely next event? Answer in one sentence and briefly justify it.\n\nThe storm had knocked out power to the whole valley by nightfall. Mara checked her phone: 3 percent battery and no signal. She remembered the old hand-crank radio her grandfather kept in the hall closet, the one he insisted they test every spring. She felt her way down the dark hallway toward the closet.",
+    "expected": "Mara will most likely retrieve and use the hand-crank radio to get information/news, since it needs no power or signal and she is heading to the closet where it is kept.",
+    "rubric": [
+      "Predicts she will get/use the hand-crank radio (for news/communication)",
+      "Justifies it via the power/signal loss and the radio being battery-independent / in that closet"
+    ]
+  },
+  {
+    "id": "reading_summarize_24",
+    "domain": "reading_summarize",
+    "subtype": "distill_thesis_from_dense_text",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "In one clear sentence, state the central thesis of this dense paragraph, stripping away the supporting detail.\n\nProponents of measuring national success purely through gross domestic product overlook that the metric, by design, counts all market activity as a positive contribution while remaining blind to its distribution and its costs. A nation can post robust GDP growth even as that growth flows overwhelmingly to a narrow slice of the population, even as the activity generating it depletes finite resources or pollutes shared air and water, and even as unpaid labor such as caregiving, which sustains the very workforce the economy depends on, goes entirely uncounted. To treat GDP as a sufficient measure of a society's progress is therefore to mistake the volume of transactions for the health of the people conducting them.",
+    "expected": "GDP is an inadequate measure of national progress because it counts all market activity as positive while ignoring inequality, environmental costs, and unpaid labor, thereby confusing economic activity with genuine societal well-being.",
+    "rubric": [
+      "States that GDP is an inadequate/insufficient measure of progress or well-being",
+      "References at least one of its blind spots (distribution/inequality, environmental cost, or unpaid labor)",
+      "Is a single sentence capturing the thesis, not the supporting examples"
+    ]
+  },
+  {
+    "id": "reading_summarize_25",
+    "domain": "reading_summarize",
+    "subtype": "summary_resolving_contradiction",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The passage contains an apparent contradiction. Summarize the passage in 2-3 sentences and explain how the contradiction is resolved.\n\nThe report says the company's profits fell last quarter, yet its stock price rose sharply the same week. At first glance this seems backwards. The explanation lies in expectations: analysts had predicted an even steeper drop in profits, so when the actual decline turned out to be milder than feared, investors treated the result as good news relative to what they had braced for, and they bought shares accordingly.",
+    "expected": "Although the company's quarterly profits fell, its stock rose because analysts had expected an even larger decline; the actual, milder drop beat expectations, so investors saw it as relatively good news and bought shares. The contradiction is resolved by recognizing that stock prices react to results relative to expectations, not to the raw direction of profits.",
+    "rubric": [
+      "States the apparent contradiction: profits fell yet the stock rose",
+      "Explains the resolution: the decline was smaller than analysts had feared (beat expectations)",
+      "Conveys that prices move on expectations relative to forecasts, not absolute results"
+    ]
+  }
+]

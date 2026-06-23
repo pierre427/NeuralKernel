@@ -1,0 +1,381 @@
+[
+  {
+    "id": "research_current_01",
+    "domain": "research_current",
+    "subtype": "officeholder_lookup",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": true,
+    "prompt": "Who is the current Secretary-General of the United Nations, and in what year did their current term begin? Give just the name and year.",
+    "expected": "As of 2026 the Secretary-General is Antonio Guterres; his second term began on 1 January 2022 (running through 31 December 2026). A correct answer names Guterres and the 2022 term start (or notes a successor if one has taken office).",
+    "rubric": [
+      "Names the sitting UN Secretary-General correctly (Antonio Guterres as of mid-2026)",
+      "States the start year of the current term (2022 for Guterres' second term)",
+      "Does not give an outdated holder (e.g., Ban Ki-moon)"
+    ]
+  },
+  {
+    "id": "research_current_02",
+    "domain": "research_current",
+    "subtype": "sports_standings",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "Which team won the most recent UEFA Champions League final (the men's edition completed before July 2026), and what was the score?",
+    "expected": "A correct answer names the club that lifted the most recent men's Champions League trophy (the final held in spring 2026) and gives the correct final scoreline. Exact winner depends on the live result; the answer must match the verified outcome.",
+    "rubric": [
+      "Identifies the winning club of the most recent men's UCL final (spring 2026)",
+      "Provides the correct final score (including any penalty shootout result if applicable)",
+      "References the correct season/edition rather than an older one"
+    ]
+  },
+  {
+    "id": "research_current_03",
+    "domain": "research_current",
+    "subtype": "price_lookup",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What is the current approximate spot price of one troy ounce of gold in US dollars? Give a figure and the date it reflects.",
+    "expected": "A correct answer gives a current gold spot price in USD per troy ounce (a figure consistent with markets at the time of answering) and dates it. The value changes daily; it must be plausible for the answer date and clearly labeled as approximate/as-of.",
+    "rubric": [
+      "Gives a numeric USD-per-troy-ounce gold price",
+      "Figure is plausible for the current market (not a stale multi-year-old value)",
+      "States or implies an as-of date for the quote"
+    ]
+  },
+  {
+    "id": "research_current_04",
+    "domain": "research_current",
+    "subtype": "software_release",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What is the latest stable release version of the Python programming language (CPython) available from python.org, and roughly when was it released?",
+    "expected": "A correct answer names the most recent stable CPython release series/version published on python.org (e.g., the 3.13.x or later line current at answer time) and an approximate release date. Must reflect the latest, not an older series.",
+    "rubric": [
+      "Names a specific current stable CPython version number",
+      "Version is the latest stable line (not an EOL or clearly outdated one)",
+      "Provides an approximate release timeframe"
+    ]
+  },
+  {
+    "id": "research_current_05",
+    "domain": "research_current",
+    "subtype": "election_result",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "In the most recent national general election held in Canada before mid-2026, which party won the most seats in the House of Commons, who became Prime Minister, and did the government hold a majority or minority? Summarize in 2-3 sentences.",
+    "expected": "A correct answer identifies the party that won the most seats in Canada's most recent federal general election (the 2025 contest), names the resulting Prime Minister, and states whether it was a majority or minority government, consistent with the verified result.",
+    "rubric": [
+      "Names the party with the most seats from the most recent Canadian federal election",
+      "Names the resulting Prime Minister",
+      "Correctly states majority vs minority status",
+      "Refers to the most recent election, not an older one"
+    ]
+  },
+  {
+    "id": "research_current_06",
+    "domain": "research_current",
+    "subtype": "company_leadership",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "Who is the current Chief Executive Officer of Intel Corporation? Name the person and roughly when they took the role.",
+    "expected": "A correct answer names Intel's sitting CEO at answer time and gives an approximate start date for their tenure. Intel's CEO changed in 2025 (Lip-Bu Tan became CEO in March 2025), so the answer must reflect the current holder, not a predecessor like Pat Gelsinger.",
+    "rubric": [
+      "Names the current Intel CEO (Lip-Bu Tan as of 2025-2026, unless changed since)",
+      "Gives an approximate appointment date",
+      "Does not name an outdated CEO (e.g., Pat Gelsinger as current)"
+    ]
+  },
+  {
+    "id": "research_current_07",
+    "domain": "research_current",
+    "subtype": "space_mission",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "What is the status of NASA's Artemis II mission as of now: has it launched yet, and if not, what is the currently announced target launch window? Answer in 1-2 sentences.",
+    "expected": "A correct answer states whether Artemis II (the crewed lunar flyby) has launched and, if not, gives the latest officially announced target launch window. As of early 2026 it had not yet flown and was targeting a window in 2026; the answer must match the current official schedule.",
+    "rubric": [
+      "States the launch status (launched vs not yet) of Artemis II",
+      "If not launched, gives the current official target window/date",
+      "Reflects the latest schedule rather than a superseded earlier one"
+    ]
+  },
+  {
+    "id": "research_current_08",
+    "domain": "research_current",
+    "subtype": "crypto_price",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": true,
+    "prompt": "What is the current approximate price of one Bitcoin (BTC) in US dollars? Provide a figure and note the date.",
+    "expected": "A correct answer gives a current BTC/USD price consistent with the market at answer time, labeled with an as-of date. The number changes constantly and must be plausible for the answering date.",
+    "rubric": [
+      "Provides a numeric USD price for one Bitcoin",
+      "Figure is plausible for current market conditions",
+      "Notes an as-of date or that it is approximate/live"
+    ]
+  },
+  {
+    "id": "research_current_09",
+    "domain": "research_current",
+    "subtype": "award_winner",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "Who won the most recent Nobel Prize in Literature (the latest award announced before mid-2026)? Name the laureate and the year.",
+    "expected": "A correct answer names the laureate of the most recently announced Nobel Prize in Literature (the 2025 award announced in October 2025) and the correct year, matching the verified announcement.",
+    "rubric": [
+      "Names the correct most-recent Literature laureate",
+      "States the correct award year (2025 as of mid-2026)",
+      "Does not name an older year's winner as the latest"
+    ]
+  },
+  {
+    "id": "research_current_10",
+    "domain": "research_current",
+    "subtype": "central_bank_rate",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "What is the current target range for the US federal funds rate set by the Federal Reserve, and at which meeting was it last changed? Give the range and the approximate date of the last change.",
+    "expected": "A correct answer states the current federal funds target range (a percentage range) and identifies the most recent FOMC meeting at which it was set or changed, consistent with the latest Fed decision at answer time.",
+    "rubric": [
+      "Gives the current federal funds target range as a percentage range",
+      "Range is consistent with the latest FOMC decision (not stale)",
+      "Identifies the approximate date/meeting of the most recent change or hold"
+    ]
+  },
+  {
+    "id": "research_current_11",
+    "domain": "research_current",
+    "subtype": "tech_product_launch",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What is the most recent flagship iPhone model Apple has released to market, and what was its starting US retail price at launch? Answer in one or two sentences.",
+    "expected": "A correct answer names the latest released flagship iPhone (the iPhone 17 line if current, or whatever Apple most recently shipped) and its launch starting US price, matching Apple's verified release. Must reflect the newest shipped model, not an announced-but-unreleased or older one.",
+    "rubric": [
+      "Names the most recently released flagship iPhone model",
+      "Gives the correct launch starting US price",
+      "Refers to a model actually released to market, not a rumored future one"
+    ]
+  },
+  {
+    "id": "research_current_12",
+    "domain": "research_current",
+    "subtype": "geopolitics_status",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "Summarize the current state of the ceasefire/peace situation between Russia and Ukraine as of now: is there an active ceasefire, ongoing negotiations, or active fighting? Provide a 3-4 sentence factual summary citing the most recent developments you can verify.",
+    "expected": "A correct answer accurately describes the current Russia-Ukraine situation at answer time (whether fighting is ongoing, whether any ceasefire/negotiations are active) based on the latest verifiable developments, without asserting outcomes that have not occurred.",
+    "rubric": [
+      "Accurately states whether active fighting, a ceasefire, or negotiations are ongoing at answer time",
+      "Cites at least one recent specific development",
+      "Avoids fabricating events not supported by verifiable news",
+      "Reflects the most current situation, not an outdated snapshot"
+    ]
+  },
+  {
+    "id": "research_current_13",
+    "domain": "research_current",
+    "subtype": "open_source_version",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What is the latest stable release version of the Linux kernel published on kernel.org? Give the version number.",
+    "expected": "A correct answer gives the current 'stable' (or mainline 'latest stable') Linux kernel version number listed on kernel.org at answer time. It must reflect the latest release, not an older longterm or stale version.",
+    "rubric": [
+      "Gives a specific Linux kernel version number",
+      "Version reflects the current latest stable release on kernel.org",
+      "Not an obviously outdated version"
+    ]
+  },
+  {
+    "id": "research_current_14",
+    "domain": "research_current",
+    "subtype": "sports_individual",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "Who is the current men's world No. 1 in the ATP singles tennis rankings? Name the player.",
+    "expected": "A correct answer names the player ranked No. 1 in the ATP men's singles rankings at answer time, matching the current official ATP ranking.",
+    "rubric": [
+      "Names the current ATP men's singles world No. 1",
+      "Reflects the current ranking, not an outdated former No. 1",
+      "Does not confuse with the WTA (women's) ranking"
+    ]
+  },
+  {
+    "id": "research_current_15",
+    "domain": "research_current",
+    "subtype": "niche_lookup",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "On the Wikipedia article for the chemical element Oganesson, what is the currently listed value for its atomic mass (the most recent IUPAC-recognized or Wikipedia-stated value)? Give the value and its unit/notation.",
+    "expected": "A correct answer reports the atomic mass value currently shown for Oganesson (element 118), which is given as the mass number of its most stable known isotope, typically written as [294] (in brackets, indicating no standard atomic weight). The answer must match the value currently on the source.",
+    "rubric": [
+      "Reports the atomic mass figure for Oganesson (~294, the most stable isotope mass number)",
+      "Notes the bracketed/most-stable-isotope notation convention",
+      "Value matches the current authoritative source"
+    ]
+  },
+  {
+    "id": "research_current_16",
+    "domain": "research_current",
+    "subtype": "box_office",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What is the current number-one film at the domestic (US) box office this weekend, and approximately how much did it gross? Answer in one or two sentences.",
+    "expected": "A correct answer names the film that topped the US weekend box office most recently before answer time and gives its approximate weekend gross, matching verified box-office reporting (e.g., Box Office Mojo) for that weekend.",
+    "rubric": [
+      "Names the current US weekend box-office number-one film",
+      "Gives an approximate weekend gross figure",
+      "Reflects the most recent reported weekend, not an old one"
+    ]
+  },
+  {
+    "id": "research_current_17",
+    "domain": "research_current",
+    "subtype": "weather_event",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "Are there any active named tropical storms or hurricanes/typhoons being tracked by major meteorological agencies right now? If yes, name at least one and its basin; if no, say so.",
+    "expected": "A correct answer states whether any named tropical cyclones are currently active per agencies like the NHC/JTWC, and if so names at least one with its basin (Atlantic, Eastern Pacific, Western Pacific, etc.), reflecting live tracking at answer time.",
+    "rubric": [
+      "States whether any named tropical cyclones are currently active",
+      "If active, names at least one storm and its basin",
+      "Reflects live/current tracking rather than a historical season"
+    ]
+  },
+  {
+    "id": "research_current_18",
+    "domain": "research_current",
+    "subtype": "legislation_status",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "What is the current implementation status of the European Union's Artificial Intelligence Act (the EU AI Act)? Specifically, have its obligations for general-purpose AI (GPAI) models taken effect yet, and what is the next major compliance milestone date? Answer in 3-4 sentences.",
+    "expected": "A correct answer summarizes the EU AI Act's phased application timeline, correctly states whether the GPAI-model obligations have entered into application (the GPAI provisions applied from August 2025), and identifies the next major milestone (e.g., high-risk system rules applying in 2026/2027), consistent with the current official timeline.",
+    "rubric": [
+      "Correctly states whether GPAI-model obligations are already in effect (yes, since Aug 2025)",
+      "Identifies the next major compliance milestone with an approximate date",
+      "Describes the phased application structure accurately",
+      "Reflects the current status, not a pre-enactment description"
+    ]
+  },
+  {
+    "id": "research_current_19",
+    "domain": "research_current",
+    "subtype": "stock_metric",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What is the current approximate market capitalization of NVIDIA (NVDA) in US dollars? Give a figure and the as-of date.",
+    "expected": "A correct answer gives NVIDIA's approximate market capitalization in USD consistent with its share price at answer time (in the trillions of dollars as of 2025-2026), labeled with an as-of date. Must be plausible for the answer date.",
+    "rubric": [
+      "Gives a numeric USD market-cap figure for NVIDIA",
+      "Figure is plausible for the current market (trillions-scale as of 2025-2026)",
+      "Notes an as-of date or that it is approximate"
+    ]
+  },
+  {
+    "id": "research_current_20",
+    "domain": "research_current",
+    "subtype": "music_chart",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "What song is currently No. 1 on the US Billboard Hot 100? Name the song and the artist.",
+    "expected": "A correct answer names the song and artist topping the most recent US Billboard Hot 100 chart at answer time, matching the official Billboard chart.",
+    "rubric": [
+      "Names the current Billboard Hot 100 No. 1 song",
+      "Names the performing artist",
+      "Reflects the most recent chart, not an older No. 1"
+    ]
+  },
+  {
+    "id": "research_current_21",
+    "domain": "research_current",
+    "subtype": "appointment_lookup",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "Who is the current President of the European Commission, and what is their nationality? Name the person and country.",
+    "expected": "A correct answer names the sitting President of the European Commission at answer time (Ursula von der Leyen, German, serving a second term from 2024) and her nationality, unless a successor has since taken office.",
+    "rubric": [
+      "Names the current European Commission President (Ursula von der Leyen as of 2024-2026)",
+      "States the correct nationality (German)",
+      "Reflects the current holder, not a predecessor"
+    ]
+  },
+  {
+    "id": "research_current_22",
+    "domain": "research_current",
+    "subtype": "model_release",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "What is the most recent flagship large language model released by Anthropic (the Claude family), and approximately when was it released? Name the model and its release timeframe.",
+    "expected": "A correct answer names Anthropic's most recently released flagship Claude model at answer time and gives an approximate release date, matching Anthropic's verified announcements. Must reflect the newest released model, not an older or unreleased one.",
+    "rubric": [
+      "Names the most recently released flagship Claude model",
+      "Gives an approximate release timeframe",
+      "Reflects an actually released model, not a rumored future one"
+    ]
+  },
+  {
+    "id": "research_current_23",
+    "domain": "research_current",
+    "subtype": "sports_schedule",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "Which city and country will host the next Summer Olympic Games, and in what year? Also name one Summer Olympics host city already confirmed after that. Answer in two sentences.",
+    "expected": "A correct answer states the next Summer Olympics host (Los Angeles, USA, in 2028) and names a subsequently confirmed host (Brisbane, Australia, in 2032), consistent with the IOC's confirmed schedule.",
+    "rubric": [
+      "Names the next Summer Olympics host city, country, and year (LA, USA, 2028)",
+      "Names a later confirmed Summer Olympics host (Brisbane 2032)",
+      "Does not list a past or unconfirmed host as 'next'"
+    ]
+  },
+  {
+    "id": "research_current_24",
+    "domain": "research_current",
+    "subtype": "fuel_price",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": true,
+    "prompt": "What is the current US national average price for a gallon of regular gasoline? Give a figure and the as-of date.",
+    "expected": "A correct answer gives the current US national average price per gallon of regular gasoline (e.g., per AAA) consistent with the answer date, with an as-of date. The figure changes frequently and must be plausible.",
+    "rubric": [
+      "Gives a numeric US national average price per gallon of regular gas",
+      "Figure is plausible for the current period",
+      "Notes an as-of date or source"
+    ]
+  },
+  {
+    "id": "research_current_25",
+    "domain": "research_current",
+    "subtype": "deadline_lookup",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": true,
+    "prompt": "For US taxpayers, what is the current standard deduction amount for a single filer for the most recent tax year for which the IRS has published figures, and what is the corresponding amount for married couples filing jointly? Identify the tax year and both amounts.",
+    "expected": "A correct answer identifies the most recent tax year with published IRS figures and gives the correct standard deduction for single filers and for married-filing-jointly for that year (e.g., for tax year 2025 the single standard deduction and the MFJ amount per IRS inflation-adjusted figures). Amounts and year must match the IRS-published values.",
+    "rubric": [
+      "Identifies a specific recent tax year with IRS-published figures",
+      "Gives the correct single-filer standard deduction amount for that year",
+      "Gives the correct married-filing-jointly standard deduction amount for that year",
+      "Reflects the most recent published figures rather than an older year"
+    ]
+  }
+]

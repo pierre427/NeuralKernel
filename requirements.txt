@@ -1,0 +1,21 @@
+# Neural Microkernel — Python dependencies
+# =========================================================================
+# TIER A (CPU, no model) — the 19 test suites, hold-out gate, self-extension
+# logic, memory store, scheduler/admission. Reproducible from this zip alone.
+# Verified on stock macOS python3 3.9.6.
+# -------------------------------------------------------------------------
+#   Python >= 3.9        (verified floor: 3.9.6)
+numpy>=1.24              # required by the entry-trap features + tensor invariants
+#   psutil  (OPTIONAL)   # only sharpens the `sysinfo` tool; absent -> graceful
+#                          fallback, never raises. `pip install psutil` to enable.
+#   regex   (OPTIONAL)   # grapheme hold-out cross-check vs \X; self-skips if absent.
+#
+# TIER B (Apple Silicon + the North model) — forward-pass invariant batteries
+# (residual == 0 proofs), entry trap on the live model, KV park/resume, the
+# coding benchmark through the kernel, escalation solver with real candidates.
+# -------------------------------------------------------------------------
+mlx>=0.31               # Apple MLX array framework (Apple Silicon only)
+mlx-lm>=0.31            # MLX LM loader / KV cache (load, make_prompt_cache)
+#
+# The North weights are NOT a pip dependency — see BUILD-FROM-SCRATCH.md step 4
+# (Hugging Face: bsisduck/North-Mini-Code-1.0-MLX-MXFP8, ~30 GB MXFP8).

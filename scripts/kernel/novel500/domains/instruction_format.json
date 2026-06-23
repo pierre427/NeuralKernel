@@ -1,0 +1,402 @@
+[
+  {
+    "id": "instruction_format_01",
+    "domain": "instruction_format",
+    "subtype": "json_only",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Output ONLY a single JSON object (no prose, no code fences) describing this fact: a maple tree that is 12 meters tall and was planted in 2009. Use exactly these keys: \"species\", \"height_m\", \"year_planted\". \"height_m\" and \"year_planted\" must be numbers, \"species\" must be a string.",
+    "expected": "{\"species\": \"maple\", \"height_m\": 12, \"year_planted\": 2009}",
+    "rubric": [
+      "Entire output parses as a single JSON object with no surrounding prose or code fences",
+      "Object has exactly the three keys: species, height_m, year_planted",
+      "height_m equals 12 (number) and year_planted equals 2009 (number)",
+      "species is the string \"maple\""
+    ]
+  },
+  {
+    "id": "instruction_format_02",
+    "domain": "instruction_format",
+    "subtype": "exact_word_count",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a sentence about the ocean that contains EXACTLY 11 words. Do not include any punctuation other than a single period at the very end. Output only the sentence.",
+    "expected": "Any single sentence on the ocean with exactly 11 whitespace-separated words ending in one period, e.g. 'The vast ocean holds many secrets beneath its deep cold waves.'",
+    "rubric": [
+      "Output is exactly one sentence about the ocean",
+      "The sentence contains exactly 11 whitespace-separated words",
+      "The only punctuation present is a single period at the end",
+      "No prose, labels, or quotation marks wrapping the sentence"
+    ]
+  },
+  {
+    "id": "instruction_format_03",
+    "domain": "instruction_format",
+    "subtype": "avoid_letter",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Describe a cup of coffee in two or three sentences WITHOUT using the letter 'e' (uppercase or lowercase) anywhere in your answer. Output only the description.",
+    "expected": "A 2-3 sentence description of coffee containing zero occurrences of the letter e/E, e.g. 'My mug holds dark hot coffee. Its aroma fills my room and brings joy.'",
+    "rubric": [
+      "Output contains no character 'e' or 'E' anywhere",
+      "Output is about a cup of coffee",
+      "Output is two or three sentences",
+      "No prose or labels outside the description"
+    ]
+  },
+  {
+    "id": "instruction_format_04",
+    "domain": "instruction_format",
+    "subtype": "alphabetical_order",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Sort these words into strict alphabetical (A-Z) order and output them as a single comma-separated line with one space after each comma: banana, apple, cherry, date, fig, elderberry. Output only the sorted line.",
+    "expected": "apple, banana, cherry, date, elderberry, fig",
+    "rubric": [
+      "Output is exactly: apple, banana, cherry, date, elderberry, fig",
+      "Words are separated by a comma followed by a single space",
+      "All six original words appear exactly once",
+      "No extra prose, trailing comma, or line breaks"
+    ]
+  },
+  {
+    "id": "instruction_format_05",
+    "domain": "instruction_format",
+    "subtype": "fixed_schema_csv",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Convert the following data into CSV. The first line MUST be the header exactly: name,age,city. Then one row per person, fields in that order, no quotes, no trailing spaces. People: Ana is 30 and lives in Lima; Boris is 45 and lives in Minsk; Chen is 28 and lives in Wuhan. Output only the CSV.",
+    "expected": "name,age,city\nAna,30,Lima\nBoris,45,Minsk\nChen,28,Wuhan",
+    "rubric": [
+      "First line is exactly 'name,age,city'",
+      "There are exactly three data rows in the given order (Ana, Boris, Chen)",
+      "Each data row has three comma-separated fields with correct values and no quotes",
+      "No extra prose, blank lines, or trailing spaces"
+    ]
+  },
+  {
+    "id": "instruction_format_06",
+    "domain": "instruction_format",
+    "subtype": "exact_sentence_count",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a short paragraph explaining what photosynthesis is. It must contain EXACTLY 4 sentences, each ending with a period. Do not use any bullet points or numbering. Output only the paragraph.",
+    "expected": "A 4-sentence paragraph defining photosynthesis (plants converting light, water, and CO2 into glucose and oxygen), each sentence ending in a period.",
+    "rubric": [
+      "Paragraph contains exactly 4 sentences each ending with a period",
+      "Content correctly describes photosynthesis",
+      "No bullet points, numbering, or headings",
+      "No prose or labels outside the paragraph"
+    ]
+  },
+  {
+    "id": "instruction_format_07",
+    "domain": "instruction_format",
+    "subtype": "json_nested_schema",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Output ONLY valid JSON (no code fences, no prose) for a book record with this exact schema: { \"title\": string, \"author\": { \"first\": string, \"last\": string }, \"tags\": array of strings, \"in_print\": boolean }. Use this data: title 'Tide Lines', author first name Maria, last name Okonkwo, tags ocean and poetry, currently in print. The tags array must be in alphabetical order.",
+    "expected": "{\"title\": \"Tide Lines\", \"author\": {\"first\": \"Maria\", \"last\": \"Okonkwo\"}, \"tags\": [\"ocean\", \"poetry\"], \"in_print\": true}",
+    "rubric": [
+      "Entire output is valid JSON with no fences or prose",
+      "Top-level keys are exactly title, author, tags, in_print",
+      "author is a nested object with keys first='Maria' and last='Okonkwo'",
+      "tags is [\"ocean\", \"poetry\"] in alphabetical order and in_print is boolean true"
+    ]
+  },
+  {
+    "id": "instruction_format_08",
+    "domain": "instruction_format",
+    "subtype": "delimiter_specific",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "List the four cardinal directions separated by the pipe character with no spaces. Order them clockwise starting from North. Output only that single line.",
+    "expected": "North|East|South|West",
+    "rubric": [
+      "Output is exactly 'North|East|South|West'",
+      "Items separated by '|' with no spaces",
+      "Order is clockwise starting from North",
+      "No extra prose or trailing delimiter"
+    ]
+  },
+  {
+    "id": "instruction_format_09",
+    "domain": "instruction_format",
+    "subtype": "first_letter_constraint",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write exactly 5 words, each starting with the letter 'P', that are all common nouns. Output them on a single line separated by single spaces, lowercase, with no punctuation.",
+    "expected": "Five lowercase common nouns each beginning with 'p', space-separated, e.g. 'pencil pillow planet potato printer'.",
+    "rubric": [
+      "Output contains exactly 5 words on one line",
+      "Every word begins with the letter 'p'",
+      "All words are common nouns, lowercase, no punctuation",
+      "Words separated by single spaces with no leading/trailing space"
+    ]
+  },
+  {
+    "id": "instruction_format_10",
+    "domain": "instruction_format",
+    "subtype": "numbered_list_exact",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Give exactly 3 tips for staying hydrated. Format as a numbered list where each line begins with the number, a period, and a single space (e.g. '1. '). Each tip must be one sentence. Output only the list.",
+    "expected": "A 3-item numbered list, lines starting '1. ', '2. ', '3. ', each a single-sentence hydration tip.",
+    "rubric": [
+      "Exactly 3 numbered items",
+      "Each line begins with '1. ', '2. ', '3. ' respectively (number, period, single space)",
+      "Each tip is a single sentence relevant to hydration",
+      "No intro text, headers, or extra items"
+    ]
+  },
+  {
+    "id": "instruction_format_11",
+    "domain": "instruction_format",
+    "subtype": "uppercase_only",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Rewrite the following text in ALL UPPERCASE letters, keeping the words and punctuation otherwise unchanged: 'The quick brown fox jumps over the lazy dog.' Output only the rewritten text.",
+    "expected": "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.",
+    "rubric": [
+      "Output is exactly 'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'",
+      "All alphabetic characters are uppercase",
+      "Punctuation and word order are unchanged",
+      "No extra prose or quotation marks"
+    ]
+  },
+  {
+    "id": "instruction_format_12",
+    "domain": "instruction_format",
+    "subtype": "char_count_limit",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a tagline for a bakery that is 40 characters or fewer (counting spaces and punctuation). Output only the tagline on one line, with no surrounding quotes.",
+    "expected": "A single bakery tagline whose total character count (including spaces and punctuation) is at most 40, e.g. 'Fresh bread, baked with love daily.'",
+    "rubric": [
+      "Output is a single line tagline relevant to a bakery",
+      "Total length including spaces and punctuation is 40 characters or fewer",
+      "No surrounding quotation marks",
+      "No extra prose, labels, or line breaks"
+    ]
+  },
+  {
+    "id": "instruction_format_13",
+    "domain": "instruction_format",
+    "subtype": "key_value_block",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Output a configuration block in the exact form 'KEY=value', one per line, no spaces around the equals sign. Include exactly these keys in this order: HOST, PORT, DEBUG. Values: host is localhost, port is 8080, debug is false. Output only the three lines.",
+    "expected": "HOST=localhost\nPORT=8080\nDEBUG=false",
+    "rubric": [
+      "Exactly three lines in the order HOST, PORT, DEBUG",
+      "Each line is KEY=value with no spaces around '='",
+      "Values are localhost, 8080, false respectively",
+      "No extra prose, blank lines, or quoting"
+    ]
+  },
+  {
+    "id": "instruction_format_14",
+    "domain": "instruction_format",
+    "subtype": "json_array_of_objects",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Output ONLY a JSON array (no prose, no fences) of exactly 3 objects. Each object must have keys \"rank\" (number) and \"name\" (string). Represent a podium: 1st Kenji, 2nd Aisha, 3rd Diego. The array must be ordered by ascending rank.",
+    "expected": "[{\"rank\": 1, \"name\": \"Kenji\"}, {\"rank\": 2, \"name\": \"Aisha\"}, {\"rank\": 3, \"name\": \"Diego\"}]",
+    "rubric": [
+      "Entire output is a valid JSON array of exactly 3 objects, no fences or prose",
+      "Each object has exactly keys rank (number) and name (string)",
+      "Objects ordered by ascending rank 1,2,3",
+      "Names map correctly: 1=Kenji, 2=Aisha, 3=Diego"
+    ]
+  },
+  {
+    "id": "instruction_format_15",
+    "domain": "instruction_format",
+    "subtype": "no_vowel_start",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write a single sentence about a mountain in which NO word begins with a vowel (a, e, i, o, u). The sentence must end with a period. Output only the sentence.",
+    "expected": "One sentence about a mountain where every word starts with a consonant, ending in a period, e.g. 'The tall snowy mountain stood by quiet woods.'",
+    "rubric": [
+      "Output is a single sentence about a mountain ending with a period",
+      "No word in the sentence begins with a, e, i, o, or u",
+      "The sentence is grammatical and coherent",
+      "No prose or labels outside the sentence"
+    ]
+  },
+  {
+    "id": "instruction_format_16",
+    "domain": "instruction_format",
+    "subtype": "markdown_table",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Output a Markdown table with exactly two columns headed 'Planet' and 'Moons' and exactly three data rows: Earth 1, Mars 2, Jupiter 95. Use the standard Markdown header separator row. Output only the table.",
+    "expected": "| Planet | Moons |\n| --- | --- |\n| Earth | 1 |\n| Mars | 2 |\n| Jupiter | 95 |",
+    "rubric": [
+      "Header row contains exactly the columns Planet and Moons",
+      "A valid Markdown separator row (dashes) follows the header",
+      "Exactly three data rows: Earth|1, Mars|2, Jupiter|95",
+      "No prose outside the table; valid pipe-delimited Markdown syntax"
+    ]
+  },
+  {
+    "id": "instruction_format_17",
+    "domain": "instruction_format",
+    "subtype": "palindrome_constraint",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Output exactly 4 single-word palindromes (words that read the same forwards and backwards), one per line, all lowercase. Each must be at least 3 letters long. Output only the four words.",
+    "expected": "Four lowercase single-word palindromes, each >=3 letters, one per line, e.g. 'level\\nradar\\ncivic\\nrotor'.",
+    "rubric": [
+      "Exactly 4 words, one per line, all lowercase",
+      "Each word is a true palindrome (reads the same reversed)",
+      "Each word is at least 3 letters long",
+      "No duplicates, prose, numbering, or punctuation"
+    ]
+  },
+  {
+    "id": "instruction_format_18",
+    "domain": "instruction_format",
+    "subtype": "json_only_extraction",
+    "length_class": "long",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "From the passage below, extract the requested fields and output ONLY a JSON object (no prose, no fences) with keys \"name\", \"role\", \"start_year\" (number). Passage: 'Dr. Priya Raman joined the Coastal Institute as lead oceanographer back in 2014, after a decade studying coral reefs abroad.'",
+    "expected": "{\"name\": \"Priya Raman\", \"role\": \"lead oceanographer\", \"start_year\": 2014}",
+    "rubric": [
+      "Entire output is a valid JSON object with no fences or prose",
+      "Keys are exactly name, role, start_year",
+      "name is 'Priya Raman' (or 'Dr. Priya Raman') and role is 'lead oceanographer'",
+      "start_year is the number 2014"
+    ]
+  },
+  {
+    "id": "instruction_format_19",
+    "domain": "instruction_format",
+    "subtype": "exact_word_count_long",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write a product description for a wireless mouse that is EXACTLY 50 words long. Count every word separated by whitespace. Do not use bullet points. Output only the description.",
+    "expected": "A single flowing product description of a wireless mouse containing exactly 50 whitespace-separated words, no bullets.",
+    "rubric": [
+      "Description is about a wireless mouse",
+      "Contains exactly 50 whitespace-separated words",
+      "No bullet points or numbered lists",
+      "No prose, labels, or word-count note outside the description"
+    ]
+  },
+  {
+    "id": "instruction_format_20",
+    "domain": "instruction_format",
+    "subtype": "acrostic",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write a 4-line acrostic poem where the first letters of the lines spell 'RAIN' (R, A, I, N) reading top to bottom. Each line must be a complete phrase. Output only the four lines, one per line.",
+    "expected": "A 4-line poem whose lines begin with R, A, I, N respectively, each a complete phrase, themed loosely on rain.",
+    "rubric": [
+      "Exactly 4 lines, one per line",
+      "Line 1 starts with R, line 2 with A, line 3 with I, line 4 with N",
+      "Each line is a complete, coherent phrase",
+      "No title, numbering, or prose outside the four lines"
+    ]
+  },
+  {
+    "id": "instruction_format_21",
+    "domain": "instruction_format",
+    "subtype": "reverse_order_list",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Take this list and output it in REVERSE order as a single comma-separated line with one space after each comma: red, orange, yellow, green, blue. Output only the reversed line.",
+    "expected": "blue, green, yellow, orange, red",
+    "rubric": [
+      "Output is exactly 'blue, green, yellow, orange, red'",
+      "Order is the exact reverse of the input",
+      "Comma followed by a single space separates items",
+      "No extra prose, trailing comma, or line breaks"
+    ]
+  },
+  {
+    "id": "instruction_format_22",
+    "domain": "instruction_format",
+    "subtype": "yaml_block",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Output a YAML block (no code fences, no prose) with exactly these top-level keys in this order: name, version, dependencies. name is 'webtool', version is '1.2.0' (must be quoted as a string), and dependencies is a YAML list with two items: requests and click. Output only the YAML.",
+    "expected": "name: webtool\nversion: \"1.2.0\"\ndependencies:\n  - requests\n  - click",
+    "rubric": [
+      "Valid YAML with top-level keys name, version, dependencies in that order",
+      "name resolves to webtool and version is the quoted string \"1.2.0\"",
+      "dependencies is a list with exactly two items: requests and click",
+      "No code fences or prose around the YAML"
+    ]
+  },
+  {
+    "id": "instruction_format_23",
+    "domain": "instruction_format",
+    "subtype": "fixed_prefix_lines",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "List 5 fruits, one per line. Every line MUST begin with the prefix '- [ ] ' (a Markdown unchecked checkbox) followed by the fruit name capitalized. Output only the five lines.",
+    "expected": "Five lines each beginning with '- [ ] ' followed by a capitalized fruit name, e.g. '- [ ] Apple'.",
+    "rubric": [
+      "Exactly 5 lines, one fruit each",
+      "Every line begins with the exact prefix '- [ ] '",
+      "Each fruit name is capitalized and is a real fruit",
+      "No duplicates, intro text, or extra lines"
+    ]
+  },
+  {
+    "id": "instruction_format_24",
+    "domain": "instruction_format",
+    "subtype": "constrained_json_enum",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Classify the sentiment of this review and output ONLY a JSON object (no fences, no prose) with keys \"sentiment\" and \"confidence\". \"sentiment\" must be exactly one of \"positive\", \"negative\", or \"neutral\". \"confidence\" must be a number between 0 and 1 inclusive. Review: 'The phone is fast and the battery lasts all day, but the camera is disappointing.'",
+    "expected": "A JSON object like {\"sentiment\": \"positive\", \"confidence\": 0.6} or {\"sentiment\": \"neutral\", \"confidence\": 0.7}; sentiment must be one of the three allowed values and confidence in [0,1].",
+    "rubric": [
+      "Entire output is a valid JSON object with no fences or prose",
+      "Keys are exactly sentiment and confidence",
+      "sentiment is exactly one of positive, negative, neutral",
+      "confidence is a number between 0 and 1 inclusive"
+    ]
+  },
+  {
+    "id": "instruction_format_25",
+    "domain": "instruction_format",
+    "subtype": "multi_constraint_combo",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write exactly 3 sentences about a library. Constraints: (1) each sentence must contain exactly 8 words; (2) no sentence may contain the word 'the'; (3) each sentence must end with a period. Output only the three sentences, one per line.",
+    "expected": "Three single-line sentences about a library, each exactly 8 words, none containing 'the', each ending with a period.",
+    "rubric": [
+      "Exactly 3 sentences, one per line, about a library",
+      "Each sentence contains exactly 8 whitespace-separated words",
+      "No sentence contains the word 'the' (as a standalone word)",
+      "Each sentence ends with a period and there is no extra prose"
+    ]
+  }
+]

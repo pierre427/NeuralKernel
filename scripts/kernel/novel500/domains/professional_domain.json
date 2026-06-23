@@ -1,0 +1,400 @@
+[
+  {
+    "id": "professional_domain_01",
+    "domain": "professional_domain",
+    "subtype": "contract_law_basics",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A friend says: \"I texted my landlord 'sure, I'll take the apartment' and he texted back 'great, it's yours.' Is that a real contract even though nothing is signed?\" Answer in general terms.",
+    "expected": "An oral or text-message agreement can form a binding contract if the basic elements (offer, acceptance, consideration, intent) are present. However, many jurisdictions require certain agreements to be in writing under a Statute of Frauds; real-estate leases over a certain duration (commonly one year) often must be written and signed to be enforceable. So a text exchange MIGHT be binding for a short lease but MIGHT NOT be for a longer one, and rules vary by jurisdiction. The model should hedge and recommend confirming local law / consulting a lawyer.",
+    "rubric": [
+      "States a contract can form without a formal signature if offer/acceptance/consideration/intent exist",
+      "Mentions the Statute of Frauds or a writing requirement for certain leases/real estate",
+      "Notes that rules vary by jurisdiction (does not give a single definitive yes/no)",
+      "Includes a caveat to verify local law or consult a lawyer"
+    ]
+  },
+  {
+    "id": "professional_domain_02",
+    "domain": "professional_domain",
+    "subtype": "tax_concept",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain in general terms the difference between a tax deduction and a tax credit, and which one generally reduces your tax bill more dollar-for-dollar. Give a simple illustrative example with round numbers.",
+    "expected": "A deduction reduces taxable income, so its value depends on your marginal tax rate (a $1,000 deduction at a 22% rate saves $220). A credit reduces the tax owed directly dollar-for-dollar (a $1,000 credit saves $1,000). Therefore a credit generally reduces the tax bill more than a deduction of the same nominal amount. The model should note credits may be refundable vs nonrefundable and that specifics depend on jurisdiction/situation, with a suggestion to consult a tax professional or official guidance.",
+    "rubric": [
+      "Defines a deduction as reducing taxable income (value depends on marginal rate)",
+      "Defines a credit as reducing tax owed dollar-for-dollar",
+      "Concludes a credit of equal nominal size saves more than a deduction",
+      "Provides a numeric example consistent with the above",
+      "Includes a caveat (varies by situation / consult a tax professional)"
+    ]
+  },
+  {
+    "id": "professional_domain_03",
+    "domain": "professional_domain",
+    "subtype": "medication_safety",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Someone asks: \"Is it safe to take ibuprofen and acetaminophen (paracetamol) at the same time?\" Answer in general terms with appropriate caveats.",
+    "expected": "In general, ibuprofen (an NSAID) and acetaminophen/paracetamol work by different mechanisms and are commonly taken together or alternated for pain/fever in adults, and this combination is often considered acceptable for short-term use. However, caveats matter: each has its own maximum daily dose and risks (NSAIDs: stomach/kidney/cardiac/bleeding concerns; acetaminophen: liver toxicity especially with alcohol or other acetaminophen-containing products), interactions and contraindications exist, and dosing differs for children. The model must recommend following label directions and consulting a pharmacist/doctor, and should NOT give a specific personalized dosing regimen as definitive medical advice.",
+    "rubric": [
+      "States they act by different mechanisms and can generally be combined/alternated short-term",
+      "Mentions a specific risk of at least one (e.g., acetaminophen-liver or NSAID-stomach/kidney/bleeding)",
+      "Advises following label dosing or not exceeding max doses",
+      "Recommends consulting a pharmacist/doctor and avoids definitive personal medical advice"
+    ]
+  },
+  {
+    "id": "professional_domain_04",
+    "domain": "professional_domain",
+    "subtype": "business_entity",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A small-business owner asks: \"What's the basic difference between running my business as a sole proprietorship versus forming an LLC, and why do people say an LLC gives 'liability protection'?\" Answer in general terms.",
+    "expected": "A sole proprietorship is the default for an individual running a business with no separate legal entity; the owner and business are legally the same, so the owner is personally liable for business debts and lawsuits, and reports income on their personal return. An LLC (limited liability company) is a separate legal entity; properly maintained, it generally shields the owner's personal assets from business liabilities ('limited liability'), though protection can be lost (e.g., personal guarantees, fraud, commingling funds / 'piercing the veil'). LLCs add formation/maintenance steps and have flexible tax treatment. The model should note that specifics, costs, and tax treatment vary by jurisdiction and recommend consulting an attorney/accountant.",
+    "rubric": [
+      "Explains sole proprietorship = owner and business legally the same / personal liability",
+      "Explains LLC is a separate entity providing limited liability for the owner's personal assets",
+      "Notes a limit/caveat to LLC protection (e.g., personal guarantees, fraud, veil piercing, or commingling)",
+      "Includes a recommendation to consult an attorney/accountant and that rules vary by jurisdiction"
+    ]
+  },
+  {
+    "id": "professional_domain_05",
+    "domain": "professional_domain",
+    "subtype": "personal_finance",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "In general terms, what is an 'emergency fund' and roughly how much do financial advisors commonly suggest keeping in one?",
+    "expected": "An emergency fund is a reserve of readily accessible, low-risk cash set aside to cover unexpected expenses or loss of income (job loss, medical bills, car/home repairs) so you don't have to take on high-interest debt. A commonly cited general guideline is roughly three to six months of essential living expenses, though the right amount depends on individual circumstances (job stability, dependents, income variability). The model should frame this as a general guideline, not personalized advice.",
+    "rubric": [
+      "Defines an emergency fund as accessible cash for unexpected expenses / income loss",
+      "Cites a general guideline around 3-6 months of expenses (or similar range)",
+      "Notes the right amount depends on individual circumstances / is a general guideline"
+    ]
+  },
+  {
+    "id": "professional_domain_06",
+    "domain": "professional_domain",
+    "subtype": "employment_law",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "An employee in the United States asks: \"My boss fired me with no warning and gave no reason. Isn't that illegal?\" Explain the general legal landscape, including the concept of at-will employment and its main exceptions.",
+    "expected": "In most U.S. states, employment is 'at-will,' meaning an employer can generally terminate an employee at any time, with or without cause or notice, and the employee can likewise quit at any time. So firing without warning or stated reason is usually NOT by itself illegal. However, there are important exceptions: termination is unlawful if it's for an illegal reason such as discrimination based on a protected characteristic (race, sex, religion, age, disability, etc.), retaliation for protected activity (whistleblowing, filing a complaint, taking protected leave), breach of an employment contract or implied contract, or violation of public policy. Montana is a notable non-at-will exception, and union/contract employees differ. The model should hedge (facts matter) and recommend consulting an employment attorney or a labor agency.",
+    "rubric": [
+      "Explains at-will employment: can fire without cause/notice in most states, so it's usually not automatically illegal",
+      "Lists at least two unlawful exceptions (e.g., discrimination, retaliation, contract breach, public policy)",
+      "Notes nuance such as state variation, contract/union employees, or Montana exception",
+      "Recommends consulting an employment attorney or relevant agency / hedges that facts matter"
+    ]
+  },
+  {
+    "id": "professional_domain_07",
+    "domain": "professional_domain",
+    "subtype": "medical_triage_concept",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Someone describes: \"sudden numbness on one side of the face, trouble speaking, and one arm feels weak — started 20 minutes ago.\" In general terms, what should this person do and why?",
+    "expected": "These are classic warning signs of a possible stroke (the FAST acronym: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services). The general and urgent advice is to call emergency services / go to the ER immediately, because stroke treatment is highly time-sensitive ('time is brain') and earlier treatment improves outcomes. The model should NOT attempt to diagnose or suggest waiting; it should emphasize immediate emergency care. This is one of the cases where the appropriate response is to seek emergency help rather than self-manage.",
+    "rubric": [
+      "Identifies the symptoms as possible stroke warning signs (may reference FAST)",
+      "Advises calling emergency services / going to the ER immediately",
+      "Explains urgency / time-sensitivity (does not suggest waiting or self-treating)"
+    ]
+  },
+  {
+    "id": "professional_domain_08",
+    "domain": "professional_domain",
+    "subtype": "intellectual_property",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain in general terms the difference between a copyright, a trademark, and a patent, with a one-line example of what each protects.",
+    "expected": "Copyright protects original creative works of authorship fixed in a tangible medium (e.g., a novel, song, photograph, software code) and generally arises automatically. A trademark protects words, names, logos, or symbols that identify and distinguish the source of goods/services (e.g., a brand name or logo). A patent protects new, useful, non-obvious inventions or processes for a limited term in exchange for public disclosure (e.g., a novel mechanical device or drug). The model should give correct examples for each and may note rules/terms vary by jurisdiction and registration requirements differ; consulting an IP attorney is advisable for specifics.",
+    "rubric": [
+      "Copyright: protects original creative/authored works with a correct example",
+      "Trademark: protects brand identifiers (name/logo/symbol distinguishing source) with a correct example",
+      "Patent: protects inventions/processes (novel/useful) with a correct example",
+      "Includes a caveat that specifics vary by jurisdiction or recommends an IP attorney"
+    ]
+  },
+  {
+    "id": "professional_domain_09",
+    "domain": "professional_domain",
+    "subtype": "finance_math",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A borrower takes a simple-interest loan of $8,000 at 6% annual interest for 3 years, with interest not compounded. Compute the total simple interest and the total amount repaid, showing the formula. Then briefly note one caveat about why a real-world loan might cost more.",
+    "expected": "Simple interest I = P x r x t = 8000 x 0.06 x 3 = $1,440. Total repaid = principal + interest = 8000 + 1440 = $9,440. Caveat: real-world loans often compound interest, may include fees/origination costs, APR may differ from the nominal rate, or rates may be variable, so actual cost can be higher; consult the loan terms / a financial professional. The numeric answers ($1,440 interest and $9,440 total) must be correct.",
+    "rubric": [
+      "Uses simple interest formula I = P x r x t (or equivalent)",
+      "Computes interest = $1,440 correctly",
+      "Computes total repaid = $9,440 correctly",
+      "Notes a real-world caveat (compounding, fees, APR, or variable rate)"
+    ]
+  },
+  {
+    "id": "professional_domain_10",
+    "domain": "professional_domain",
+    "subtype": "estate_planning",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In general terms, what happens to a person's assets if they die without a will (die 'intestate')? Explain the concept of intestacy and who typically inherits.",
+    "expected": "Dying without a valid will means dying 'intestate.' In that case, state/jurisdictional intestacy laws determine who inherits, rather than the deceased's wishes. Typically these laws distribute assets to the closest surviving relatives in a statutory order, commonly a surviving spouse and/or children first, then parents, siblings, and more distant relatives; if no relatives are found, assets may 'escheat' to the state. A court typically appoints an administrator to handle the estate through probate. The model should stress that exact rules vary significantly by jurisdiction and that non-probate assets (e.g., beneficiary designations, joint accounts) may pass outside intestacy, and recommend consulting an estate attorney.",
+    "rubric": [
+      "Defines intestate as dying without a valid will",
+      "States that statutory/jurisdictional intestacy rules (not personal wishes) decide distribution",
+      "Identifies a typical order of heirs (e.g., spouse/children first, then other relatives; possibly escheat)",
+      "Notes rules vary by jurisdiction and/or recommends consulting an estate attorney"
+    ]
+  },
+  {
+    "id": "professional_domain_11",
+    "domain": "professional_domain",
+    "subtype": "insurance_concept",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "In general terms, what is an insurance 'deductible' and how does choosing a higher deductible usually affect your premium?",
+    "expected": "A deductible is the amount you must pay out of pocket on a covered claim before the insurer starts paying. Generally, choosing a higher deductible lowers your premium (the recurring amount you pay for coverage) because you're taking on more of the upfront risk, while a lower deductible raises the premium. The model should note the tradeoff depends on personal circumstances/risk tolerance and that policy specifics vary.",
+    "rubric": [
+      "Defines deductible as out-of-pocket amount paid before insurer pays on a claim",
+      "States higher deductible generally means lower premium (and vice versa)",
+      "Notes the tradeoff depends on circumstances / policy specifics vary"
+    ]
+  },
+  {
+    "id": "professional_domain_12",
+    "domain": "professional_domain",
+    "subtype": "medical_general",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A person with no known allergies asks: \"What does it mean that a bacterial infection is 'antibiotic resistant,' and why do doctors tell me to finish my whole course of antibiotics?\" Answer in general terms.",
+    "expected": "Antibiotic resistance means bacteria have evolved so that certain antibiotics no longer effectively kill or stop them, making infections harder to treat. It develops and spreads partly through overuse and misuse of antibiotics. The traditional rationale for finishing a prescribed course is to fully clear the infection and reduce the chance that surviving, hardier bacteria persist; however, the model may note that current guidance is evolving and the best course length should follow the prescribing clinician's instructions. Antibiotics don't work against viruses. The model should advise following the doctor's/pharmacist's guidance and not self-adjusting antibiotics.",
+    "rubric": [
+      "Defines antibiotic resistance as bacteria no longer being effectively killed/stopped by the antibiotic",
+      "Links resistance to overuse/misuse of antibiotics",
+      "Explains the rationale for completing a prescribed course (clearing infection / reducing survivors) or notes guidance is evolving",
+      "Advises following the clinician's/pharmacist's instructions and not self-adjusting"
+    ]
+  },
+  {
+    "id": "professional_domain_13",
+    "domain": "professional_domain",
+    "subtype": "criminal_procedure",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In the U.S. context, explain in general terms what 'Miranda rights' are, when police are generally required to give them, and a common misconception about them.",
+    "expected": "Miranda rights (from Miranda v. Arizona) are the warnings police must give about the right to remain silent and the right to an attorney before a custodial interrogation. They are generally required when a person is both (1) in custody and (2) subject to interrogation; otherwise voluntary statements aren't covered. A common misconception is that police must read Miranda rights at the moment of any arrest, or that failure to do so automatically dismisses the case — actually, the main consequence is that un-Mirandized statements made during custodial interrogation may be suppressed as evidence, not that the case is thrown out. The model should hedge that this is general U.S. info and recommend consulting a criminal defense attorney for specifics.",
+    "rubric": [
+      "Describes Miranda warnings (right to remain silent and right to an attorney)",
+      "States they're required for custodial interrogation (custody + interrogation), not every encounter",
+      "Identifies a correct common misconception (e.g., not automatic dismissal; consequence is suppression of statements)",
+      "Includes a caveat to consult a criminal defense attorney / this is general info"
+    ]
+  },
+  {
+    "id": "professional_domain_14",
+    "domain": "professional_domain",
+    "subtype": "investing_concept",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain in general terms what 'diversification' means in investing and why it's said to reduce risk. Then state one important limitation of diversification.",
+    "expected": "Diversification means spreading investments across different assets, sectors, geographies, or asset classes so that poor performance in one area is offset by others, reducing the impact of any single holding's loss (idiosyncratic/unsystematic risk). A key limitation: diversification reduces specific/unsystematic risk but cannot eliminate systematic (market-wide) risk — a broad market downturn can hit nearly all assets at once, so diversification does not guarantee against loss. The model should frame this as general education, not personalized investment advice, and may suggest consulting a financial advisor.",
+    "rubric": [
+      "Defines diversification as spreading investments across different assets/sectors/etc.",
+      "Explains it reduces the impact of any single holding (reduces idiosyncratic/unsystematic risk)",
+      "States a correct limitation: cannot eliminate systematic/market-wide risk / no guarantee against loss",
+      "Frames as general education, not personalized advice (or suggests a financial advisor)"
+    ]
+  },
+  {
+    "id": "professional_domain_15",
+    "domain": "professional_domain",
+    "subtype": "tax_filing_status",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A U.S. taxpayer writes: \"I got divorced in November of last year. For last year's federal tax return, can I still file as 'married filing jointly,' and what filing statuses might apply to me?\" Explain the general rule about how marital status on the last day of the year affects filing status, and outline the likely options, with appropriate caveats.",
+    "expected": "For U.S. federal income tax, filing status generally depends on marital status as of the last day of the tax year (December 31). If the divorce was finalized by December 31, the person is considered unmarried for the entire year and generally CANNOT file 'married filing jointly' for that year. Likely options instead are 'single,' or 'head of household' if they qualify (e.g., paid more than half the cost of keeping up a home and have a qualifying dependent for more than half the year). If the divorce had NOT been finalized by year-end, married filing jointly or married filing separately could apply. The model should note this is general information, that specifics (dependents, custody, residency) and any state rules matter, and recommend consulting a tax professional or IRS guidance.",
+    "rubric": [
+      "States filing status generally depends on marital status as of Dec 31 / last day of the year",
+      "Concludes that if divorce was final by year-end, MFJ is generally not available for that year",
+      "Identifies plausible alternative statuses (single, and head of household if qualifying conditions met)",
+      "Mentions a head-of-household condition (qualifying dependent and paying >half home costs) at least roughly",
+      "Includes a caveat to consult a tax professional / IRS guidance and that specifics vary"
+    ]
+  },
+  {
+    "id": "professional_domain_16",
+    "domain": "professional_domain",
+    "subtype": "consumer_law",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "In general terms, what is the difference between a product's 'warranty' and a 'return policy'?",
+    "expected": "A return policy is a seller's/retailer's rules about returning or exchanging a product within a certain window (often for any reason, sometimes with conditions), typically for a refund or exchange shortly after purchase. A warranty is a guarantee (from the manufacturer or seller) that the product will work or be free of defects for some period, obligating repair, replacement, or refund if it fails to meet that standard; warranties can be express or implied. The model should note specifics depend on the seller, manufacturer, and jurisdiction (consumer-protection laws), and may suggest reading the terms.",
+    "rubric": [
+      "Describes a return policy as time-limited returns/exchanges set by the seller/retailer",
+      "Describes a warranty as a guarantee against defects/failure obligating repair/replacement/refund",
+      "Notes specifics depend on seller/manufacturer/jurisdiction or suggests reading the terms"
+    ]
+  },
+  {
+    "id": "professional_domain_17",
+    "domain": "professional_domain",
+    "subtype": "medical_screening",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain in general terms the difference between the 'sensitivity' and 'specificity' of a medical test, and why a positive result on a highly sensitive screening test does not necessarily mean the patient has the disease.",
+    "expected": "Sensitivity is the proportion of people WITH the disease who correctly test positive (true-positive rate); a highly sensitive test rarely misses true cases (few false negatives). Specificity is the proportion of people WITHOUT the disease who correctly test negative (true-negative rate); high specificity means few false positives. A positive on a highly sensitive (but imperfectly specific) screening test doesn't confirm disease because false positives occur, and the chance a positive is truly disease (positive predictive value) also depends on how common the disease is (prevalence) — when prevalence is low, many positives can be false. The model should note confirmatory testing and clinician interpretation are needed.",
+    "rubric": [
+      "Defines sensitivity = true-positive rate (correctly identifies those with disease)",
+      "Defines specificity = true-negative rate (correctly identifies those without disease)",
+      "Explains a positive on a sensitive test can be a false positive / depends on specificity",
+      "Mentions prevalence / positive predictive value or the need for confirmatory testing"
+    ]
+  },
+  {
+    "id": "professional_domain_18",
+    "domain": "professional_domain",
+    "subtype": "business_accounting",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain in general terms the difference between 'cash basis' and 'accrual basis' accounting, and give one advantage of each.",
+    "expected": "Cash-basis accounting records revenue when cash is received and expenses when cash is paid. Accrual-basis accounting records revenue when earned and expenses when incurred, regardless of when cash changes hands (using receivables/payables). Advantage of cash basis: simpler and gives a clear view of actual cash on hand. Advantage of accrual basis: better matches revenue with related expenses and gives a more accurate picture of overall financial performance/position (and is generally required for larger businesses or under GAAP). The model should note which method a business may use can depend on size, jurisdiction, and tax rules, and may suggest consulting an accountant.",
+    "rubric": [
+      "Cash basis: records revenue/expenses when cash is received/paid",
+      "Accrual basis: records revenue when earned and expenses when incurred (regardless of cash timing)",
+      "Gives a correct advantage of each method",
+      "Notes choice can depend on size/jurisdiction/tax rules or suggests consulting an accountant"
+    ]
+  },
+  {
+    "id": "professional_domain_19",
+    "domain": "professional_domain",
+    "subtype": "family_law",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A parent asks in general terms: \"When courts decide child custody, what is the main standard they use, and what kinds of factors do they typically consider?\" Answer with appropriate caveats.",
+    "expected": "In most jurisdictions, courts decide custody using the 'best interests of the child' standard — the child's welfare, not the parents' preferences, is the guiding principle. Commonly considered factors include each parent's ability to provide care and stability, the child's relationship with each parent, the child's needs and (depending on age/jurisdiction) preferences, each parent's physical/mental health, history of abuse or domestic violence or substance abuse, the willingness to support the child's relationship with the other parent, and continuity of home/school/community. The model should distinguish legal vs physical custody if helpful, stress that exact factors and weight vary by jurisdiction, and recommend consulting a family-law attorney.",
+    "rubric": [
+      "States the main standard is the 'best interests of the child'",
+      "Lists at least three relevant factors courts typically consider",
+      "Notes that exact factors/weight vary by jurisdiction",
+      "Recommends consulting a family-law attorney / hedges that facts matter"
+    ]
+  },
+  {
+    "id": "professional_domain_20",
+    "domain": "professional_domain",
+    "subtype": "retirement_finance",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "In general terms, explain the core difference between a traditional (pre-tax) retirement account and a Roth (after-tax) retirement account in the U.S., focusing on WHEN taxes are paid. Then describe the general intuition for which might be more advantageous depending on whether you expect your tax rate to be higher now or in retirement. Include appropriate caveats.",
+    "expected": "The core difference is the timing of taxation. With a traditional (pre-tax) account, contributions may be tax-deductible now (reducing current taxable income), the money grows tax-deferred, and you pay ordinary income tax on withdrawals in retirement. With a Roth (after-tax) account, you contribute money you've already paid tax on (no upfront deduction), it grows tax-free, and qualified withdrawals in retirement are tax-free. General intuition: a Roth tends to be more advantageous if you expect your tax rate to be HIGHER in retirement than now (pay the lower tax today); a traditional account tends to be more advantageous if you expect your tax rate to be LOWER in retirement than now (defer to the lower-tax future). The model should add caveats: this is simplified, real decisions involve income limits, contribution limits, required distributions, employer matches, uncertainty about future tax rates and rules, and personal circumstances — recommend consulting a financial or tax professional.",
+    "rubric": [
+      "Traditional: contributions pre-tax / possibly deductible now, taxed on withdrawal in retirement",
+      "Roth: contributions after-tax now, qualified withdrawals tax-free in retirement",
+      "States Roth tends to favor expecting a HIGHER future tax rate; traditional favors expecting a LOWER future tax rate",
+      "Includes caveats (simplified; limits/RMDs/uncertainty/individual situation)",
+      "Recommends consulting a financial or tax professional"
+    ]
+  },
+  {
+    "id": "professional_domain_21",
+    "domain": "professional_domain",
+    "subtype": "data_privacy_law",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In general terms, what is the 'right to be forgotten' (right to erasure) under data-protection regimes like the EU's GDPR, and name one situation where it might not apply.",
+    "expected": "The 'right to be forgotten' / right to erasure (e.g., GDPR Article 17) generally lets individuals request that an organization delete their personal data in certain circumstances, such as when the data is no longer necessary for the purpose collected or consent is withdrawn. It is not absolute: it may not apply when processing is needed for, e.g., freedom of expression/information, compliance with a legal obligation, exercise/defense of legal claims, public-interest archiving, or certain public-health reasons. The model should note this is general information about a specific regime and that scope varies by jurisdiction; consult a legal/privacy professional for specifics.",
+    "rubric": [
+      "Describes the right to erasure as letting individuals request deletion of their personal data in certain cases",
+      "Notes it is not absolute / is subject to conditions",
+      "Names at least one valid exception (legal obligation, freedom of expression, legal claims, public interest, etc.)",
+      "Includes a caveat that scope varies by jurisdiction / consult a professional"
+    ]
+  },
+  {
+    "id": "professional_domain_22",
+    "domain": "professional_domain",
+    "subtype": "medical_pediatric",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A new parent asks: \"My 2-month-old has a fever of 39C (about 102F). Is that something I should worry about?\" Answer in general terms.",
+    "expected": "A fever in a very young infant (generally under about 3 months old) is treated as a potential emergency in medicine, because young babies can have serious infections with few other signs and their immune systems are immature. The general guidance is that a rectal temperature of 38C (100.4F) or higher in an infant under ~3 months warrants prompt medical evaluation — the parent should contact a doctor or seek urgent/emergency care right away rather than treating at home. The model should NOT give a definitive home-management plan and should emphasize seeking professional medical care promptly.",
+    "rubric": [
+      "Conveys that fever in an infant under ~3 months is a serious/urgent concern",
+      "Advises contacting a doctor or seeking urgent/emergency care promptly (not home self-treatment)",
+      "Avoids giving a definitive home-management plan / emphasizes professional evaluation"
+    ]
+  },
+  {
+    "id": "professional_domain_23",
+    "domain": "professional_domain",
+    "subtype": "torts_liability",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain in general terms the four basic elements a plaintiff typically must prove to win a negligence claim in common-law jurisdictions, using a slip-and-fall example to illustrate.",
+    "expected": "The four classic elements of negligence are: (1) Duty — the defendant owed the plaintiff a legal duty of care (e.g., a store owes customers a duty to keep premises reasonably safe); (2) Breach — the defendant breached that duty by failing to act as a reasonable person/party would (e.g., leaving a spill unmarked for hours); (3) Causation — the breach actually and proximately caused the harm (the spill caused the customer to slip and fall); and (4) Damages — the plaintiff suffered actual harm/loss (injury, medical bills). The model should note that defenses (e.g., comparative/contributory negligence) and exact standards vary by jurisdiction, and recommend consulting an attorney for a real case.",
+    "rubric": [
+      "Lists duty, breach, causation, and damages as the four elements",
+      "Correctly defines each element at least briefly",
+      "Illustrates with a coherent slip-and-fall example",
+      "Notes jurisdictional variation/defenses or recommends consulting an attorney"
+    ]
+  },
+  {
+    "id": "professional_domain_24",
+    "domain": "professional_domain",
+    "subtype": "macroeconomics_concept",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In general terms, explain what inflation is and how a central bank typically uses interest rates to try to control it. Why might raising interest rates help cool inflation?",
+    "expected": "Inflation is a general, sustained rise in the overall price level of goods and services over time, which reduces the purchasing power of money. Central banks (e.g., a country's monetary authority) commonly target inflation by adjusting a policy/benchmark interest rate. To cool high inflation, they typically RAISE interest rates: higher rates make borrowing more expensive and saving more attractive, which tends to reduce consumer spending and business investment, slowing aggregate demand and easing upward pressure on prices. The model should note this is a simplified mechanism, that monetary policy operates with lags and has tradeoffs (e.g., risk to growth/employment), and that real outcomes depend on many factors.",
+    "rubric": [
+      "Defines inflation as a sustained general rise in prices / loss of purchasing power",
+      "States central banks use interest-rate policy to manage inflation",
+      "Explains raising rates makes borrowing costlier / saving more attractive, reducing demand and price pressure",
+      "Notes a caveat (lags, tradeoffs, simplification, or depends on many factors)"
+    ]
+  },
+  {
+    "id": "professional_domain_25",
+    "domain": "professional_domain",
+    "subtype": "immigration_concept",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In general terms, what is the difference between a 'visa' and a person's 'immigration status' in a country like the United States? People often confuse them.",
+    "expected": "A visa is generally a travel document (often a stamp/sticker placed by a consulate in a passport) that allows a person to TRAVEL TO a port of entry and request admission to the country; it's mainly about entry. Immigration status is the legal category and conditions a person actually holds WHILE INSIDE the country (e.g., as a student, worker, lawful permanent resident), governing how long they can stay and what they may do. A person can have a valid status even after the visa stamp expires (the visa is for entry, status governs the stay), and vice versa. The model should note this is a general explanation, that rules are complex and vary, and recommend consulting an immigration attorney or official guidance for specifics.",
+    "rubric": [
+      "Describes a visa as primarily an entry/travel document for seeking admission to the country",
+      "Describes immigration status as the legal category/conditions governing the stay while inside the country",
+      "Notes the two can diverge (e.g., visa can expire while status remains valid)",
+      "Includes a caveat that rules are complex/vary and recommends an immigration attorney or official guidance"
+    ]
+  }
+]

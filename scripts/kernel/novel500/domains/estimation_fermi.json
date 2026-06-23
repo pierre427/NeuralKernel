@@ -1,0 +1,407 @@
+[
+  {
+    "id": "estimation_fermi_01",
+    "domain": "estimation_fermi",
+    "subtype": "count_objects",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Estimate how many individual blades of grass are on a standard soccer (association football) pitch. Show your reasoning and give a final order-of-magnitude answer.",
+    "expected": "Pitch area ~7,000 m^2 (105 m x 68 m). Grass density is roughly 10,000-20,000 blades per m^2. Product ~ 7e7 to 1.4e8 blades, i.e. on the order of 10^8 (tens to ~100 million). Any answer in roughly 1e7-1e9 with a stated density and area is acceptable.",
+    "rubric": [
+      "Estimates pitch area near 7,000 m^2 (or derives it from ~100 m x ~70 m)",
+      "Uses a per-m^2 blade density in the 1,000-50,000 range",
+      "Multiplies area by density to get a total",
+      "Final answer is order 10^7 to 10^9 (best ~10^8)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_02",
+    "domain": "estimation_fermi",
+    "subtype": "energy_consumption",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A mid-size city has 200,000 households. Estimate the total annual electricity consumption (in kWh) of just the refrigerators in that city. State your assumptions about fridges per household and per-fridge consumption.",
+    "expected": "Assume ~1.1 fridges per household (some have a second), so ~220,000 fridges. A typical fridge uses ~350-500 kWh/year. Total ~ 7.7e7 to 1.1e8 kWh/year, i.e. on the order of 100 million kWh (~10^8). Accept ~5e7 to 2e8 kWh with reasonable per-fridge figures.",
+    "rubric": [
+      "Estimates number of fridges (~1 per household, ~200,000-250,000 total)",
+      "Uses per-fridge annual consumption in the ~300-600 kWh range",
+      "Multiplies to get a city total",
+      "Final answer order 10^8 kWh/year (accept ~5e7-2e8)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_03",
+    "domain": "estimation_fermi",
+    "subtype": "labor_demand",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the number of full-time professional dog walkers working in New York City. Walk through your decomposition: city population, dog ownership rate, fraction of dogs whose owners hire walkers, how many walks per dog per day, how many dogs one walker can handle, and working days. Give a final figure and a plausible range.",
+    "expected": "NYC ~8.4M people, ~3M households, ~20-25% own a dog -> ~600,000-750,000 dogs. Maybe 10-15% of those use a paid walker -> ~70,000-110,000 dogs walked. Most need 1 weekday walk; a walker handles ~4-8 dogs/day (group walks) and works ~250 days/yr, but the relevant constraint is daily simultaneous demand: ~80,000 daily walks / ~6 dogs per walker per day ~= ~13,000 walker-slots, but accounting for part-timers and that one walker does multiple walk-windows, the full-time-equivalent count lands ~5,000-15,000. Accept any answer in roughly 3,000-20,000 with a coherent chain.",
+    "rubric": [
+      "Starts from NYC population/households and a dog-ownership rate (~15-30%)",
+      "Applies a fraction of dogs using paid walkers (~5-20%)",
+      "Uses a dogs-per-walker-per-day capacity figure (~3-10)",
+      "Combines into a walker count with a stated range",
+      "Final figure in the ~3,000-20,000 range (order 10^3-10^4)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_04",
+    "domain": "estimation_fermi",
+    "subtype": "volume_capacity",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Estimate how many standard table-tennis (ping-pong) balls would fit inside a typical school classroom. Give your reasoning.",
+    "expected": "Classroom ~7 m x 8 m x 3 m ~= ~170 m^3. A ping-pong ball is 40 mm diameter; its bounding cube is 4 cm^3 = 6.4e-5 m^3, and sphere packing fills ~64-74%, but using the cube-per-ball with ~70% packing: balls ~ 170 m^3 * 0.7 / (3.35e-5 m^3 sphere volume) ~ 3.5e6. A simpler cube-packing estimate gives ~170/6.4e-5 ~ 2.6e6. Accept ~1e6 to 1e7 (order millions).",
+    "rubric": [
+      "Estimates classroom volume (~100-250 m^3)",
+      "Uses ball diameter ~40 mm (or volume ~3e-5 m^3 / cube ~6.4e-5 m^3)",
+      "Accounts for packing or divides volume by per-ball cube",
+      "Final answer order 10^6 (accept 1e6-1e7)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_05",
+    "domain": "estimation_fermi",
+    "subtype": "rate_throughput",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate how many pizzas a single busy independent pizzeria sells in one year. Decompose by hours open, peak vs off-peak, and pizzas per hour, then annualize.",
+    "expected": "Open ~360 days/yr, ~10 hours/day. Average ~15-25 pizzas/hour blended (more at dinner peak, fewer midday). ~20/hr * 10 hr = ~200/day -> ~72,000/year. Accept ~30,000-120,000 pizzas/year with a coherent hourly rate and open-days assumption.",
+    "rubric": [
+      "Estimates open hours/day and days/year",
+      "Uses a pizzas-per-hour rate (blended peak/off-peak)",
+      "Computes per-day then annualizes",
+      "Final answer order 10^4-10^5 (~30k-120k)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_06",
+    "domain": "estimation_fermi",
+    "subtype": "material_quantity",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You need to repaint the exterior walls of a rectangular two-story house that is 12 m long, 9 m wide, and 6 m tall. Windows and doors take up about 15% of the wall area. Paint covers 10 m^2 per liter per coat, and you want two coats. Estimate how many liters of paint to buy.",
+    "expected": "Perimeter = 2*(12+9) = 42 m; wall area = 42 * 6 = 252 m^2. Subtract 15% openings -> ~214 m^2 paintable. Two coats -> ~428 m^2 to cover. At 10 m^2/L -> ~43 L. Round up for waste to ~45-50 L. Accept ~40-50 L.",
+    "rubric": [
+      "Computes wall area from perimeter x height (~250 m^2 gross)",
+      "Subtracts ~15% for windows/doors (~210-215 m^2)",
+      "Doubles for two coats and divides by 10 m^2/L",
+      "Final answer ~40-50 liters"
+    ]
+  },
+  {
+    "id": "estimation_fermi_07",
+    "domain": "estimation_fermi",
+    "subtype": "time_aggregate",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Estimate the total number of hours a typical person spends brushing their teeth over an 80-year lifetime. Show your steps.",
+    "expected": "~2 brushings/day * 2 minutes = 4 min/day. Over 80 years: 4 min * 365 * 80 = ~116,800 minutes = ~1,950 hours. Roughly 2,000 hours (~80 days). Accept ~1,000-3,000 hours.",
+    "rubric": [
+      "Uses ~2 brushings/day at ~2 minutes each (~4 min/day)",
+      "Multiplies by days per year and ~80 years",
+      "Converts minutes to hours",
+      "Final answer ~1,000-3,000 hours (best ~2,000)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_08",
+    "domain": "estimation_fermi",
+    "subtype": "biological_flux",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total mass (in kilograms) of insects consumed by all the spiders in a single hectare of temperate grassland in one year. Lay out a chain: spider density per m^2, average spider mass, daily food intake as a fraction of body mass, and active days per year.",
+    "expected": "Spider density in grassland ~50-150 per m^2 -> ~100/m^2 -> 1e6 per hectare (1e4 m^2). Average spider mass ~5-20 mg -> ~10 mg. A spider eats roughly 10% of body mass per day -> ~1 mg prey/spider/day. Active ~200 days/yr -> ~200 mg prey/spider/yr. Total: 1e6 spiders * 0.2 g = 2e5 g = ~200 kg/hectare/yr. Order of magnitude ~10^2 kg (accept ~30-500 kg). Reasonable chains yielding 10^1-10^3 kg accepted.",
+    "rubric": [
+      "Estimates spider density per m^2 and scales to a hectare (1e4 m^2)",
+      "Uses an average spider mass (~mg scale)",
+      "Applies a daily intake fraction of body mass and active days/year",
+      "Combines into total prey mass with unit conversions",
+      "Final answer order 10^1-10^3 kg (best ~10^2)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_09",
+    "domain": "estimation_fermi",
+    "subtype": "data_storage",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate the total storage (in terabytes) needed to keep one uncompressed high-resolution photo of every book page in a large national library holding 15 million books. Assume an average book length and per-page image size, and state them.",
+    "expected": "~15M books * ~300 pages/book = ~4.5e9 pages. An uncompressed high-res page scan ~ 25-50 MB (e.g., ~3000x4000 px, 24-bit ~ 36 MB). Use ~35 MB -> 4.5e9 * 35 MB = ~1.58e11 MB = ~1.58e8 GB = ~158,000 TB ~ 158 PB. Accept ~50,000-500,000 TB (order 10^5 TB / ~10^2 PB).",
+    "rubric": [
+      "Estimates total pages (~books x ~200-400 pages)",
+      "Uses a per-page uncompressed image size (~20-60 MB)",
+      "Multiplies and converts to terabytes",
+      "Final answer order 10^5 TB (accept 5e4-5e5 TB)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_10",
+    "domain": "estimation_fermi",
+    "subtype": "transport_logistics",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate the number of shipping containers (TEU) that pass through a single major seaport in one day, given the port handles roughly 20 million TEU per year. Then estimate how many of those a single quay crane must move per hour if the port runs 10 such cranes around the clock.",
+    "expected": "20M TEU/year / 365 = ~54,800 TEU/day. With 10 cranes running 24 h/day = 240 crane-hours/day -> ~54,800/240 = ~228 TEU per crane-hour. Real cranes do ~25-40 moves/hour, so this implies many more cranes or that not all TEU pass cranes simultaneously, but the arithmetic answer is ~55,000 TEU/day and ~230 TEU/crane-hour. Accept ~50,000-60,000 TEU/day and ~150-300 per crane-hour.",
+    "rubric": [
+      "Divides annual TEU by ~365 to get ~55,000/day",
+      "Computes total crane-hours (10 cranes x 24 h = 240)",
+      "Divides daily TEU by crane-hours",
+      "Final: ~55,000 TEU/day and ~200-250 per crane-hour"
+    ]
+  },
+  {
+    "id": "estimation_fermi_11",
+    "domain": "estimation_fermi",
+    "subtype": "count_objects",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Estimate how many cells of toilet paper (individual sheets) a typical 4-person household uses in one year. Show your assumptions.",
+    "expected": "~4 people, each ~5 bathroom uses/day with toilet paper, ~8 sheets per use -> ~40 sheets/person/day. 40 * 4 = 160 sheets/day -> 160 * 365 = ~58,400 sheets/year. Accept ~30,000-100,000 sheets/year.",
+    "rubric": [
+      "Estimates sheets per person per day (uses/day x sheets/use)",
+      "Scales to 4 people and 365 days",
+      "Shows the multiplication",
+      "Final answer order 10^4-10^5 (~30k-100k)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_12",
+    "domain": "estimation_fermi",
+    "subtype": "economic_flow",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total annual revenue (in USD) of the entire street-food cart industry in a megacity of 20 million people. Build it up from number of carts, customers per cart per day, average spend, and operating days per year. State each assumption and give a range.",
+    "expected": "Carts: maybe 1 cart per ~500-1000 people -> ~20,000-40,000 carts (use ~30,000). Customers per cart ~80-150/day (use ~100), average spend ~$2-4 (use ~$3) -> ~$300/cart/day. Operating ~300 days/yr -> ~$90,000/cart/year. Total: 30,000 * $90,000 = ~$2.7e9 (~$2-3 billion). Accept ~$5e8 to ~$1e10 (order 10^9) with a coherent chain.",
+    "rubric": [
+      "Estimates number of carts from population (cart-per-N-people)",
+      "Uses customers/cart/day and average spend",
+      "Includes operating days per year",
+      "Multiplies through to a total with a stated range",
+      "Final answer order 10^9 USD (accept ~5e8-1e10)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_13",
+    "domain": "estimation_fermi",
+    "subtype": "physics_scaling",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total kinetic energy (in joules) of all the cars currently moving on the highways of a country with 50 million registered vehicles. Assume a fraction are in motion at any instant and a typical highway speed. Show the chain.",
+    "expected": "Fraction moving at any instant ~3-5% -> ~2e6 cars in motion. Average mass ~1,500 kg, highway speed ~25-30 m/s. KE per car = 0.5 * 1500 * 28^2 ~= 5.9e5 J. Total ~ 2e6 * 5.9e5 = ~1.2e12 J (~10^12 J). Accept ~3e11 to ~5e12 J with stated moving-fraction and speed.",
+    "rubric": [
+      "Estimates fraction of vehicles in motion at an instant (~1-10%)",
+      "Uses car mass ~1,000-2,000 kg and speed ~20-35 m/s",
+      "Computes per-car KE = 0.5 m v^2",
+      "Multiplies by number moving",
+      "Final answer order 10^12 J (accept 3e11-5e12)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_14",
+    "domain": "estimation_fermi",
+    "subtype": "rate_throughput",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate how many heartbeats a human heart makes in an average 75-year lifetime. Show your steps.",
+    "expected": "Average resting+active rate ~70-80 bpm (use ~75). Per year: 75 * 60 * 24 * 365 ~= 3.94e7 beats/year. Over 75 years: ~2.96e9 ~ 3 billion beats. Accept ~2e9-4e9 (best ~3e9).",
+    "rubric": [
+      "Uses average heart rate ~60-90 bpm",
+      "Multiplies bpm by minutes per year",
+      "Multiplies by ~75 years",
+      "Final answer order 10^9 (best ~2.5-3.5 billion)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_15",
+    "domain": "estimation_fermi",
+    "subtype": "water_resource",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate the volume of water (in cubic meters) that falls as rain on a 1 km^2 urban park during a single year, given the region receives about 800 mm of annual rainfall. Then estimate what fraction could be captured if 30% of that area is impervious surface draining to a collection system at 90% efficiency.",
+    "expected": "1 km^2 = 1e6 m^2. 800 mm = 0.8 m. Total rain volume = 1e6 * 0.8 = 8e5 m^3/year (800,000 m^3). Impervious area = 0.3 * 1e6 = 3e5 m^2 -> rain on it = 3e5 * 0.8 = 2.4e5 m^3; at 90% capture -> ~2.16e5 m^3 captured. Accept total ~8e5 m^3 and captured ~2e5 m^3.",
+    "rubric": [
+      "Converts area to m^2 and rainfall depth to meters",
+      "Total volume = area x depth = ~8e5 m^3",
+      "Applies 30% impervious and 90% efficiency",
+      "Captured ~2.0-2.2e5 m^3"
+    ]
+  },
+  {
+    "id": "estimation_fermi_16",
+    "domain": "estimation_fermi",
+    "subtype": "count_objects",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Estimate how many words are printed in a single typical 300-page novel. Show your reasoning.",
+    "expected": "~300 words per page (typical paperback ~250-350) * 300 pages = ~90,000 words. Accept ~70,000-120,000 words (order ~10^5).",
+    "rubric": [
+      "Uses words-per-page ~250-350",
+      "Multiplies by 300 pages",
+      "Final answer ~70,000-120,000 words"
+    ]
+  },
+  {
+    "id": "estimation_fermi_17",
+    "domain": "estimation_fermi",
+    "subtype": "info_bandwidth",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total number of distinct text messages (SMS/chat) sent worldwide in a single day. Decompose by global population, fraction with a phone, fraction actively messaging daily, and messages per active user per day. Give a final order-of-magnitude and a range.",
+    "expected": "World ~8e9 people; ~5-5.5e9 have a mobile phone; of those maybe ~3.5-4e9 send messages on a given day (texts + chat apps). Active users send ~20-50 messages/day -> use ~30. Total: ~3.8e9 * 30 ~= ~1.1e11 messages/day, i.e. order 10^11 (~100 billion). Accept ~3e10 to ~3e11.",
+    "rubric": [
+      "Starts from world population and phone-ownership fraction",
+      "Applies a daily-active-messager fraction",
+      "Uses messages per active user per day (~10-50)",
+      "Multiplies to a total with a range",
+      "Final answer order 10^11 (accept 3e10-3e11)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_18",
+    "domain": "estimation_fermi",
+    "subtype": "labor_demand",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate how many full-time barbers and hairdressers a country of 60 million people needs to keep everyone reasonably groomed. Reason from haircut frequency, time per cut, and barber working hours.",
+    "expected": "60M people, average ~8-10 haircuts/year/person (men more frequent, kids/women varies) -> use ~8 -> 4.8e8 cuts/year. Each cut ~30-45 min incl. turnover -> use ~0.6 h -> ~2.9e8 barber-hours/year. A barber works ~1,800 productive hours/year -> ~2.9e8 / 1,800 ~= ~160,000 barbers. Accept ~80,000-300,000 (order 10^5).",
+    "rubric": [
+      "Estimates haircuts per person per year (~6-12)",
+      "Multiplies by population for total cuts/year",
+      "Uses time per cut and annual working hours per barber",
+      "Final answer order 10^5 (~80k-300k)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_19",
+    "domain": "estimation_fermi",
+    "subtype": "volume_capacity",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "An Olympic swimming pool is 50 m x 25 m x 2 m deep. Estimate how long it would take to fill it using an ordinary garden hose. State the hose's flow rate assumption.",
+    "expected": "Pool volume = 50 * 25 * 2 = 2,500 m^3 = 2.5e6 liters. Garden hose flow ~ 10-20 L/min (use ~15 L/min). Time = 2.5e6 / 15 = ~1.67e5 minutes = ~2,780 hours = ~116 days. Accept ~70-200 days depending on flow rate (order ~10^2 days).",
+    "rubric": [
+      "Computes pool volume = 2,500 m^3 = 2.5e6 liters",
+      "Assumes a garden-hose flow rate (~8-20 L/min)",
+      "Divides volume by flow rate and converts units",
+      "Final answer order ~10^2 days (accept ~70-200 days)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_20",
+    "domain": "estimation_fermi",
+    "subtype": "emissions_footprint",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total annual CO2 emissions (in metric tons) from all the daily commuting car trips in a metropolitan area of 4 million people. Decompose: working population, fraction commuting by car, average round-trip distance, working days, fuel economy, and CO2 per liter of fuel. State assumptions and give a range.",
+    "expected": "Working population ~50% of 4M = 2M; ~60% commute by car (driver) -> ~1.2M commuters. Round trip ~25 km/day. Working days ~230/yr. Distance/yr per commuter = 25 * 230 = ~5,750 km. Fuel use at ~8 L/100km -> ~460 L/yr. CO2 ~2.3 kg/L gasoline -> ~1,060 kg = ~1.06 t/yr per commuter. Total = 1.2M * 1.06 t = ~1.27e6 t/year (~1-2 million tonnes). Accept ~5e5 to ~3e6 t/year (order 10^6).",
+    "rubric": [
+      "Estimates car-commuter count from population (working fraction x car-share)",
+      "Uses round-trip distance and working days for annual km",
+      "Applies fuel economy and CO2 per liter (~2.3 kg/L)",
+      "Combines into per-commuter then total emissions",
+      "Final answer order 10^6 tonnes/year (accept 5e5-3e6)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_21",
+    "domain": "estimation_fermi",
+    "subtype": "count_objects",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate the number of LEGO bricks manufactured worldwide in a single year. Reason from a known scale (e.g., bricks per person sold, or total set sales) and state your anchor.",
+    "expected": "A common anchor: the LEGO Group produces tens of billions of elements per year. From the ground up: ~tens of millions of sets/year * ~hundreds of pieces/set, or ~ a few hundred bricks per person on Earth amortized; the accepted figure is order 10^10-10^11 (tens of billions of bricks/year, commonly cited ~75 billion). Accept ~1e10 to ~1.5e11.",
+    "rubric": [
+      "States an anchor (sets/year x pieces/set, or per-capita) ",
+      "Reasons to a total bricks/year",
+      "Final answer order 10^10-10^11 (tens of billions)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_22",
+    "domain": "estimation_fermi",
+    "subtype": "biological_count",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total number of breaths a blue whale takes in its lifetime, and compare the lifetime air volume moved to the volume of an Olympic swimming pool (2,500 m^3). State your assumptions about breathing rate, lung capacity, and lifespan.",
+    "expected": "Blue whale breathes ~ once every ~10-15 min while active, fewer when diving; average ~5 breaths/hour over a day -> ~120 breaths/day. Lifespan ~80 years -> ~120 * 365 * 80 = ~3.5e6 breaths. Lung tidal volume per breath ~1,000-1,500 liters (huge); use ~1,500 L = 1.5 m^3. Lifetime air = 3.5e6 * 1.5 m^3 = ~5.3e6 m^3 = ~2,100 Olympic pools. Accept breaths ~1e6-1e7 and air volume comparison order ~10^3 pools.",
+    "rubric": [
+      "Estimates breaths per day (rate per hour x 24)",
+      "Multiplies by ~70-90 year lifespan for total breaths (~10^6-10^7)",
+      "Uses a per-breath lung volume (~1,000-1,500 L)",
+      "Computes lifetime air volume and compares to 2,500 m^3 pool",
+      "Pool comparison order ~10^3 pools"
+    ]
+  },
+  {
+    "id": "estimation_fermi_23",
+    "domain": "estimation_fermi",
+    "subtype": "rate_throughput",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate how many cups of coffee are served per day by all the coffee shops in a city of 1 million people. Reason from the fraction who buy coffee out, cups per buyer, and cross-check against shops per capita and cups per shop.",
+    "expected": "Of 1M people, ~20-30% buy a coffee out on a given day -> ~250,000 buyers, ~1.2 cups each -> ~300,000 cups/day. Cross-check: ~1 coffee shop per ~1,500-2,000 people -> ~500-650 shops; ~300,000 / 600 shops ~= ~500 cups/shop/day (plausible for a busy cafe, high for small ones -> consistent within order). Accept ~150,000-500,000 cups/day (order 10^5).",
+    "rubric": [
+      "Estimates fraction of population buying coffee out and cups per buyer",
+      "Computes total cups/day",
+      "Provides a cross-check via shops-per-capita and cups-per-shop",
+      "Final answer order 10^5 cups/day (~150k-500k)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_24",
+    "domain": "estimation_fermi",
+    "subtype": "material_quantity",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Estimate the total mass of concrete (in metric tons) used to build all the sidewalks in a city of 2 million people. Decompose: total road/street length, sidewalk on both sides, sidewalk width and slab thickness, concrete density, and give a range.",
+    "expected": "Street length: cities have roughly ~2-3 km of road per 1,000 people -> ~2M people * 2.5 km/1000 = ~5,000 km of streets. Sidewalk both sides -> ~10,000 km of sidewalk. Width ~1.5 m, thickness ~0.12 m -> cross-section 0.18 m^2. Volume = 1e7 m * 0.18 = 1.8e6 m^3. Concrete density ~2.4 t/m^3 -> ~4.3e6 t. Order ~10^6 tonnes. Accept ~1e6 to ~1e7 tonnes with a coherent chain.",
+    "rubric": [
+      "Estimates total street length from road-per-capita scaling",
+      "Doubles for sidewalks on both sides",
+      "Uses sidewalk width x thickness for cross-section and volume",
+      "Applies concrete density (~2.3-2.5 t/m^3)",
+      "Final answer order 10^6 tonnes (accept 1e6-1e7)"
+    ]
+  },
+  {
+    "id": "estimation_fermi_25",
+    "domain": "estimation_fermi",
+    "subtype": "energy_balance",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Estimate how many standard rooftop solar panels (each ~400 W peak, generating about 1.5 kWh per day on average) would be needed to fully power a town of 10,000 homes, where each home uses about 30 kWh per day. State your reasoning.",
+    "expected": "Town daily demand = 10,000 homes * 30 kWh = 300,000 kWh/day. Per panel = 1.5 kWh/day. Panels needed = 300,000 / 1.5 = 200,000 panels. (For all-solar without storage you'd oversize, but the straightforward energy-balance answer is ~200,000.) Accept ~150,000-300,000 panels.",
+    "rubric": [
+      "Computes town daily demand = 10,000 x 30 = 300,000 kWh/day",
+      "Divides by per-panel daily output (1.5 kWh)",
+      "Final answer ~200,000 panels (accept 150k-300k)"
+    ]
+  }
+]

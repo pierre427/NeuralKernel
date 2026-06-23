@@ -1,0 +1,404 @@
+[
+  {
+    "id": "data_transform_01",
+    "domain": "data_transform",
+    "subtype": "csv_to_json",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Convert this CSV into a JSON array of objects. Use the header row for keys. Keep values as strings. Output only the JSON.\n\nname,role,city\nMaya,editor,Lyon\nDev,intern,Osaka",
+    "expected": "[{\"name\": \"Maya\", \"role\": \"editor\", \"city\": \"Lyon\"}, {\"name\": \"Dev\", \"role\": \"intern\", \"city\": \"Osaka\"}]",
+    "rubric": [
+      "Output is a valid JSON array of 2 objects",
+      "Keys are exactly name, role, city for each object",
+      "Maya object has role=editor and city=Lyon; Dev object has role=intern and city=Osaka",
+      "All values are strings"
+    ]
+  },
+  {
+    "id": "data_transform_02",
+    "domain": "data_transform",
+    "subtype": "json_to_csv",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Convert this JSON array to CSV. First line is the header with columns in this order: id,qty,sku. No trailing spaces. Output only the CSV.\n\n[{\"sku\":\"A1\",\"id\":7,\"qty\":3},{\"sku\":\"B2\",\"id\":8,\"qty\":12}]",
+    "expected": "id,qty,sku\n7,3,A1\n8,12,B2",
+    "rubric": [
+      "Header line is exactly: id,qty,sku",
+      "Row for id 7 is: 7,3,A1",
+      "Row for id 8 is: 8,12,B2",
+      "No extra columns, quotes, or trailing whitespace"
+    ]
+  },
+  {
+    "id": "data_transform_03",
+    "domain": "data_transform",
+    "subtype": "filter_rows",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "From this CSV, output only the rows where status is 'active', keeping the header. Preserve original column order and row order. Output only CSV.\n\nuser,status,plan\nrhea,active,pro\nkofi,paused,free\nlena,active,free\nomar,closed,pro\ntara,active,team",
+    "expected": "user,status,plan\nrhea,active,pro\nlena,active,free\ntara,active,team",
+    "rubric": [
+      "Header row preserved as user,status,plan",
+      "Exactly 3 data rows kept (rhea, lena, tara) in that order",
+      "Paused/closed rows (kofi, omar) are excluded",
+      "Columns and values unchanged"
+    ]
+  },
+  {
+    "id": "data_transform_04",
+    "domain": "data_transform",
+    "subtype": "aggregate_groupby",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Given these sales records, compute total amount per region. Output a JSON object mapping region to the integer sum, with regions sorted alphabetically (keys in alphabetical order). Output only JSON.\n\nregion,amount\nWest,120\nEast,50\nWest,80\nNorth,200\nEast,50\nNorth,25",
+    "expected": "{\"East\": 100, \"North\": 225, \"West\": 200}",
+    "rubric": [
+      "Keys are East, North, West in alphabetical order",
+      "East total is 100",
+      "North total is 225",
+      "West total is 200"
+    ]
+  },
+  {
+    "id": "data_transform_05",
+    "domain": "data_transform",
+    "subtype": "pivot",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Pivot this long-format data into a wide table. Rows = product, columns = quarter (Q1,Q2 in that order), cells = units. Use 0 for missing combinations. Output as CSV with header 'product,Q1,Q2'. Sort products alphabetically. Output only CSV.\n\nproduct,quarter,units\nbolt,Q1,10\nbolt,Q2,4\nnut,Q1,7\nwasher,Q2,9",
+    "expected": "product,Q1,Q2\nbolt,10,4\nnut,7,0\nwasher,0,9",
+    "rubric": [
+      "Header is exactly product,Q1,Q2",
+      "bolt row is bolt,10,4",
+      "nut row is nut,7,0 (missing Q2 filled with 0)",
+      "washer row is washer,0,9 (missing Q1 filled with 0)",
+      "Products sorted alphabetically: bolt, nut, washer"
+    ]
+  },
+  {
+    "id": "data_transform_06",
+    "domain": "data_transform",
+    "subtype": "keyvalue_parse",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Parse these key=value lines into a JSON object. Convert numeric values to numbers and 'true'/'false' to booleans. Strings stay strings. Output only JSON.\n\nport=8080\nhost=localhost\ndebug=true\nretries=3",
+    "expected": "{\"port\": 8080, \"host\": \"localhost\", \"debug\": true, \"retries\": 3}",
+    "rubric": [
+      "port is the number 8080 (not a string)",
+      "host is the string \"localhost\"",
+      "debug is the boolean true (not a string)",
+      "retries is the number 3"
+    ]
+  },
+  {
+    "id": "data_transform_07",
+    "domain": "data_transform",
+    "subtype": "flatten_nested_json",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Flatten this nested JSON into a single-level object. Join nested keys with a dot. Output only JSON with keys in this order: user.name, user.addr.city, user.addr.zip, active.\n\n{\"user\":{\"name\":\"Ines\",\"addr\":{\"city\":\"Porto\",\"zip\":\"4000\"}},\"active\":true}",
+    "expected": "{\"user.name\": \"Ines\", \"user.addr.city\": \"Porto\", \"user.addr.zip\": \"4000\", \"active\": true}",
+    "rubric": [
+      "Key user.name maps to \"Ines\"",
+      "Key user.addr.city maps to \"Porto\"",
+      "Key user.addr.zip maps to \"4000\"",
+      "Key active maps to boolean true",
+      "No nested objects remain in output"
+    ]
+  },
+  {
+    "id": "data_transform_08",
+    "domain": "data_transform",
+    "subtype": "sort_multikey",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Sort these rows by score descending, then by name ascending for ties. Output as CSV keeping the header 'name,score'. Output only CSV.\n\nname,score\nbeth,88\nalan,88\ncarl,91\ndana,75\neli,91",
+    "expected": "name,score\ncarl,91\neli,91\nalan,88\nbeth,88\ndana,75",
+    "rubric": [
+      "Rows sorted by score descending",
+      "Ties broken by name ascending (carl before eli; alan before beth)",
+      "Header name,score preserved",
+      "Order is carl, eli, alan, beth, dana"
+    ]
+  },
+  {
+    "id": "data_transform_09",
+    "domain": "data_transform",
+    "subtype": "dedup",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Remove duplicate rows from this CSV, keeping the FIRST occurrence of each duplicate and preserving order. A duplicate is an exact match across all columns. Keep the header. Output only CSV.\n\nemail,tier\na@x.io,gold\nb@x.io,silver\na@x.io,gold\nc@x.io,gold\nb@x.io,silver",
+    "expected": "email,tier\na@x.io,gold\nb@x.io,silver\nc@x.io,gold",
+    "rubric": [
+      "Header email,tier preserved",
+      "Exactly 3 unique data rows remain",
+      "Order is a@x.io,gold then b@x.io,silver then c@x.io,gold",
+      "Duplicate later occurrences removed"
+    ]
+  },
+  {
+    "id": "data_transform_10",
+    "domain": "data_transform",
+    "subtype": "column_compute",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Add a computed column 'total' = price * qty to this CSV. Keep existing columns in order, append total as the last column. total should be an integer. Keep the header. Output only CSV.\n\nitem,price,qty\npen,3,4\nmug,5,2\npad,2,10",
+    "expected": "item,price,qty,total\npen,3,4,12\nmug,5,2,10\npad,2,10,20",
+    "rubric": [
+      "Header is item,price,qty,total",
+      "pen total is 12",
+      "mug total is 10",
+      "pad total is 20",
+      "Existing columns and order preserved"
+    ]
+  },
+  {
+    "id": "data_transform_11",
+    "domain": "data_transform",
+    "subtype": "rename_select_columns",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "From this CSV, keep only the columns 'id' and 'name', rename 'name' to 'label', and drop 'extra'. Keep header and row order. Output only CSV.\n\nid,name,extra\n1,apple,x\n2,pear,y",
+    "expected": "id,label\n1,apple\n2,pear",
+    "rubric": [
+      "Header is exactly id,label",
+      "extra column dropped",
+      "Row 1 is 1,apple and row 2 is 2,pear",
+      "Column order is id then label"
+    ]
+  },
+  {
+    "id": "data_transform_12",
+    "domain": "data_transform",
+    "subtype": "transpose",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Transpose this CSV so that columns become rows and rows become columns. Output as CSV. The first cell of each output row is the original column name. Output only CSV.\n\nq,a,b\nx,1,2\ny,3,4",
+    "expected": "q,x,y\na,1,3\nb,2,4",
+    "rubric": [
+      "Output has 3 rows corresponding to original columns q, a, b",
+      "Row q is q,x,y",
+      "Row a is a,1,3",
+      "Row b is b,2,4"
+    ]
+  },
+  {
+    "id": "data_transform_13",
+    "domain": "data_transform",
+    "subtype": "join",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Inner-join these two CSVs on 'dept_id'. Output columns in order: emp,dept_name. Keep employee rows in their original order; drop employees whose dept_id has no match. Output only CSV with header 'emp,dept_name'.\n\nEmployees:\nemp,dept_id\nNora,10\nPaul,20\nQuin,99\nRosa,10\n\nDepartments:\ndept_id,dept_name\n10,Sales\n20,Legal\n30,Ops",
+    "expected": "emp,dept_name\nNora,Sales\nPaul,Legal\nRosa,Sales",
+    "rubric": [
+      "Header is emp,dept_name",
+      "Nora maps to Sales, Paul to Legal, Rosa to Sales",
+      "Quin (dept_id 99, no match) is dropped",
+      "Original employee order preserved (Nora, Paul, Rosa)"
+    ]
+  },
+  {
+    "id": "data_transform_14",
+    "domain": "data_transform",
+    "subtype": "date_reformat",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Reformat the 'date' column from MM/DD/YYYY to YYYY-MM-DD (ISO). Keep all columns and order. Keep header. Output only CSV.\n\nevent,date\nlaunch,03/09/2025\nreview,11/27/2024\ndemo,07/04/2025",
+    "expected": "event,date\nlaunch,2025-03-09\nreview,2024-11-27\ndemo,2025-07-04",
+    "rubric": [
+      "Header event,date preserved",
+      "launch date is 2025-03-09",
+      "review date is 2024-11-27",
+      "demo date is 2025-07-04",
+      "Zero-padding of month and day preserved"
+    ]
+  },
+  {
+    "id": "data_transform_15",
+    "domain": "data_transform",
+    "subtype": "markdown_table_to_json",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Convert this Markdown table to a JSON array of objects using the header row for keys. Trim surrounding whitespace from each cell. Keep numbers as strings. Output only JSON.\n\n| city  | pop   |\n|-------|-------|\n| Riga  | 605   |\n| Tartu | 91    |",
+    "expected": "[{\"city\": \"Riga\", \"pop\": \"605\"}, {\"city\": \"Tartu\", \"pop\": \"91\"}]",
+    "rubric": [
+      "Output is a JSON array of 2 objects",
+      "Keys are city and pop",
+      "Riga object has pop \"605\"; Tartu object has pop \"91\"",
+      "Whitespace trimmed (no leading/trailing spaces in values)",
+      "Separator row (dashes) not included as data"
+    ]
+  },
+  {
+    "id": "data_transform_16",
+    "domain": "data_transform",
+    "subtype": "json_array_extract_field",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "From this JSON array, extract just the 'email' of each object into a JSON array of strings, preserving order. Output only JSON.\n\n[{\"name\":\"A\",\"email\":\"a@z.io\"},{\"name\":\"B\",\"email\":\"b@z.io\"},{\"name\":\"C\",\"email\":\"c@z.io\"}]",
+    "expected": "[\"a@z.io\", \"b@z.io\", \"c@z.io\"]",
+    "rubric": [
+      "Output is a JSON array of 3 strings",
+      "Order is a@z.io, b@z.io, c@z.io",
+      "Only email values included (no names)"
+    ]
+  },
+  {
+    "id": "data_transform_17",
+    "domain": "data_transform",
+    "subtype": "unpivot_melt",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Unpivot (melt) this wide CSV into long format. Keep 'name' as the id column. Create columns 'metric' and 'value' from the remaining columns (jan, feb). Emit rows in row-major order: for each input row, jan first then feb. Output only CSV with header 'name,metric,value'.\n\nname,jan,feb\nA,1,2\nB,3,4",
+    "expected": "name,metric,value\nA,jan,1\nA,feb,2\nB,jan,3\nB,feb,4",
+    "rubric": [
+      "Header is name,metric,value",
+      "Four data rows produced",
+      "Rows for A appear before rows for B; within each, jan before feb",
+      "Values are A/jan/1, A/feb/2, B/jan/3, B/feb/4"
+    ]
+  },
+  {
+    "id": "data_transform_18",
+    "domain": "data_transform",
+    "subtype": "quoted_csv_parse",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Parse this CSV that contains quoted fields with embedded commas. Output a JSON array of objects using the header. Strip the surrounding quotes but keep the internal comma. Output only JSON.\n\nname,note\n\"Lee, Sam\",\"top, pick\"\nKai,plain",
+    "expected": "[{\"name\": \"Lee, Sam\", \"note\": \"top, pick\"}, {\"name\": \"Kai\", \"note\": \"plain\"}]",
+    "rubric": [
+      "Output is a JSON array of 2 objects",
+      "First object name is \"Lee, Sam\" (comma preserved, quotes stripped)",
+      "First object note is \"top, pick\"",
+      "Second object is name Kai, note plain"
+    ]
+  },
+  {
+    "id": "data_transform_19",
+    "domain": "data_transform",
+    "subtype": "running_total",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Add a 'cumulative' column that is the running total of 'amount' from top to bottom. Keep existing columns and order; append cumulative last. Keep header. Output only CSV.\n\nday,amount\nmon,5\ntue,3\nwed,8\nthu,2",
+    "expected": "day,amount,cumulative\nmon,5,5\ntue,3,8\nwed,8,16\nthu,2,18",
+    "rubric": [
+      "Header is day,amount,cumulative",
+      "Cumulative values are 5, 8, 16, 18 in order",
+      "Original day and amount columns unchanged"
+    ]
+  },
+  {
+    "id": "data_transform_20",
+    "domain": "data_transform",
+    "subtype": "json_restructure_map",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Convert this JSON array of objects into a single JSON object keyed by 'id', where each value is the object's 'name'. Output only JSON with keys in the order the ids appear.\n\n[{\"id\":\"u1\",\"name\":\"Ada\"},{\"id\":\"u2\",\"name\":\"Bo\"},{\"id\":\"u3\",\"name\":\"Cy\"}]",
+    "expected": "{\"u1\": \"Ada\", \"u2\": \"Bo\", \"u3\": \"Cy\"}",
+    "rubric": [
+      "Output is a JSON object (not array)",
+      "Keys are u1, u2, u3 mapping to Ada, Bo, Cy respectively",
+      "Key order matches input order"
+    ]
+  },
+  {
+    "id": "data_transform_21",
+    "domain": "data_transform",
+    "subtype": "conditional_recode",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Add a 'grade' column based on 'score': 90+ -> A, 80-89 -> B, 70-79 -> C, below 70 -> F. Append grade as the last column. Keep header and order. Output only CSV.\n\nstudent,score\nMia,95\nNed,82\nOla,70\nPia,64",
+    "expected": "student,score,grade\nMia,95,A\nNed,82,B\nOla,70,C\nPia,64,F",
+    "rubric": [
+      "Header is student,score,grade",
+      "Mia grade A, Ned grade B",
+      "Ola grade C (boundary 70 -> C)",
+      "Pia grade F"
+    ]
+  },
+  {
+    "id": "data_transform_22",
+    "domain": "data_transform",
+    "subtype": "split_column",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Split the 'full' column (format 'First Last') into two columns 'first' and 'last'. Drop the original 'full' column. Output columns in order: id,first,last. Keep header and row order. Output only CSV.\n\nid,full\n1,Gita Rao\n2,Sven Holm",
+    "expected": "id,first,last\n1,Gita,Rao\n2,Sven,Holm",
+    "rubric": [
+      "Header is id,first,last",
+      "Row 1 is 1,Gita,Rao",
+      "Row 2 is 2,Sven,Holm",
+      "Original full column dropped"
+    ]
+  },
+  {
+    "id": "data_transform_23",
+    "domain": "data_transform",
+    "subtype": "nested_aggregate",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "From this JSON array of orders, compute the count of orders and the total 'amount' per 'customer'. Output a JSON array of objects with fields customer, count, total, sorted by total descending then customer ascending. Output only JSON.\n\n[{\"customer\":\"X\",\"amount\":10},{\"customer\":\"Y\",\"amount\":40},{\"customer\":\"X\",\"amount\":30},{\"customer\":\"Z\",\"amount\":40},{\"customer\":\"Y\",\"amount\":0}]",
+    "expected": "[{\"customer\": \"X\", \"count\": 2, \"total\": 40}, {\"customer\": \"Y\", \"count\": 2, \"total\": 40}, {\"customer\": \"Z\", \"count\": 1, \"total\": 40}]",
+    "rubric": [
+      "Output is a JSON array of 3 objects with fields customer, count, total",
+      "X: count 2 total 40; Y: count 2 total 40; Z: count 1 total 40",
+      "Sorted by total descending then customer ascending (X, Y, Z all total 40)",
+      "Counts and totals are numbers"
+    ]
+  },
+  {
+    "id": "data_transform_24",
+    "domain": "data_transform",
+    "subtype": "fill_missing",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "This CSV has empty cells in the 'region' column. Forward-fill: replace each empty region with the most recent non-empty region above it. Keep header and order. Output only CSV.\n\ncity,region\nA,North\nB,\nC,\nD,South\nE,",
+    "expected": "city,region\nA,North\nB,North\nC,North\nD,South\nE,South",
+    "rubric": [
+      "Header city,region preserved",
+      "B and C filled with North",
+      "E filled with South",
+      "Non-empty rows (A North, D South) unchanged"
+    ]
+  },
+  {
+    "id": "data_transform_25",
+    "domain": "data_transform",
+    "subtype": "multistep_pipeline",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Process this CSV in order: (1) drop rows where qty is 0; (2) add column 'revenue' = price*qty; (3) keep only columns sku,revenue; (4) sort by revenue descending. Keep header 'sku,revenue'. Output only CSV.\n\nsku,price,qty\nP1,10,0\nP2,5,3\nP3,8,2\nP4,20,1\nP5,4,0",
+    "expected": "sku,revenue\nP4,20\nP3,16\nP2,15",
+    "rubric": [
+      "Rows P1 and P5 (qty 0) dropped",
+      "Revenue computed correctly: P2=15, P3=16, P4=20",
+      "Only columns sku,revenue in output",
+      "Sorted by revenue descending: P4(20), P3(16), P2(15)"
+    ]
+  }
+]

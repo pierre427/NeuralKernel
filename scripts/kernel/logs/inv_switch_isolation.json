@@ -1,0 +1,15 @@
+{
+  "n_lanes": 4,
+  "W": 2,
+  "ticks": 130,
+  "plane": "disabled(None)",
+  "lane_lens": [
+    64,
+    61,
+    39,
+    64
+  ],
+  "isolation_mismatches": 0,
+  "production_parity": true,
+  "RESULT": "PASS"
+}

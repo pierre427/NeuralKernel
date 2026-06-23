@@ -1,0 +1,17 @@
+{
+  "n_base": 70,
+  "park_ats": [
+    1,
+    8,
+    35,
+    69
+  ],
+  "plane": "disabled(None): park/resume in isolation from M3",
+  "results": {
+    "1": true,
+    "8": true,
+    "35": true,
+    "69": true
+  },
+  "RESULT": "PASS"
+}

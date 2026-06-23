@@ -1,0 +1,391 @@
+[
+  {
+    "id": "coding_01",
+    "domain": "coding",
+    "subtype": "python-implement",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Write a Python function `run_length_encode(s: str) -> str` that compresses a string by replacing runs of the same character with the character followed by the run count, but only when the count is 2 or more. A single character is left unchanged (no '1'). Example: run_length_encode('aaabbc') returns 'a3b2c'. Return only the function.",
+    "expected": "def run_length_encode(s):\n    out = []\n    i = 0\n    n = len(s)\n    while i < n:\n        j = i\n        while j < n and s[j] == s[i]:\n            j += 1\n        count = j - i\n        out.append(s[i] if count == 1 else s[i] + str(count))\n        i = j\n    return ''.join(out)",
+    "rubric": [
+      "run_length_encode('aaabbc') == 'a3b2c'",
+      "Single characters appended without a '1' suffix (e.g. 'abc' -> 'abc')",
+      "Empty string returns ''",
+      "Handles a run length >= 10 correctly (e.g. 12 'a's -> 'a12')"
+    ]
+  },
+  {
+    "id": "coding_02",
+    "domain": "coding",
+    "subtype": "explain-output",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "What does this Python snippet print, and why?\n\n```python\ndef make_adders():\n    return [lambda x: x + i for i in range(3)]\n\nprint([f(10) for f in make_adders()])\n```",
+    "expected": "It prints [12, 12, 12]. Because of late binding in closures, all three lambdas capture the same variable `i` (not its value at creation time). By the time the lambdas are called, the list comprehension loop has finished and i == 2, so each computes 10 + 2 = 12.",
+    "rubric": [
+      "States the output is [12, 12, 12]",
+      "Explains it is due to late binding / closures capturing the variable i, not its value",
+      "Notes i ends at 2 after the loop completes"
+    ]
+  },
+  {
+    "id": "coding_03",
+    "domain": "coding",
+    "subtype": "sql-query",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Given a table `orders(id INT, customer_id INT, amount DECIMAL, created_at DATE)`, write a single SQL query (standard SQL) that returns, for each customer_id, the total amount spent and the number of orders, but ONLY for customers who have placed more than 3 orders. Sort the result by total amount descending. Use column aliases total_amount and order_count.",
+    "expected": "SELECT customer_id, SUM(amount) AS total_amount, COUNT(*) AS order_count\nFROM orders\nGROUP BY customer_id\nHAVING COUNT(*) > 3\nORDER BY total_amount DESC;",
+    "rubric": [
+      "Groups by customer_id and aggregates SUM(amount) and COUNT(*)",
+      "Filters groups with HAVING COUNT(*) > 3 (not WHERE)",
+      "Orders by the total amount descending",
+      "Uses the aliases total_amount and order_count"
+    ]
+  },
+  {
+    "id": "coding_04",
+    "domain": "coding",
+    "subtype": "debug",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "This Python function is supposed to return True if a list of integers contains any duplicate, else False. It has a bug. Identify the bug and give a corrected version.\n\n```python\ndef has_duplicate(nums):\n    seen = set()\n    for n in nums:\n        if n in seen:\n            seen.add(n)\n            return True\n    return False\n```",
+    "expected": "Bug: the function never adds elements to `seen` on the normal path. The `seen.add(n)` is inside the `if n in seen` block, so `seen` always stays empty and the function always returns False. The add must happen for every element. Corrected:\n\ndef has_duplicate(nums):\n    seen = set()\n    for n in nums:\n        if n in seen:\n            return True\n        seen.add(n)\n    return False",
+    "rubric": [
+      "Identifies that elements are never added to `seen` on the non-duplicate path (add is misplaced inside the if)",
+      "Corrected code moves seen.add(n) outside/after the duplicate check so every element is recorded",
+      "Corrected function returns True on a list with duplicates and False otherwise"
+    ]
+  },
+  {
+    "id": "coding_05",
+    "domain": "coding",
+    "subtype": "regex",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a single regular expression (PCRE/Python `re` syntax) that matches a valid 24-hour time string of the form HH:MM where HH is 00 to 23 and MM is 00 to 59. The regex must match the entire string (anchored). Provide only the regex pattern.",
+    "expected": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+    "rubric": [
+      "Anchored with ^ and $",
+      "Hour part accepts 00-19 via [01][0-9] and 20-23 via 2[0-3]",
+      "Minute part is [0-5][0-9]",
+      "Rejects 24:00 and 23:60 (does not over-match)"
+    ]
+  },
+  {
+    "id": "coding_06",
+    "domain": "coding",
+    "subtype": "complexity",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "State the worst-case time complexity in Big-O of the following function in terms of n = len(arr), and briefly justify.\n\n```python\ndef f(arr):\n    total = 0\n    for i in range(len(arr)):\n        for j in range(i, len(arr)):\n            total += arr[i] * arr[j]\n    return total\n```",
+    "expected": "O(n^2). The outer loop runs n times; the inner loop runs n-i times, summing to n + (n-1) + ... + 1 = n(n+1)/2 iterations, which is O(n^2).",
+    "rubric": [
+      "States O(n^2)",
+      "Justifies via the nested loop with the inner loop running n-i times (triangular sum n(n+1)/2)"
+    ]
+  },
+  {
+    "id": "coding_07",
+    "domain": "coding",
+    "subtype": "js-implement",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a JavaScript function `chunk(arr, size)` that splits an array into subarrays of length `size` (the last chunk may be shorter). If size is less than 1, return an empty array. Example: chunk([1,2,3,4,5], 2) returns [[1,2],[3,4],[5]]. Return only the function.",
+    "expected": "function chunk(arr, size) {\n  if (size < 1) return [];\n  const result = [];\n  for (let i = 0; i < arr.length; i += size) {\n    result.push(arr.slice(i, i + size));\n  }\n  return result;\n}",
+    "rubric": [
+      "chunk([1,2,3,4,5], 2) deep-equals [[1,2],[3,4],[5]]",
+      "Last chunk is shorter when length is not divisible by size",
+      "Returns [] when size < 1",
+      "Returns [] for an empty input array"
+    ]
+  },
+  {
+    "id": "coding_08",
+    "domain": "coding",
+    "subtype": "explain-output",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "What is logged by this JavaScript, and why?\n\n```javascript\nconsole.log([1, 2, 3, 10, 20].sort());\n```",
+    "expected": "It logs [1, 10, 2, 20, 3]. Array.prototype.sort with no comparator converts elements to strings and sorts lexicographically, so '10' comes before '2' because the character '1' < '2'.",
+    "rubric": [
+      "States the output is [1, 10, 2, 20, 3]",
+      "Explains default sort converts to strings and compares lexicographically",
+      "Notes the fix would be sort((a,b) => a - b) for numeric order (optional but correct if mentioned)"
+    ]
+  },
+  {
+    "id": "coding_09",
+    "domain": "coding",
+    "subtype": "bash",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a single bash command (one line, may use a pipeline) that prints the 5 largest files (by size) in the current directory tree, showing human-readable sizes, largest first. Assume GNU coreutils are available.",
+    "expected": "du -ah . | sort -rh | head -n 5\n\n(Alternatively, to count only files: find . -type f -printf '%s %p\\n' | sort -rn | head -n 5 | ... ; the du-based one-liner above is the expected answer.)",
+    "rubric": [
+      "Computes file sizes (du, or find with sizes)",
+      "Sorts by size in descending order (sort -rh or -rn)",
+      "Limits output to 5 with head -n 5",
+      "Produces human-readable sizes (du -h / -ah) when du is used"
+    ]
+  },
+  {
+    "id": "coding_10",
+    "domain": "coding",
+    "subtype": "python-implement",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Implement a Python function `merge_intervals(intervals: list[list[int]]) -> list[list[int]]` that merges all overlapping closed intervals and returns them sorted by start. Intervals are [start, end] with start <= end. Touching intervals (e.g. [1,2] and [2,3]) count as overlapping and must be merged. Example: merge_intervals([[1,3],[2,6],[8,10],[15,18]]) returns [[1,6],[8,10],[15,18]]. Return only the function.",
+    "expected": "def merge_intervals(intervals):\n    if not intervals:\n        return []\n    intervals = sorted(intervals, key=lambda x: x[0])\n    merged = [list(intervals[0])]\n    for start, end in intervals[1:]:\n        if start <= merged[-1][1]:\n            merged[-1][1] = max(merged[-1][1], end)\n        else:\n            merged.append([start, end])\n    return merged",
+    "rubric": [
+      "Sorts intervals by start before merging",
+      "merge_intervals([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]",
+      "Touching intervals like [1,2],[2,3] merge into [1,3]",
+      "Returns [] for empty input",
+      "Uses max() so a contained interval (e.g. [1,10],[2,3]) does not shrink the merged end"
+    ]
+  },
+  {
+    "id": "coding_11",
+    "domain": "coding",
+    "subtype": "explain-output",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "What does this Python code print?\n\n```python\ndef f(a, items=[]):\n    items.append(a)\n    return items\n\nprint(f(1))\nprint(f(2))\nprint(f(3, []))\nprint(f(4))\n```",
+    "expected": "It prints:\n[1]\n[1, 2]\n[3]\n[1, 2, 4]\n\nThe default argument list is created once and shared across calls, so it accumulates. f(3, []) supplies a fresh list, so it prints [3] without affecting the shared default. f(4) again uses the shared default which already holds [1, 2].",
+    "rubric": [
+      "Output lines are [1], [1, 2], [3], [1, 2, 4] in order",
+      "Explains the mutable default argument is created once and shared across calls",
+      "Notes f(3, []) uses a separate list and does not affect the shared default"
+    ]
+  },
+  {
+    "id": "coding_12",
+    "domain": "coding",
+    "subtype": "sql-debug",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A developer wants the name of every employee along with their manager's name from a single table `employees(id, name, manager_id)` where manager_id references employees.id and is NULL for the CEO. They wrote:\n\n```sql\nSELECT e.name, m.name AS manager_name\nFROM employees e\nJOIN employees m ON e.manager_id = m.id;\n```\n\nThe CEO is missing from the results. Explain why and give a corrected query that includes the CEO (with NULL manager_name).",
+    "expected": "The inner JOIN drops rows where e.manager_id does not match any m.id. The CEO has manager_id = NULL, and NULL never matches in the join condition, so the CEO row is excluded. Use a LEFT JOIN to keep all employees:\n\nSELECT e.name, m.name AS manager_name\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.id;",
+    "rubric": [
+      "Identifies the inner JOIN excludes rows whose manager_id is NULL (no match)",
+      "Corrected query uses LEFT JOIN (e LEFT JOIN m)",
+      "Notes the CEO appears with NULL manager_name in the corrected result"
+    ]
+  },
+  {
+    "id": "coding_13",
+    "domain": "coding",
+    "subtype": "python-debug",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "This function should return the average of a list of numbers, returning 0.0 for an empty list. It crashes on some valid inputs. Find the bug and fix it.\n\n```python\ndef average(nums):\n    return sum(nums) / len(nums) or 0.0\n```",
+    "expected": "Two issues. The intended empty-list guard does not work: when nums is empty, len(nums) is 0, so the division raises ZeroDivisionError before `or 0.0` is ever evaluated. Also operator precedence means `sum/len or 0.0` would turn a real average of 0.0 into 0.0 (harmless) but the crash is the real bug. Fix with an explicit guard:\n\ndef average(nums):\n    if not nums:\n        return 0.0\n    return sum(nums) / len(nums)",
+    "rubric": [
+      "Identifies that an empty list causes ZeroDivisionError (division evaluated before `or 0.0`)",
+      "Corrected version guards the empty case before dividing (e.g. if not nums: return 0.0)",
+      "Corrected function returns the correct mean for non-empty lists and 0.0 for empty"
+    ]
+  },
+  {
+    "id": "coding_14",
+    "domain": "coding",
+    "subtype": "regex",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write a Python `re` regular expression with a single named capture group called `slug` that extracts the post slug from URLs of the form `https://blog.example.com/2026/06/my-first-post/` where the slug is the final path segment (here `my-first-post`). The slug consists of lowercase letters, digits, and hyphens. The URL may or may not end with a trailing slash. Provide the pattern as a raw string and a one-line usage with re.search.",
+    "expected": "import re\npattern = r'/(?P<slug>[a-z0-9-]+)/?$'\nm = re.search(pattern, url)\nslug = m.group('slug') if m else None\n\nThe key piece is the named group (?P<slug>[a-z0-9-]+) preceded by a slash and followed by an optional trailing slash anchored to the end with $.",
+    "rubric": [
+      "Uses a named group with syntax (?P<slug>...)",
+      "Character class allows lowercase letters, digits, and hyphens: [a-z0-9-]+",
+      "Anchors to end with $ and allows optional trailing slash (/?)",
+      "Extracts 'my-first-post' from the example URL (works with and without trailing slash)"
+    ]
+  },
+  {
+    "id": "coding_15",
+    "domain": "coding",
+    "subtype": "complexity",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Two functions both check whether two strings are anagrams of each other. Give the time complexity of each in Big-O (n = length of the strings, assume equal length) and state which is asymptotically better.\n\nA:\n```python\ndef anagram_a(s, t):\n    return sorted(s) == sorted(t)\n```\nB:\n```python\ndef anagram_b(s, t):\n    from collections import Counter\n    return Counter(s) == Counter(t)\n```",
+    "expected": "A is O(n log n) due to the two sorts dominating. B is O(n) because building Counters is a linear pass over each string and comparing the two counts is O(k) where k is the number of distinct characters (bounded). B is asymptotically better (O(n) vs O(n log n)).",
+    "rubric": [
+      "anagram_a is O(n log n) due to sorting",
+      "anagram_b is O(n) due to counting / hashing",
+      "States B is asymptotically better than A"
+    ]
+  },
+  {
+    "id": "coding_16",
+    "domain": "coding",
+    "subtype": "js-debug",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "This async JavaScript is meant to fetch three URLs in parallel and return all results, but it runs them sequentially. Rewrite it to actually run in parallel.\n\n```javascript\nasync function fetchAll(urls) {\n  const results = [];\n  for (const url of urls) {\n    results.push(await fetch(url).then(r => r.json()));\n  }\n  return results;\n}\n```",
+    "expected": "The `await` inside the loop forces each request to complete before the next starts (sequential). Start all requests first, then await them together with Promise.all:\n\nasync function fetchAll(urls) {\n  return Promise.all(urls.map(url => fetch(url).then(r => r.json())));\n}",
+    "rubric": [
+      "Identifies that `await` inside the for-loop serializes the requests",
+      "Corrected version uses Promise.all (with urls.map) to run requests concurrently",
+      "Returned value is still an array of the parsed JSON results in URL order"
+    ]
+  },
+  {
+    "id": "coding_17",
+    "domain": "coding",
+    "subtype": "python-implement",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Implement a Python function `tokenize(expr: str) -> list` that tokenizes a simple arithmetic expression into a list of tokens. The input contains non-negative integers (possibly multi-digit), the operators + - * /, and parentheses ( ). Whitespace is allowed anywhere and must be ignored. Integer tokens must be returned as Python ints; operators and parentheses as their single-character strings. Raise a ValueError on any unexpected character. Example: tokenize('12 + (3*45)') returns [12, '+', '(', 3, '*', 45, ')']. Return only the function.",
+    "expected": "def tokenize(expr):\n    tokens = []\n    i = 0\n    n = len(expr)\n    ops = set('+-*/()')\n    while i < n:\n        c = expr[i]\n        if c.isspace():\n            i += 1\n        elif c.isdigit():\n            j = i\n            while j < n and expr[j].isdigit():\n                j += 1\n            tokens.append(int(expr[i:j]))\n            i = j\n        elif c in ops:\n            tokens.append(c)\n            i += 1\n        else:\n            raise ValueError(f'unexpected character: {c!r}')\n    return tokens",
+    "rubric": [
+      "tokenize('12 + (3*45)') == [12, '+', '(', 3, '*', 45, ')']",
+      "Multi-digit integers parsed as a single int token, not per-digit",
+      "Whitespace is ignored anywhere in the input",
+      "Integer tokens are Python ints; operators/parens are strings",
+      "Raises ValueError on an unexpected character (e.g. a letter)"
+    ]
+  },
+  {
+    "id": "coding_18",
+    "domain": "coding",
+    "subtype": "explain-output",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "What does this Python print, and why?\n\n```python\na = 256\nb = 256\nc = 257\nd = 257\nprint(a is b, c is d)\n```\nAssume a standard CPython interpreter running the code as a single script (module).",
+    "expected": "It prints `True True`. CPython caches (interns) small integers from -5 to 256, so a and b refer to the same cached object (True). For 257, although it is outside the small-int cache, when the two assignments appear in the same code object CPython's compiler/peephole constant folding deduplicates equal constants in the same compilation unit, so c and d also refer to the same object (True). (Note: typed line-by-line in the interactive REPL, c is d may be False because each line is compiled separately.)",
+    "rubric": [
+      "States the script output is True True",
+      "Explains small-int caching/interning (-5 to 256) for a is b",
+      "Explains c is d is True due to constant deduplication within the same code object/compilation unit (and/or notes the REPL caveat differs)"
+    ]
+  },
+  {
+    "id": "coding_19",
+    "domain": "coding",
+    "subtype": "sql-window",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Given `sales(region TEXT, salesperson TEXT, amount DECIMAL)`, write a SQL query that returns, for each region, the salesperson with the highest total amount in that region, along with that total. If there is a tie, returning any one of the tied salespeople is acceptable. Use a window function. Return columns region, salesperson, total_amount.",
+    "expected": "SELECT region, salesperson, total_amount\nFROM (\n  SELECT region, salesperson,\n         SUM(amount) AS total_amount,\n         ROW_NUMBER() OVER (PARTITION BY region ORDER BY SUM(amount) DESC) AS rn\n  FROM sales\n  GROUP BY region, salesperson\n) t\nWHERE rn = 1;",
+    "expected_note": "RANK() instead of ROW_NUMBER() is also acceptable since ties are allowed.",
+    "rubric": [
+      "Aggregates SUM(amount) grouped by region and salesperson",
+      "Uses a window function partitioned by region, ordered by the total descending (ROW_NUMBER or RANK)",
+      "Filters the windowed result to the top row per region (rn = 1)",
+      "Returns region, salesperson, and the total amount"
+    ]
+  },
+  {
+    "id": "coding_20",
+    "domain": "coding",
+    "subtype": "bash",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write a bash one-liner that, given a file `access.log` where each line's first whitespace-separated field is an IP address, prints the top 3 IP addresses by request count, each line formatted as `<count> <ip>` sorted by count descending. Assume GNU coreutils.",
+    "expected": "awk '{print $1}' access.log | sort | uniq -c | sort -rn | head -n 3\n\nThis extracts the first field, counts occurrences with uniq -c (requires the prior sort), sorts numerically descending, and takes the top 3. Output lines are '<count> <ip>'.",
+    "rubric": [
+      "Extracts the first field (awk '{print $1}' or cut -d' ' -f1)",
+      "Counts occurrences with uniq -c after a sort",
+      "Sorts the counts numerically descending (sort -rn) and takes top 3 with head -n 3",
+      "Final output is in '<count> <ip>' form"
+    ]
+  },
+  {
+    "id": "coding_21",
+    "domain": "coding",
+    "subtype": "python-implement",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a Python function `flatten(nested) -> list` that fully flattens an arbitrarily nested list of integers into a single flat list, preserving left-to-right order. Only lists are containers; ints are leaves. Example: flatten([1, [2, [3, 4], 5], [[6]]]) returns [1, 2, 3, 4, 5, 6]. Return only the function.",
+    "expected": "def flatten(nested):\n    result = []\n    for item in nested:\n        if isinstance(item, list):\n            result.extend(flatten(item))\n        else:\n            result.append(item)\n    return result",
+    "rubric": [
+      "flatten([1, [2, [3, 4], 5], [[6]]]) == [1, 2, 3, 4, 5, 6]",
+      "Handles arbitrary nesting depth (recursion or stack)",
+      "Order is preserved left to right",
+      "flatten([]) == [] and flatten([[]]) == []"
+    ]
+  },
+  {
+    "id": "coding_22",
+    "domain": "coding",
+    "subtype": "explain-output",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "What does this bash script print?\n\n```bash\nx=5\n(\n  x=10\n  echo \"inside: $x\"\n)\necho \"outside: $x\"\n```",
+    "expected": "It prints:\ninside: 10\noutside: 5\n\nThe parentheses create a subshell. Assigning x=10 inside the subshell only affects the subshell's copy of the variable; the parent shell's x remains 5.",
+    "rubric": [
+      "Output is 'inside: 10' then 'outside: 5'",
+      "Explains the parentheses spawn a subshell whose variable changes do not propagate to the parent"
+    ]
+  },
+  {
+    "id": "coding_23",
+    "domain": "coding",
+    "subtype": "js-implement",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Implement a JavaScript function `debounce(fn, delay)` that returns a debounced version of `fn`: repeated calls reset a timer, and `fn` runs only after `delay` ms have elapsed since the last call. The debounced function must invoke `fn` with the most recent arguments and the correct `this`. Return only the function.",
+    "expected": "function debounce(fn, delay) {\n  let timer = null;\n  return function (...args) {\n    clearTimeout(timer);\n    timer = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}",
+    "rubric": [
+      "Returns a new function that wraps fn",
+      "Each call clears the previous timer (clearTimeout) and schedules a new one with setTimeout(delay)",
+      "Invokes fn with the latest arguments",
+      "Preserves `this` (e.g. uses an arrow callback capturing this, or fn.apply(this, args))"
+    ]
+  },
+  {
+    "id": "coding_24",
+    "domain": "coding",
+    "subtype": "python-debug",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "This Python class implements a fixed-size LRU cache but has a correctness bug: accessing an existing key does not mark it as recently used, so the wrong item can be evicted. Identify the bug and provide a corrected `get` method (and note any change to `put`). Use collections.OrderedDict semantics or equivalent.\n\n```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.store = OrderedDict()\n\n    def get(self, key):\n        if key not in self.store:\n            return -1\n        return self.store[key]\n\n    def put(self, key, value):\n        self.store[key] = value\n        if len(self.store) > self.capacity:\n            self.store.popitem(last=False)\n```",
+    "expected": "Bug: `get` reads the value but never moves the key to the most-recently-used end, so subsequent eviction (popitem(last=False), the oldest) can evict a key that was just accessed. Also `put` on an existing key should move it to the end so an update counts as a use. Fix using OrderedDict.move_to_end:\n\n    def get(self, key):\n        if key not in self.store:\n            return -1\n        self.store.move_to_end(key)\n        return self.store[key]\n\n    def put(self, key, value):\n        if key in self.store:\n            self.store.move_to_end(key)\n        self.store[key] = value\n        if len(self.store) > self.capacity:\n            self.store.popitem(last=False)",
+    "rubric": [
+      "Identifies that get does not update recency / move the key to the MRU position",
+      "Corrected get calls move_to_end(key) (or equivalent reordering) before returning the value",
+      "Notes put on an existing key should also move it to the end (or re-insert) so updates count as recent",
+      "Eviction still removes the least-recently-used via popitem(last=False)"
+    ]
+  },
+  {
+    "id": "coding_25",
+    "domain": "coding",
+    "subtype": "complexity-reason",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A function builds a result string by repeatedly concatenating in a loop:\n\n```python\ndef build(words):\n    s = ''\n    for w in words:\n        s = s + w\n    return s\n```\nLet n be the number of words and assume each word has length m. State the worst-case time complexity of this approach, explain why, and give an O(n*m) alternative.",
+    "expected": "Because Python strings are immutable, each `s = s + w` creates a new string by copying all characters accumulated so far plus the new word. After k iterations the accumulated length is about k*m, so the total work is m + 2m + 3m + ... + n*m = m * n(n+1)/2 = O(n^2 * m). The fix is to collect the pieces and join once: return ''.join(words), which is O(n*m).",
+    "rubric": [
+      "States the loop is O(n^2 * m) (or O(n^2) treating m as constant) due to repeated copying",
+      "Explains string immutability forces a full copy on each concatenation, giving a quadratic sum",
+      "Gives the ''.join(words) alternative and states it is O(n*m)"
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "maxn": 4260,
+  "park_at": 4200,
+  "k": 8,
+  "n_oracle": 4260,
+  "n_test": 4260,
+  "trimmable_at_park": false,
+  "rollback_path": "restore",
+  "restore_path_taken": true,
+  "token_mismatches": 0,
+  "tokens_eq": true,
+  "RESULT": "PASS"
+}

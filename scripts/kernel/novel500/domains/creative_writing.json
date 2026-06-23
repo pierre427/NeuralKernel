@@ -1,0 +1,382 @@
+[
+  {
+    "id": "creative_writing_01",
+    "domain": "creative_writing",
+    "subtype": "six_word_story",
+    "length_class": "short",
+    "difficulty": "easy",
+    "prompt": "Write a complete story in EXACTLY six words about a lighthouse keeper. The six words must form a coherent narrative with an implied beginning, change, and end. Output only the six words, no title or explanation.",
+    "expected": "A six-word string that tells a self-contained micro-story involving a lighthouse keeper (or unmistakably the lighthouse-keeping context), e.g. 'Kept light burning; no ships came.'",
+    "rubric": [
+      "Output is exactly six words (hyphenated compounds count as one word)",
+      "Clearly concerns a lighthouse keeper or lighthouse-keeping",
+      "Implies a narrative arc or turn, not just a description",
+      "No title, label, or extra commentary in the output"
+    ]
+  },
+  {
+    "id": "creative_writing_02",
+    "domain": "creative_writing",
+    "subtype": "acrostic_poem",
+    "length_class": "short",
+    "difficulty": "medium",
+    "prompt": "Write an acrostic poem where the first letters of the lines spell the word OCEAN (one line per letter, 5 lines total). Each line must be a complete phrase and the whole poem must be about the sea. Output the 5 lines only.",
+    "expected": "Five lines beginning with O, C, E, A, N respectively, each about the sea, e.g. lines starting 'Over the waves...', 'Cold currents...', 'Endless horizon...', 'Always shifting...', 'Night tides...'.",
+    "rubric": [
+      "Exactly 5 lines",
+      "First letters read O, C, E, A, N top to bottom",
+      "Every line relates to the sea/ocean",
+      "Each line is a complete phrase, not a single stray word"
+    ]
+  },
+  {
+    "id": "creative_writing_03",
+    "domain": "creative_writing",
+    "subtype": "constrained_lipogram",
+    "length_class": "short",
+    "difficulty": "hard",
+    "prompt": "Write a 3-sentence description of a thunderstorm that does NOT use the letter 'e' anywhere (a lipogram). The description must clearly evoke a thunderstorm. Output only the 3 sentences.",
+    "expected": "Three sentences vividly describing a thunderstorm with zero occurrences of the letter 'e' (upper or lower case), e.g. 'Dark sky splits. Bright light flashs upon a damp hilltop. Loud roars roll across...'",
+    "rubric": [
+      "Contains exactly 3 sentences",
+      "The letter 'e' (uppercase or lowercase) appears zero times",
+      "Content clearly depicts a thunderstorm",
+      "Sentences are grammatical and coherent"
+    ]
+  },
+  {
+    "id": "creative_writing_04",
+    "domain": "creative_writing",
+    "subtype": "haiku",
+    "length_class": "short",
+    "difficulty": "easy",
+    "prompt": "Write a haiku about an abandoned subway station. Use the traditional 5-7-5 syllable structure (line 1: 5 syllables, line 2: 7 syllables, line 3: 5 syllables). Output only the three lines.",
+    "expected": "A 3-line haiku with 5, 7, and 5 syllables per line, themed on an abandoned/empty subway station.",
+    "rubric": [
+      "Exactly 3 lines",
+      "Syllable counts are 5 / 7 / 5",
+      "Subject is clearly an abandoned or empty subway station",
+      "No title or extra text"
+    ]
+  },
+  {
+    "id": "creative_writing_05",
+    "domain": "creative_writing",
+    "subtype": "dialogue_subtext",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "prompt": "Write a dialogue between two characters, Mara and her adult son Theo, about whether to sell the family home. The CONSTRAINT: neither character may ever directly say the words 'sell', 'house', 'home', 'money', or 'love'. The tension and the real subject must come through subtext only. Write 8-12 lines of dialogue total (alternating speakers, attributed). Do not include narration except minimal action beats.",
+    "expected": "8-12 alternating attributed dialogue lines between Mara and Theo that clearly concern selling the family home and carry emotional subtext, while never using the five banned words.",
+    "rubric": [
+      "Between 8 and 12 dialogue lines, alternating between Mara and Theo",
+      "None of the words sell, house, home, money, love appear (any case)",
+      "The real subject (selling the family home) is recognizable from subtext",
+      "Emotional tension is present through implication, not statement",
+      "Only minimal action beats, not full narration"
+    ]
+  },
+  {
+    "id": "creative_writing_06",
+    "domain": "creative_writing",
+    "subtype": "marketing_microcopy",
+    "length_class": "short",
+    "difficulty": "easy",
+    "prompt": "Write a product tagline for a reusable stainless-steel water bottle aimed at hikers. CONSTRAINTS: maximum 8 words, must mention or strongly imply durability, and must NOT use the word 'water'. Output only the tagline.",
+    "expected": "A tagline of 8 words or fewer aimed at hikers that conveys durability/toughness and avoids the word 'water', e.g. 'Built tough for every trail you conquer.'",
+    "rubric": [
+      "8 words or fewer",
+      "Does not contain the word 'water'",
+      "Conveys or strongly implies durability/toughness",
+      "Relevant to a water bottle for hikers"
+    ]
+  },
+  {
+    "id": "creative_writing_07",
+    "domain": "creative_writing",
+    "subtype": "second_person_pov",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "prompt": "Write a short scene (120-180 words) entirely in the SECOND PERSON point of view ('you'), present tense, describing someone waking up in an unfamiliar hotel room with no memory of how they got there. Maintain second person and present tense throughout. Output only the scene.",
+    "expected": "A 120-180 word scene written consistently in second person ('you') and present tense, depicting waking in an unfamiliar hotel room with amnesia about arrival.",
+    "rubric": [
+      "Word count between 120 and 180",
+      "Uses second person ('you') as the consistent POV throughout",
+      "Written in present tense throughout",
+      "Scene depicts waking in an unfamiliar hotel room with no memory of arrival"
+    ]
+  },
+  {
+    "id": "creative_writing_08",
+    "domain": "creative_writing",
+    "subtype": "rhyming_couplets",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "prompt": "Write a poem of exactly 4 rhyming couplets (8 lines total) about a procrastinator facing a deadline. Each couplet's two lines must rhyme (AABBCCDD scheme). Keep a light, humorous tone. Output only the 8 lines.",
+    "expected": "An 8-line humorous poem in 4 rhyming couplets (AABBCCDD) about procrastination and a looming deadline.",
+    "rubric": [
+      "Exactly 8 lines forming 4 couplets",
+      "Rhyme scheme is AABBCCDD (each pair of lines rhymes)",
+      "Subject is procrastination/facing a deadline",
+      "Tone is light or humorous"
+    ]
+  },
+  {
+    "id": "creative_writing_09",
+    "domain": "creative_writing",
+    "subtype": "epistolary",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "prompt": "Write a letter from a 19th-century sailor to his sister back home, describing a storm at sea. CONSTRAINTS: format as a proper letter (greeting, body, closing/signature); the sailor's name is Elias; keep period-appropriate diction (no modern slang or technology); 150-220 words. Output only the letter.",
+    "expected": "A 150-220 word letter with a salutation, body describing a sea storm, and a closing signed Elias, written in period-appropriate language without modern anachronisms.",
+    "rubric": [
+      "Word count between 150 and 220",
+      "Has letter structure: greeting, body, and closing/signature",
+      "Signed by or attributable to Elias",
+      "Describes a storm at sea",
+      "No modern slang or anachronistic technology"
+    ]
+  },
+  {
+    "id": "creative_writing_10",
+    "domain": "creative_writing",
+    "subtype": "flash_fiction_twist",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "prompt": "Write a piece of flash fiction (200-300 words) that contains a genuine twist ending which recontextualizes everything before it. The story must be about a person preparing dinner for a guest. The twist must be plausibly foreshadowed (a re-reader could spot clues), not a cheat. Output only the story.",
+    "expected": "A 200-300 word story about preparing dinner for a guest with a twist ending that reframes earlier events and is supported by earlier clues.",
+    "rubric": [
+      "Word count between 200 and 300",
+      "Centers on preparing dinner for a guest",
+      "Has a twist ending that recontextualizes prior events",
+      "Twist is foreshadowed by earlier detail(s), not arbitrary"
+    ]
+  },
+  {
+    "id": "creative_writing_11",
+    "domain": "creative_writing",
+    "subtype": "persuasive_speech",
+    "length_class": "long",
+    "difficulty": "medium",
+    "prompt": "Write a persuasive 1-minute speech (roughly 130-160 words) urging a town council to fund a public library renovation. CONSTRAINTS: include at least one rhetorical question, at least one concrete (invented but specific) statistic, and a clear call to action in the final sentence. Use a confident, civic tone. Output only the speech.",
+    "expected": "A 130-160 word persuasive speech to a town council advocating library renovation funding, containing a rhetorical question, a specific statistic, and a closing call to action.",
+    "rubric": [
+      "Word count roughly 130-160",
+      "Contains at least one rhetorical question",
+      "Includes at least one concrete, specific statistic",
+      "Final sentence is a clear call to action",
+      "Topic is funding a public library renovation"
+    ]
+  },
+  {
+    "id": "creative_writing_12",
+    "domain": "creative_writing",
+    "subtype": "style_pastiche",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "prompt": "Write a short paragraph (80-130 words) describing a city at dawn in the style of hardboiled noir detective fiction (terse sentences, cynical first-person narrator, urban grit, wry similes). Do not mention any crime or detective explicitly; convey the style purely through voice and imagery. Output only the paragraph.",
+    "expected": "An 80-130 word first-person paragraph describing a city at dawn that unmistakably evokes hardboiled noir style through terse sentences, cynical voice, and gritty similes, without naming a crime or detective.",
+    "rubric": [
+      "Word count between 80 and 130",
+      "First-person, cynical/terse noir voice",
+      "Describes a city at dawn",
+      "Does not explicitly mention a crime or a detective",
+      "Uses at least one wry or vivid simile/metaphor"
+    ]
+  },
+  {
+    "id": "creative_writing_13",
+    "domain": "creative_writing",
+    "subtype": "must_include_words",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "prompt": "Write a short story (150-220 words) about a child's first day at a new school. CONSTRAINT: you must naturally incorporate all five of these words: 'umbrella', 'cinnamon', 'whistle', 'glass', 'orbit'. Each word must appear at least once and fit the narrative organically. Output only the story.",
+    "expected": "A 150-220 word story about a child's first day at a new school that organically includes all of: umbrella, cinnamon, whistle, glass, orbit.",
+    "rubric": [
+      "Word count between 150 and 220",
+      "All five required words appear: umbrella, cinnamon, whistle, glass, orbit",
+      "Each required word is used in a fitting, natural way",
+      "Story is about a child's first day at a new school"
+    ]
+  },
+  {
+    "id": "creative_writing_14",
+    "domain": "creative_writing",
+    "subtype": "limerick",
+    "length_class": "short",
+    "difficulty": "medium",
+    "prompt": "Write a limerick about a cat who thinks it is a king. Follow the limerick form: 5 lines, rhyme scheme AABBA, with the characteristic anapestic rhythm (lines 1, 2, 5 longer; lines 3, 4 shorter). Keep it humorous. Output only the 5 lines.",
+    "expected": "A 5-line humorous limerick (AABBA rhyme, lines 3-4 shorter) about a cat that believes it is a king.",
+    "rubric": [
+      "Exactly 5 lines",
+      "Rhyme scheme is AABBA",
+      "Lines 3 and 4 are noticeably shorter than lines 1, 2, 5",
+      "Humorous and about a cat who thinks it is a king"
+    ]
+  },
+  {
+    "id": "creative_writing_15",
+    "domain": "creative_writing",
+    "subtype": "unreliable_narrator",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "prompt": "Write a first-person monologue (150-250 words) by a narrator describing a dinner party they hosted, in which the narrator is clearly unreliable: their account should contain at least two internal contradictions or tells that signal to the reader the truth differs from what the narrator claims. The narrator should not acknowledge being unreliable. Output only the monologue.",
+    "expected": "A 150-250 word first-person dinner-party monologue with at least two contradictions/tells revealing the narrator's unreliability, without the narrator admitting it.",
+    "rubric": [
+      "Word count between 150 and 250",
+      "First-person monologue about a dinner party the narrator hosted",
+      "Contains at least two internal contradictions or tells of unreliability",
+      "Narrator never explicitly admits to being unreliable"
+    ]
+  },
+  {
+    "id": "creative_writing_16",
+    "domain": "creative_writing",
+    "subtype": "concrete_constraints_ad",
+    "length_class": "short",
+    "difficulty": "easy",
+    "prompt": "Write a 3-line social media ad for a weekend coffee shop pop-up. CONSTRAINTS: line 1 is a hook (max 6 words), line 2 gives the offer/details, line 3 is a call to action ending with exactly one emoji. Total under 35 words. Output only the 3 lines.",
+    "expected": "A 3-line coffee-shop pop-up ad: a hook of <=6 words, a details line, and a CTA line ending in exactly one emoji, totaling under 35 words.",
+    "rubric": [
+      "Exactly 3 lines",
+      "Line 1 (hook) is 6 words or fewer",
+      "Line 3 is a call to action ending with exactly one emoji",
+      "Total under 35 words and clearly about a coffee shop pop-up"
+    ]
+  },
+  {
+    "id": "creative_writing_17",
+    "domain": "creative_writing",
+    "subtype": "screenplay_format",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "prompt": "Write a short screenplay scene in proper screenplay format. CONSTRAINTS: begin with a slug line (INT./EXT. LOCATION - TIME), include at least one action line, and include dialogue from two named characters with character cues in CAPS centered above each line. The scene: two coworkers discover the office vending machine is giving out free snacks. Keep it to 120-200 words. Output only the scene.",
+    "expected": "A 120-200 word screenplay scene with a proper slug line, action lines, and capped character cues over dialogue, depicting two coworkers finding a free-snack vending machine.",
+    "rubric": [
+      "Starts with a slug line in INT./EXT. LOCATION - TIME format",
+      "Includes at least one action/description line",
+      "Two named characters speak, each with a CAPS character cue",
+      "Scene is about coworkers and a vending machine giving free snacks",
+      "Word count between 120 and 200"
+    ]
+  },
+  {
+    "id": "creative_writing_18",
+    "domain": "creative_writing",
+    "subtype": "show_dont_tell",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "prompt": "Write a passage (100-160 words) that conveys a character is grief-stricken WITHOUT using the words 'grief', 'sad', 'cry', 'tears', 'mourn', 'loss', or any direct emotion-naming word. Show the emotion only through action, physical detail, and behavior. Output only the passage.",
+    "expected": "A 100-160 word passage that conveys grief solely through behavior and physical detail, avoiding the banned emotion-naming words.",
+    "rubric": [
+      "Word count between 100 and 160",
+      "None of these words appear: grief, sad, cry, tears, mourn, loss",
+      "No other direct emotion-naming words used to state the feeling",
+      "Grief is clearly conveyed through actions and physical/sensory detail"
+    ]
+  },
+  {
+    "id": "creative_writing_19",
+    "domain": "creative_writing",
+    "subtype": "alphabetical_constraint",
+    "length_class": "short",
+    "difficulty": "hard",
+    "prompt": "Write a single coherent sentence describing a morning routine in which each successive word begins with the next letter of the alphabet, starting at 'A' (word 1 starts with A, word 2 with B, word 3 with C, and so on). Use at least 8 words (reaching at least the letter H). The sentence should make sense. Output only the sentence.",
+    "expected": "A coherent sentence of at least 8 words where the words' initial letters proceed A, B, C, D, E, F, G, H, ... in order, describing a morning routine.",
+    "rubric": [
+      "At least 8 words",
+      "Initial letters proceed in alphabetical order starting at A with no skips",
+      "Forms a grammatical, sensible sentence",
+      "Relates to a morning routine"
+    ]
+  },
+  {
+    "id": "creative_writing_20",
+    "domain": "creative_writing",
+    "subtype": "two_voice_poem",
+    "length_class": "long",
+    "difficulty": "hard",
+    "prompt": "Write a poem for two voices about a parent and a teenager experiencing the same evening differently. Format it in two clearly labeled columns or alternating labeled stanzas ('PARENT:' and 'TEEN:'), with at least 4 stanzas per voice (8 stanza-units total). The two perspectives should contrast (e.g., worry vs. independence) yet describe the same moments. Output only the poem.",
+    "expected": "A two-voice poem with labeled PARENT and TEEN parts (at least 4 each, 8 total), presenting contrasting perspectives on the same shared evening.",
+    "rubric": [
+      "Clearly labeled two voices (PARENT and TEEN)",
+      "At least 4 stanza-units per voice (8 total)",
+      "The two voices describe the same moments from contrasting viewpoints",
+      "Theme is a parent and teenager experiencing the same evening"
+    ]
+  },
+  {
+    "id": "creative_writing_21",
+    "domain": "creative_writing",
+    "subtype": "elevator_pitch",
+    "length_class": "short",
+    "difficulty": "medium",
+    "prompt": "Write a one-paragraph elevator pitch (50-75 words) for an original sci-fi novel. CONSTRAINTS: must establish a protagonist, a central conflict, and the world/hook, in that order; must end with a stakes statement; must NOT exceed 75 words. Output only the pitch.",
+    "expected": "A 50-75 word sci-fi novel pitch that introduces a protagonist, then the central conflict, then the world/hook, ending on a stakes statement.",
+    "rubric": [
+      "Word count between 50 and 75",
+      "Establishes a protagonist, a central conflict, and a world/hook",
+      "Ends with a clear stakes statement",
+      "Clearly science-fiction in genre"
+    ]
+  },
+  {
+    "id": "creative_writing_22",
+    "domain": "creative_writing",
+    "subtype": "syllable_descending",
+    "length_class": "short",
+    "difficulty": "hard",
+    "prompt": "Write a 5-line poem about falling asleep where each line has one fewer syllable than the previous: line 1 has 5 syllables, line 2 has 4, line 3 has 3, line 4 has 2, line 5 has 1. The descending count should mirror drifting off. Output only the 5 lines.",
+    "expected": "A 5-line poem about falling asleep with syllable counts of 5, 4, 3, 2, 1 from top to bottom.",
+    "rubric": [
+      "Exactly 5 lines",
+      "Syllable counts are 5, 4, 3, 2, 1 in that order",
+      "Theme is falling asleep / drifting off",
+      "Lines form a coherent poem"
+    ]
+  },
+  {
+    "id": "creative_writing_23",
+    "domain": "creative_writing",
+    "subtype": "genre_fusion",
+    "length_class": "long",
+    "difficulty": "hard",
+    "prompt": "Write a short story opening (250-350 words) that fuses two genres: cozy slice-of-life AND cosmic horror. The mundane, warm domestic surface and the creeping cosmic dread must coexist on the page, with the horror implied rather than stated outright by the end. Setting: a small-town bakery. Output only the opening.",
+    "expected": "A 250-350 word bakery-set story opening that blends cozy slice-of-life warmth with creeping cosmic-horror dread, keeping the horror implied by the close.",
+    "rubric": [
+      "Word count between 250 and 350",
+      "Set in a small-town bakery with cozy, warm domestic texture",
+      "Conveys creeping cosmic-horror dread alongside the coziness",
+      "The horror is implied/suggested rather than stated outright by the end"
+    ]
+  },
+  {
+    "id": "creative_writing_24",
+    "domain": "creative_writing",
+    "subtype": "palindromic_structure",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "prompt": "Write a 7-line poem about regret that has a mirror (chiastic) structure: line 7 must repeat line 1, line 6 must repeat line 2, line 5 must repeat line 3, and line 4 is the unique central pivot. So the form is A B C D C B A. The repeated lines may be reused verbatim. Output only the 7 lines.",
+    "expected": "A 7-line poem about regret structured A B C D C B A, where lines 5,6,7 mirror lines 3,2,1 (verbatim) and line 4 is a unique pivot.",
+    "rubric": [
+      "Exactly 7 lines",
+      "Line 7 equals line 1, line 6 equals line 2, line 5 equals line 3 (verbatim)",
+      "Line 4 is a distinct central line not repeated elsewhere",
+      "Theme is regret"
+    ]
+  },
+  {
+    "id": "creative_writing_25",
+    "domain": "creative_writing",
+    "subtype": "constrained_dialogue_length",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "prompt": "Write a tense negotiation dialogue between a hostage negotiator (NEGOTIATOR) and a desperate person (CALLER). CONSTRAINT: every single line of dialogue must be 5 words or fewer, no exceptions. Use at least 10 lines total, alternating speakers, with speaker labels. The clipped lines should heighten tension. No narration. Output only the labeled dialogue.",
+    "expected": "At least 10 alternating labeled dialogue lines (NEGOTIATOR/CALLER) of a tense negotiation, with every line 5 words or fewer and no narration.",
+    "rubric": [
+      "At least 10 dialogue lines, alternating NEGOTIATOR and CALLER",
+      "Every dialogue line is 5 words or fewer",
+      "Lines are labeled with speaker names",
+      "Content is a tense hostage/crisis negotiation with no narration"
+    ]
+  }
+]

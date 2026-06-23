@@ -1,0 +1,376 @@
+[
+  {
+    "id": "logic_puzzles_01",
+    "domain": "logic_puzzles",
+    "subtype": "knights_and_knaves",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "On an island, knights always tell the truth and knaves always lie. You meet two people, Pim and Quo. Pim says: 'Quo and I are both knaves.' What is Pim and what is Quo?",
+    "expected": "Pim is a knave and Quo is a knight.",
+    "rubric": [
+      "States Pim is a knave",
+      "States Quo is a knight",
+      "Reasoning notes Pim's statement can't be true (a knight wouldn't call himself a knave), so Pim lies, making the 'both knaves' claim false, so Quo is a knight"
+    ]
+  },
+  {
+    "id": "logic_puzzles_02",
+    "domain": "logic_puzzles",
+    "subtype": "river_crossing",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A farmer must cross a river with a wolf, a goat, and a basket of cabbages. The boat holds the farmer plus only one item at a time. If left together unsupervised, the wolf eats the goat, and the goat eats the cabbages. Give a sequence of crossings that gets everything across safely. List each trip as 'take X across' or 'return alone' or 'take X back'.",
+    "expected": "1) Take goat across. 2) Return alone. 3) Take wolf across. 4) Take goat back. 5) Take cabbages across. 6) Return alone. 7) Take goat across.",
+    "rubric": [
+      "First crossing takes the goat",
+      "Includes a trip that brings the goat back after delivering the wolf (or cabbages)",
+      "Final state has wolf, goat, and cabbages all on the far side with no forbidden pair ever left alone",
+      "Sequence is 7 trips and valid throughout"
+    ]
+  },
+  {
+    "id": "logic_puzzles_03",
+    "domain": "logic_puzzles",
+    "subtype": "sequence_completion",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "What number comes next in this sequence? 2, 6, 12, 20, 30, 42, ___",
+    "expected": "56",
+    "rubric": [
+      "Answer is 56",
+      "Reasoning identifies the rule as n(n+1) or that differences increase by 2 (4, 6, 8, 10, 12, 14)"
+    ]
+  },
+  {
+    "id": "logic_puzzles_04",
+    "domain": "logic_puzzles",
+    "subtype": "lateral_thinking",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A man pushes his car to a hotel and immediately realizes he is bankrupt. What is going on?",
+    "expected": "He is playing Monopoly; he moved his car token onto a property (a hotel-owned space) and owes rent he cannot pay.",
+    "rubric": [
+      "Identifies the situation as a board game (Monopoly)",
+      "Explains the 'car' is a game token/piece, not a real automobile",
+      "Connects landing on the hotel to owing rent leading to bankruptcy"
+    ]
+  },
+  {
+    "id": "logic_puzzles_05",
+    "domain": "logic_puzzles",
+    "subtype": "constraint_satisfaction",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Four friends—Ada, Ben, Cleo, and Dan—each ordered a different drink (coffee, tea, juice, water) and sat in seats numbered 1 to 4 from left to right. Clues: (1) The person in seat 2 ordered tea. (2) The juice drinker sat in seat 4. (3) Ben ordered coffee and sat in an odd-numbered seat. (4) Cleo sat in seat 2. (5) Ada sat immediately to the right of Ben. Determine each person's seat number and drink.",
+    "expected": "Seat 1: Ben, coffee. Seat 2: Cleo, tea. Seat 3: Ada, water. Seat 4: Dan, juice.",
+    "rubric": [
+      "Ben is in seat 1 with coffee",
+      "Cleo is in seat 2 with tea",
+      "Ada is in seat 3 with water",
+      "Dan is in seat 4 with juice",
+      "Solution satisfies all five clues"
+    ]
+  },
+  {
+    "id": "logic_puzzles_06",
+    "domain": "logic_puzzles",
+    "subtype": "riddle",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "I have keys but open no locks. I have space but no room. You can enter, but you can't go outside. What am I?",
+    "expected": "A keyboard.",
+    "rubric": [
+      "Answer is a keyboard",
+      "Optionally notes the wordplay: keys (keyboard keys), space (spacebar), enter (enter key)"
+    ]
+  },
+  {
+    "id": "logic_puzzles_07",
+    "domain": "logic_puzzles",
+    "subtype": "logical_deduction",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "All of Maria's pets are either cats or dogs. Every cat she owns is black. She owns exactly 5 pets. She owns more dogs than cats. At least one pet is not black. Exactly one statement follows necessarily: (A) She owns exactly 2 cats. (B) She owns at least one dog. (C) All her dogs are black. (D) She owns 5 black pets. Which one and why?",
+    "expected": "(B) She owns at least one dog.",
+    "rubric": [
+      "Selects (B)",
+      "Explains 'more dogs than cats' with 5 pets forces at least one dog (in fact at least 3)",
+      "Rejects A, C, D as not necessarily true"
+    ]
+  },
+  {
+    "id": "logic_puzzles_08",
+    "domain": "logic_puzzles",
+    "subtype": "age_word_problem",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A mother is currently three times as old as her daughter. In 12 years, the mother will be twice as old as her daughter. How old is each of them now?",
+    "expected": "The daughter is 12 and the mother is 36.",
+    "rubric": [
+      "Daughter is 12 now",
+      "Mother is 36 now",
+      "Verifies: in 12 years 48 = 2 x 24"
+    ]
+  },
+  {
+    "id": "logic_puzzles_09",
+    "domain": "logic_puzzles",
+    "subtype": "weighing_puzzle",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "You have 9 identical-looking coins; exactly one is heavier than the other 8 (which all weigh the same). Using a balance scale, what is the minimum number of weighings guaranteed to identify the heavy coin, and describe a strategy?",
+    "expected": "2 weighings. Split into three groups of 3. Weigh group A vs group B. If they balance, the heavy coin is in group C; otherwise it is in the heavier side. From the identified group of 3, weigh one coin vs another: if balanced, the third is heavy; otherwise the heavier side is the heavy coin.",
+    "rubric": [
+      "States the minimum is 2 weighings",
+      "First weighing compares two groups of 3 coins each",
+      "Describes how a balanced first weighing isolates the untested group of 3",
+      "Second weighing compares 1 vs 1 from the suspect group of 3"
+    ]
+  },
+  {
+    "id": "logic_puzzles_10",
+    "domain": "logic_puzzles",
+    "subtype": "pattern_completion",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Complete the pattern: J, F, M, A, M, J, J, A, ___. What letter comes next and what is the pattern?",
+    "expected": "S. The letters are the first letters of the months (January, February, ... August), so the next is September = S.",
+    "rubric": [
+      "Answer is S",
+      "Identifies the pattern as first letters of the months of the year"
+    ]
+  },
+  {
+    "id": "logic_puzzles_11",
+    "domain": "logic_puzzles",
+    "subtype": "self_referential",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "In the sentence below, how many words contain exactly four letters? Answer with a single number. Sentence: 'Many bold fish swim near the warm green reef at dawn.'",
+    "expected": "8",
+    "rubric": [
+      "Answer is 8",
+      "The eight four-letter words are: Many, bold, fish, swim, near, warm, reef, dawn (the=3, green=5, at=2 are excluded)"
+    ]
+  },
+  {
+    "id": "logic_puzzles_12",
+    "domain": "logic_puzzles",
+    "subtype": "truth_teller_liar",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Three people, X, Y, Z, are each either a truth-teller (always true) or a liar (always false). X says: 'Y is a liar.' Y says: 'X and Z are the same type.' Z says: 'Y is a truth-teller.' Determine the type of each.",
+    "expected": "X is a truth-teller, Y is a liar, Z is a liar.",
+    "rubric": [
+      "X is a truth-teller",
+      "Y is a liar",
+      "Z is a liar",
+      "Reasoning is internally consistent with all three statements"
+    ]
+  },
+  {
+    "id": "logic_puzzles_13",
+    "domain": "logic_puzzles",
+    "subtype": "lateral_thinking",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A woman shoots her husband, then holds him underwater for five minutes. Next she hangs him. Soon after, they enjoy a lovely dinner together. How is this possible?",
+    "expected": "She is a photographer: she 'shoots' his photo, develops it in water, and hangs it up to dry. No one is harmed.",
+    "rubric": [
+      "Identifies the woman as a photographer",
+      "Explains 'shoots' = takes a photograph",
+      "Explains 'underwater' = developing in chemical/water bath and 'hangs' = hanging the print to dry"
+    ]
+  },
+  {
+    "id": "logic_puzzles_14",
+    "domain": "logic_puzzles",
+    "subtype": "arithmetic_sequence",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Find the missing number: 81, 64, 49, 36, ___, 16, 9.",
+    "expected": "25",
+    "rubric": [
+      "Answer is 25",
+      "Identifies the sequence as descending perfect squares (9^2, 8^2, 7^2, 6^2, 5^2, 4^2, 3^2)"
+    ]
+  },
+  {
+    "id": "logic_puzzles_15",
+    "domain": "logic_puzzles",
+    "subtype": "grid_deduction",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Three houses in a row (positions 1, 2, 3 from left). Each house has a different color (red, blue, green) and one owner (Tom, Uma, Vik). Clues: (1) The green house is somewhere to the right of the red house. (2) Uma lives in the blue house. (3) Tom lives in position 1. (4) The house in position 2 is green. (5) Vik does not live in position 3. Give each position's color and owner.",
+    "expected": "Position 1: red, Tom. Position 2: green, Vik. Position 3: blue, Uma.",
+    "rubric": [
+      "Position 1 is red and Tom",
+      "Position 2 is green and Vik",
+      "Position 3 is blue and Uma",
+      "Solution satisfies all five clues"
+    ]
+  },
+  {
+    "id": "logic_puzzles_16",
+    "domain": "logic_puzzles",
+    "subtype": "riddle",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "The more of this there is, the less you see. What is it?",
+    "expected": "Darkness.",
+    "rubric": [
+      "Answer is darkness (fog or mist also acceptable if reasoned)",
+      "Explanation matches: more of it reduces visibility"
+    ]
+  },
+  {
+    "id": "logic_puzzles_17",
+    "domain": "logic_puzzles",
+    "subtype": "logical_implication",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Consider: 'If it rained, then the match was cancelled.' We observe that the match was NOT cancelled. What can we validly conclude about whether it rained? Name the rule of inference.",
+    "expected": "We can validly conclude that it did not rain. The rule is modus tollens (denying the consequent).",
+    "rubric": [
+      "Concludes it did not rain",
+      "Names the rule as modus tollens (or 'denying the consequent')"
+    ]
+  },
+  {
+    "id": "logic_puzzles_18",
+    "domain": "logic_puzzles",
+    "subtype": "water_jug",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "You have a 5-liter jug and a 3-liter jug and an unlimited water source, with no other measuring marks. Describe how to measure exactly 4 liters in the 5-liter jug.",
+    "expected": "Fill the 5L jug. Pour from 5L into 3L until 3L is full, leaving 2L in the 5L jug. Empty the 3L jug. Pour the 2L from the 5L jug into the 3L jug. Fill the 5L jug again. Pour from the 5L jug into the 3L jug (which already has 2L, so it takes 1 more liter), leaving exactly 4L in the 5L jug. (An alternative fill-the-3L route also works.)",
+    "rubric": [
+      "Final state has exactly 4 liters in the 5-liter jug",
+      "Every step is a legal fill, empty, or pour between the two jugs",
+      "Sequence is correct and reproducible"
+    ]
+  },
+  {
+    "id": "logic_puzzles_19",
+    "domain": "logic_puzzles",
+    "subtype": "cryptarithm",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Solve the cryptarithm where each distinct letter is a distinct digit 0-9 and no leading zero: ODD + ODD = EVEN. Here O, D, E, V, N are letters (E and the others all distinct). Give one valid digit assignment and the numeric equation it represents.",
+    "expected": "One valid solution: O=6, D=5, E=1, V=3, N=0, giving 655 + 655 = 1310. Each distinct letter maps to a distinct digit, EVEN is a 4-digit number, and no leading zeros (O=6, E=1).",
+    "rubric": [
+      "Provides a digit for each of O, D, E, V, N with all distinct",
+      "ODD + ODD numerically equals the 4-digit EVEN",
+      "No letter that begins a number is 0",
+      "The shown arithmetic is correct"
+    ]
+  },
+  {
+    "id": "logic_puzzles_20",
+    "domain": "logic_puzzles",
+    "subtype": "sequence_completion",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "What is the next term? 1, 11, 21, 1211, 111221, ___",
+    "expected": "312211",
+    "rubric": [
+      "Answer is 312211",
+      "Identifies the look-and-say sequence (each term describes the digits of the previous term)"
+    ]
+  },
+  {
+    "id": "logic_puzzles_21",
+    "domain": "logic_puzzles",
+    "subtype": "probability_logic",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A bag contains 3 red marbles and 2 blue marbles. You draw two marbles without replacement. What is the probability that both are red? Give the answer as a simplified fraction.",
+    "expected": "3/10",
+    "rubric": [
+      "Answer is 3/10",
+      "Shows reasoning (3/5 x 2/4 = 6/20 = 3/10) or equivalent counting (C(3,2)/C(5,2) = 3/10)"
+    ]
+  },
+  {
+    "id": "logic_puzzles_22",
+    "domain": "logic_puzzles",
+    "subtype": "lateral_thinking",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "What can travel around the world while staying in a corner?",
+    "expected": "A (postage) stamp.",
+    "rubric": [
+      "Answer is a stamp (postage stamp)",
+      "Explanation matches: it sits in the corner of an envelope yet travels worldwide"
+    ]
+  },
+  {
+    "id": "logic_puzzles_23",
+    "domain": "logic_puzzles",
+    "subtype": "constraint_satisfaction",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Five runners finished a race in positions 1st through 5th, with no ties. Clues: (1) Pat finished ahead of Nia. (2) Nia finished ahead of Ravi. (3) Ravi finished immediately ahead of Omar. (4) Quin finished last (5th). Determine the finishing order from 1st to 5th.",
+    "expected": "1st Pat, 2nd Nia, 3rd Ravi, 4th Omar, 5th Quin.",
+    "rubric": [
+      "Pat is 1st",
+      "Nia is 2nd",
+      "Ravi is 3rd and Omar is 4th (Ravi immediately ahead of Omar)",
+      "Quin is 5th",
+      "Order satisfies all four clues"
+    ]
+  },
+  {
+    "id": "logic_puzzles_24",
+    "domain": "logic_puzzles",
+    "subtype": "riddle",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Forward I am heavy, but backward I am not. What word am I?",
+    "expected": "Ton (spelled backward it is 'not').",
+    "rubric": [
+      "Answer is the word 'ton'",
+      "Explains 'ton' is heavy and reversed spells 'not'"
+    ]
+  },
+  {
+    "id": "logic_puzzles_25",
+    "domain": "logic_puzzles",
+    "subtype": "logical_deduction",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Five cards lie on a table, each with a letter on one side and a number on the other. The visible faces show: A, K, 4, 7, 2. Someone claims: 'If a card has a vowel on one side, then it has an even number on the other side.' Which cards must you turn over to test this claim, and why?",
+    "expected": "Turn over the A and the 7. Turn A to check it has an even number; turn 7 (odd) to check it does not have a vowel. K (consonant) and the even numbers 4 and 2 cannot falsify the rule.",
+    "rubric": [
+      "Says to turn over the A card",
+      "Says to turn over the 7 card",
+      "Explains that consonant K and even numbers 4 and 2 need not be turned",
+      "Reasoning reflects testing the conditional (vowel -> even) by checking the vowel and the odd number"
+    ]
+  }
+]

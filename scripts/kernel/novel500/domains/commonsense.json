@@ -1,0 +1,376 @@
+[
+  {
+    "id": "commonsense_01",
+    "domain": "commonsense",
+    "subtype": "physical_cause_effect",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A person leaves a metal spoon standing in a pot of soup that has been simmering on the stove for ten minutes, then grabs the spoon by the handle with a bare hand. What most likely happens?",
+    "expected": "The handle has heated up (metal conducts heat), so the person burns or hurts their hand and likely jerks it away / drops the spoon.",
+    "rubric": [
+      "Says the metal handle became hot",
+      "States the hand gets burned, hurt, or that the person pulls away",
+      "Attributes it to heat conduction through the metal (or implies the handle got hot from the pot)"
+    ]
+  },
+  {
+    "id": "commonsense_02",
+    "domain": "commonsense",
+    "subtype": "social_intuition",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "At a dinner party, Maya quietly tells her friend Dev that she just lost her job that morning, asking him not to make a big deal of it. Five minutes later, the host loudly toasts Maya and asks everyone to congratulate her on her exciting new career chapter, beaming at her. How does Maya most likely feel, and what is a tactful thing she could say in response?",
+    "expected": "Maya likely feels awkward, embarrassed, or put on the spot (and possibly that Dev betrayed her confidence, or that the host is mistaken). A tactful response deflects without revealing details or correcting the host harshly, e.g., thanking everyone warmly and changing the subject, or saying she's figuring out next steps and appreciates the support.",
+    "rubric": [
+      "Identifies Maya feeling awkward/embarrassed/uncomfortable/put-on-the-spot",
+      "Recognizes the toast conflicts with her wish for privacy (or that she didn't get a new job)",
+      "Offers a tactful, non-confrontational reply that avoids airing the truth publicly"
+    ]
+  },
+  {
+    "id": "commonsense_03",
+    "domain": "commonsense",
+    "subtype": "temporal_ordering",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Put these everyday actions in the correct order for making a cup of instant coffee: (a) drink it, (b) add hot water, (c) put coffee granules in the mug, (d) stir.",
+    "expected": "c, b, d, a (put granules in, add hot water, stir, drink).",
+    "rubric": [
+      "Granules in mug come before adding water",
+      "Stirring comes after water is added",
+      "Drinking is last"
+    ]
+  },
+  {
+    "id": "commonsense_04",
+    "domain": "commonsense",
+    "subtype": "physical_intuition",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You drop a full, sealed plastic water bottle and an empty open plastic water bottle (same bottle, no cap) from the same height onto a tile floor. Which one is more likely to make a loud splash or spill water, and why?",
+    "expected": "Neither will splash much, but the open empty bottle won't spill (it's empty). The full sealed bottle holds water but is sealed, so it also won't spill unless it bursts. The key point: the sealed full bottle contains water but won't spill because it's sealed; the open bottle has no water to spill. So the answer is that little to no water spills from either; if anything, a full UNSEALED open bottle would spill, but as described neither spills significantly.",
+    "rubric": [
+      "Notes the empty bottle has no water to spill",
+      "Notes the full bottle is sealed so it won't spill (unless it bursts)",
+      "Concludes neither is likely to spill significantly as described"
+    ]
+  },
+  {
+    "id": "commonsense_05",
+    "domain": "commonsense",
+    "subtype": "what_happens_next",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A child builds a tall tower of wooden blocks on a wobbly card table, then runs past and bumps the table hard. What most likely happens next?",
+    "expected": "The tower wobbles and topples / the blocks fall, likely scattering on the table or floor.",
+    "rubric": [
+      "States the tower falls or collapses",
+      "Connects it to the bump/vibration of the table"
+    ]
+  },
+  {
+    "id": "commonsense_06",
+    "domain": "commonsense",
+    "subtype": "social_norms",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You're a guest at someone's home for dinner. You accidentally knock over your glass of red wine and it spills across the white tablecloth toward the host's lap. List the first two or three things a considerate guest should do, in order.",
+    "expected": "1) Apologize immediately and check the host isn't being stained/burned. 2) Help contain the spill (blot it with a napkin, lift the glass, move items out of the way). 3) Offer to help clean up or pay for cleaning, and accept the host's lead. Order: react/apologize and protect the host first, then blot/contain, then offer to clean.",
+    "rubric": [
+      "Apologizing and/or checking on the host comes first",
+      "Includes blotting/containing the spill with a napkin or cloth",
+      "Includes offering to help clean up or make amends",
+      "Steps are in a sensible order (react/protect before cleanup detail)"
+    ]
+  },
+  {
+    "id": "commonsense_07",
+    "domain": "commonsense",
+    "subtype": "physical_cause_effect",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "It's a freezing winter night, well below 0 degrees C. You leave a glass bottle completely full of water and tightly capped on the porch overnight. In the morning, what do you most likely find?",
+    "expected": "The water froze and expanded, likely cracking or shattering the bottle (or popping the cap), with ice inside.",
+    "rubric": [
+      "States the water froze",
+      "States the bottle likely cracked/shattered/burst (or cap popped)",
+      "Attributes it to water expanding when it freezes"
+    ]
+  },
+  {
+    "id": "commonsense_08",
+    "domain": "commonsense",
+    "subtype": "intention_inference",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Tom keeps glancing at the clock, has put on his coat, and is standing by the door jingling his keys while his coworker keeps talking about weekend plans. The coworker says, 'And then on Sunday we might go hiking, unless it rains, in which case...' What is Tom most likely trying to communicate without saying it, and what would be a polite way for him to make it explicit?",
+    "expected": "Tom is signaling that he needs to leave / is in a hurry and wants to end the conversation. A polite explicit version: 'I'd love to hear more, but I really have to run — can we catch up later?'",
+    "rubric": [
+      "Identifies Tom wants to leave / end the conversation / is in a hurry",
+      "Reads the nonverbal cues (coat, keys, clock-watching, by the door)",
+      "Suggests a polite explicit statement that excuses himself and/or offers to continue later"
+    ]
+  },
+  {
+    "id": "commonsense_09",
+    "domain": "commonsense",
+    "subtype": "physical_intuition",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You want to cool a can of soda quickly. You have a bucket. Which fills the gap fastest: (a) a bucket of ice cubes only, (b) a bucket of ice cubes plus cold water, or (c) leaving the can on a table at room temperature? Pick one and explain in a sentence.",
+    "expected": "(b) ice cubes plus cold water cools fastest, because the water makes full contact with the can's surface and conducts heat away faster than air gaps between dry ice cubes.",
+    "rubric": [
+      "Chooses (b) ice plus water",
+      "Explains water contacts the can better / conducts heat faster than air or dry ice alone"
+    ]
+  },
+  {
+    "id": "commonsense_10",
+    "domain": "commonsense",
+    "subtype": "what_happens_next",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A delivery driver leaves a cardboard box of books on a doorstep. A heavy thunderstorm rolls in over the next two hours and rain pours directly onto the box. The homeowner doesn't get home until evening. Describe the most likely state of the box and books when the homeowner arrives, and one thing they should do.",
+    "expected": "The cardboard is soaked, soggy, and likely collapsing/falling apart; the books inside are probably wet, with warped/wavy pages and possibly running ink. The homeowner should remove the books from the wet box, dry them (e.g., stand them open / pat them, place absorbent paper between pages), and possibly contact the seller for a replacement.",
+    "rubric": [
+      "Box is soaked/soggy/falling apart",
+      "Books are wet and likely warped/damaged",
+      "Suggests a reasonable action (dry the books and/or contact seller for replacement)"
+    ]
+  },
+  {
+    "id": "commonsense_11",
+    "domain": "commonsense",
+    "subtype": "social_intuition",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Your friend cooked you dinner for the first time and proudly served a dish that is honestly quite bland. They ask, 'So, what do you think?' What is a kind and honest thing to say?",
+    "expected": "A response that is appreciative and honest without being harsh — thanking them for cooking, noting something genuinely positive, and gently offering a mild suggestion if asked (e.g., 'Thanks so much for cooking! It's really nice — I think a bit more salt or seasoning could make it pop.').",
+    "rubric": [
+      "Expresses appreciation/gratitude for the effort",
+      "Avoids a harsh or purely negative reply",
+      "Is honest, e.g., gently suggests an improvement rather than fully lying that it's perfect"
+    ]
+  },
+  {
+    "id": "commonsense_12",
+    "domain": "commonsense",
+    "subtype": "physical_cause_effect",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Two identical helium balloons are in a car. One is tied to the floor with a short string; the other floats freely against the ceiling. The car suddenly accelerates forward (speeds up). Which way does the freely floating helium balloon move relative to the car — forward, backward, or stays put? Answer and explain briefly.",
+    "expected": "The freely floating helium balloon moves FORWARD (toward the front of the car) during acceleration. This is counterintuitive: dense air gets thrown backward by inertia, raising air pressure at the back, which pushes the lighter-than-air balloon forward.",
+    "rubric": [
+      "Answers that the balloon moves forward",
+      "Explains the denser air is thrown backward (inertia) and the lighter helium balloon is pushed forward by the pressure difference",
+      "Distinguishes this from how a loose heavy object (or a person) would lurch backward"
+    ]
+  },
+  {
+    "id": "commonsense_13",
+    "domain": "commonsense",
+    "subtype": "everyday_estimation",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Roughly how long does it typically take to hard-boil a chicken egg in already-boiling water: about 1 minute, about 10 minutes, or about 45 minutes? Pick the closest.",
+    "expected": "About 10 minutes (typically 9-12 minutes for a fully hard-boiled egg).",
+    "rubric": [
+      "Selects about 10 minutes",
+      "Does not select 1 minute or 45 minutes"
+    ]
+  },
+  {
+    "id": "commonsense_14",
+    "domain": "commonsense",
+    "subtype": "implicit_assumption",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A man pushes his car to a hotel and then realizes he is bankrupt. He never started the engine and there was no breakdown. In what ordinary situation does this scenario make complete sense?",
+    "expected": "He is playing the board game Monopoly. The 'car' is his game token, the 'hotel' is a property he's landed on, and he goes bankrupt paying the rent.",
+    "rubric": [
+      "Identifies the situation as a board game (Monopoly)",
+      "Explains the car is a game piece/token and the hotel is a game property",
+      "Connects landing on the hotel to going bankrupt from rent"
+    ]
+  },
+  {
+    "id": "commonsense_15",
+    "domain": "commonsense",
+    "subtype": "physical_intuition",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "You place a dry sponge on top of a puddle of water on the kitchen counter and leave it for a minute. What most likely happens to the sponge and the puddle?",
+    "expected": "The sponge soaks up (absorbs) the water and becomes wet/heavier, while the puddle shrinks or disappears.",
+    "rubric": [
+      "Sponge absorbs the water / becomes wet",
+      "Puddle shrinks or is reduced/gone"
+    ]
+  },
+  {
+    "id": "commonsense_16",
+    "domain": "commonsense",
+    "subtype": "social_cause_effect",
+    "length_class": "long",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Priya manages a small team. One team member, Leo, has been arriving late every day for two weeks. Priya hasn't said anything, hoping it would fix itself, but other team members have started arriving late too and morale seems to be dropping as people grumble about fairness. Explain the likely cause-and-effect chain at play here, and what Priya should probably do.",
+    "expected": "Because Leo's lateness went unaddressed, others perceived it as tolerated/unfair, so they relaxed their own punctuality (norm erosion), and the resulting sense of unfairness hurt morale. Priya should address it: speak with Leo privately to understand and correct the lateness, and reaffirm/clarify expectations with the team consistently and fairly.",
+    "rubric": [
+      "Identifies that unaddressed lateness signaled it was acceptable/tolerated",
+      "Explains the spread to others as a fairness/norm issue lowering morale",
+      "Recommends Priya address Leo (ideally privately) and reset expectations for the team",
+      "Notes that consistency/fairness in enforcement matters"
+    ]
+  },
+  {
+    "id": "commonsense_17",
+    "domain": "commonsense",
+    "subtype": "what_happens_next",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You put a closed, empty glass jar with its lid on tight into the freezer for a few hours, then take it out and immediately try to unscrew the lid. Is the lid likely to be easier or harder to open right out of the freezer compared to after it warms up, and why?",
+    "expected": "Right out of the freezer the lid is likely harder to open, because the cold air inside contracted, creating lower pressure (partial vacuum) that holds the lid down; as it warms, the air expands and the lid loosens (also running it under warm water helps).",
+    "rubric": [
+      "Says it is harder to open right out of the freezer",
+      "Explains the cold air inside contracted, lowering internal pressure (vacuum effect)",
+      "Notes warming it makes it easier to open"
+    ]
+  },
+  {
+    "id": "commonsense_18",
+    "domain": "commonsense",
+    "subtype": "intention_inference",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A toddler stands in the kitchen holding an empty cookie jar lid, with chocolate smeared around their mouth and crumbs on their shirt, and says 'I didn't eat any cookies.' A parent walks in. What is the most reasonable conclusion, and why might the toddler still say they didn't?",
+    "expected": "The toddler almost certainly ate the cookies (evidence: chocolate on mouth, crumbs, holding the jar lid). They deny it likely to avoid getting in trouble / out of fear of punishment, with an immature understanding that the visible evidence gives them away.",
+    "rubric": [
+      "Concludes the toddler ate the cookies",
+      "Cites the physical evidence (chocolate/crumbs/jar)",
+      "Explains the denial as avoiding trouble/punishment (and/or limited grasp of evidence)"
+    ]
+  },
+  {
+    "id": "commonsense_19",
+    "domain": "commonsense",
+    "subtype": "physical_cause_effect",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "You pour boiling water into a thin, cheap drinking glass that was sitting in the fridge. What is the most likely outcome, and what would have been a safer choice?",
+    "expected": "The glass is likely to crack or shatter due to thermal shock (rapid uneven expansion). A safer choice is to use a heat-resistant/tempered glass or mug, or let the glass warm up first / warm the glass gradually.",
+    "rubric": [
+      "States the glass likely cracks/shatters",
+      "Attributes it to thermal shock / sudden temperature change",
+      "Suggests a safer alternative (heat-resistant container or warming gradually)"
+    ]
+  },
+  {
+    "id": "commonsense_20",
+    "domain": "commonsense",
+    "subtype": "social_norms",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "You're in a quiet library reading room and your phone starts ringing loudly. What is the appropriate thing to do?",
+    "expected": "Quickly silence the phone (and if you must take the call, step outside the reading room first); apologize if needed. Don't answer it loudly at your seat.",
+    "rubric": [
+      "Silences/mutes the phone promptly",
+      "If taking the call, leaves the quiet room to do so (does not talk at the seat)"
+    ]
+  },
+  {
+    "id": "commonsense_21",
+    "domain": "commonsense",
+    "subtype": "physical_intuition",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A rowboat is floating in a small pond. In the boat is a person holding a heavy iron anchor. The water level on the pond's edge is marked. The person then drops the anchor overboard and it sinks to the bottom. Does the pond's water level rise, fall, or stay the same? Explain.",
+    "expected": "The water level FALLS. While in the boat, the anchor displaces water equal to its weight (a large volume). On the bottom, it displaces water equal only to its own volume (much smaller, since iron is dense). Less total displacement means the water level drops slightly.",
+    "rubric": [
+      "Answers that the water level falls/drops",
+      "Explains that floating, the anchor displaces water equal to its weight",
+      "Explains that sunk, it displaces only its own (smaller) volume",
+      "Connects the reduced displacement to the lower level"
+    ]
+  },
+  {
+    "id": "commonsense_22",
+    "domain": "commonsense",
+    "subtype": "everyday_planning",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "It's 7:45 AM. You need to be at a meeting across town by 8:30 AM. The drive normally takes 25 minutes, but it's rush hour and rain is forecast. You haven't had coffee, your car is low on gas (about 15 miles of range), and the gas station is 5 minutes out of the way. What's the most sensible plan, and what should you sacrifice if needed?",
+    "expected": "Leave now and prioritize arriving on time; given rush hour + rain, padding for delays matters. With only 15 miles of range, getting gas may be necessary but adds risk to timing — if the destination is within ~10 miles you can likely skip gas and fill up after the meeting. Sacrifice the coffee (skip it or grab it later). Build in extra time for traffic/rain; if running late, message ahead that you may be a few minutes late.",
+    "rubric": [
+      "Prioritizes leaving promptly / arriving on time given traffic and rain",
+      "Treats coffee as the thing to sacrifice/skip",
+      "Reasons about the gas: skip if range suffices for the trip, otherwise quick fill, and fill up after if possible",
+      "Mentions accounting for delays or notifying the meeting if late (any one sensible contingency)"
+    ]
+  },
+  {
+    "id": "commonsense_23",
+    "domain": "commonsense",
+    "subtype": "what_happens_next",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "A cat is sitting on a windowsill in the sun watching a bird through closed glass. The bird flies away. What does the cat most likely do next?",
+    "expected": "The cat likely loses interest and relaxes — e.g., keeps watching the empty area briefly, then settles down, naps in the sun, grooms itself, or moves on. It cannot chase the bird (glass + bird gone).",
+    "rubric": [
+      "Recognizes the cat can't catch the bird (it flew away / glass in the way)",
+      "Gives a plausible next behavior (loses interest, naps, grooms, watches, moves on)"
+    ]
+  },
+  {
+    "id": "commonsense_24",
+    "domain": "commonsense",
+    "subtype": "social_intuition",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Two old friends, Sam and Jordan, meet for coffee after a year apart. Sam excitedly shares that they got engaged. Jordan smiles and says 'Wow, congratulations, that's... that's really great,' then immediately looks down at their phone and changes the subject to traffic. Later Jordan texts a warm, detailed congratulations message. What likely explains Jordan's in-person reaction versus the later text, and what might Sam reasonably infer about Jordan's true feelings?",
+    "expected": "Jordan's hesitant in-person reaction (pause, looking away, changing subject) suggests they were caught off guard or had a complicated emotional reaction in the moment — possibly surprise, envy, sadness about their own situation, or feeling overwhelmed — making it hard to respond fully on the spot. The later warm, detailed text suggests Jordan, given time to process and compose themselves, genuinely is happy and wanted to express it properly. Sam can reasonably infer Jordan is happy for them but had an in-the-moment difficulty (not genuine indifference), so the thoughtful text is closer to Jordan's true feelings.",
+    "rubric": [
+      "Notes the in-person reaction reads as awkward/caught-off-guard or emotionally complicated (e.g., surprise, envy, own situation)",
+      "Explains the later text as Jordan having had time to process and respond genuinely/warmly",
+      "Concludes Jordan likely does feel happy/supportive overall (not indifferent)",
+      "Reconciles the two reactions rather than treating them as contradictory"
+    ]
+  },
+  {
+    "id": "commonsense_25",
+    "domain": "commonsense",
+    "subtype": "physical_cause_effect",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A person waters a potted plant generously every single day and keeps it in a dark closet 'to protect it from harsh sun.' After three weeks, describe the most likely condition of the plant and explain the two main mistakes.",
+    "expected": "The plant is likely sickly: pale, yellowing, leggy/stretched, wilting or with rotting roots, possibly dying. Two main mistakes: (1) overwatering, which suffocates/rots the roots (waterlogged soil, no oxygen), and (2) lack of light, so it can't photosynthesize, causing pale, weak, stretched growth.",
+    "rubric": [
+      "Describes the plant as unhealthy/dying (e.g., yellowing, wilting, leggy, rotting)",
+      "Identifies overwatering as a problem (root rot / waterlogged soil)",
+      "Identifies lack of light as a problem (no photosynthesis / etiolation)"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "n_oracle": 70,
+  "plane": "disabled(None)",
+  "results": {
+    "park4_k3": {
+      "eq": true,
+      "rollback_path": "trim"
+    },
+    "park8_k6": {
+      "eq": true,
+      "rollback_path": "trim"
+    },
+    "park16_k8": {
+      "eq": true,
+      "rollback_path": "trim"
+    }
+  },
+  "RESULT": "PASS"
+}

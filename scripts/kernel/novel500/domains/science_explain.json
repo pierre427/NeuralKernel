@@ -1,0 +1,394 @@
+[
+  {
+    "id": "science_explain_01",
+    "domain": "science_explain",
+    "subtype": "physics_everyday",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "In two or three sentences, explain why a metal spoon feels colder than a wooden spoon when both have been sitting in the same room at the same temperature.",
+    "expected": "Both spoons are actually at the same temperature, but metal conducts heat away from your hand much faster than wood does. Because metal rapidly draws thermal energy out of your skin, your nerves sense a quick drop in skin temperature and interpret it as 'cold.' Wood is a poor conductor (insulator), so it removes heat slowly and feels comparatively warm.",
+    "rubric": [
+      "States both spoons are at the same (room) temperature",
+      "Identifies metal's high thermal conductivity vs wood's low conductivity as the cause",
+      "Connects faster heat removal from the skin to the sensation of 'cold'"
+    ]
+  },
+  {
+    "id": "science_explain_02",
+    "domain": "science_explain",
+    "subtype": "biology_cellular",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain how a vaccine using a weakened (attenuated) live pathogen produces lasting immunity. Cover what the immune system does on first exposure and why a later exposure to the real pathogen is handled differently.",
+    "expected": "An attenuated vaccine introduces a live but crippled pathogen that can replicate weakly without causing serious disease. The innate immune system reacts first, then antigen-presenting cells display pathogen antigens to T cells, activating helper T cells. B cells recognizing the antigen are activated, proliferate, and differentiate into plasma cells that secrete antibodies, and into long-lived memory B cells; memory T cells are also formed. On later exposure to the real pathogen, these memory cells recognize the antigen quickly and mount a faster, larger secondary response (more antibody, sooner), neutralizing the pathogen before it causes disease.",
+    "rubric": [
+      "Describes a live but weakened pathogen that replicates without causing serious illness",
+      "Explains primary response: antigen recognition and activation of B/T cells / antibody production",
+      "States that memory B and/or T cells are generated and persist",
+      "Explains the faster, stronger secondary response on real-pathogen exposure"
+    ]
+  },
+  {
+    "id": "science_explain_03",
+    "domain": "science_explain",
+    "subtype": "cs_algorithms",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain why a hash table offers average-case O(1) lookup but worst-case O(n) lookup. Include the role of collisions and what design choices affect which case you get in practice.",
+    "expected": "A hash table maps a key to an array index using a hash function, so on average a lookup computes the hash and jumps straight to the bucket in constant time. Worst case occurs when many or all keys hash to the same bucket (collisions), degrading the structure to a linear scan of one bucket, hence O(n). Good behavior depends on: a hash function that distributes keys uniformly, keeping the load factor low (resizing/rehashing when it grows), and the collision-resolution strategy (chaining vs open addressing). Adversarial or poorly distributed keys, a bad hash function, or a high load factor push you toward the worst case.",
+    "rubric": [
+      "Explains average O(1) via hash function mapping key directly to a bucket/index",
+      "Identifies collisions (many keys in one bucket) as the cause of O(n) worst case",
+      "Mentions at least two design factors: hash quality, load factor/resizing, or collision-resolution strategy"
+    ]
+  },
+  {
+    "id": "science_explain_04",
+    "domain": "science_explain",
+    "subtype": "astronomy",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Explain in a few sentences why the Moon always shows the same face to Earth.",
+    "expected": "The Moon is tidally locked to Earth: its rotation period about its own axis equals its orbital period around Earth (both about 27.3 days). This synchronization arose because Earth's gravity raised tidal bulges on the Moon, and the resulting torque gradually slowed the Moon's spin until rotation and orbit matched. Because it turns exactly once per orbit, the same hemisphere always faces us. (The Moon does rotate; it is not non-rotating.)",
+    "rubric": [
+      "States the Moon's rotation period equals its orbital period (tidal locking / synchronous rotation)",
+      "Notes the Moon does still rotate (once per orbit), not that it fails to spin",
+      "Attributes the locking to tidal forces/torque from Earth's gravity"
+    ]
+  },
+  {
+    "id": "science_explain_05",
+    "domain": "science_explain",
+    "subtype": "chemistry_bonding",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Water (H2O) and carbon dioxide (CO2) are both small triatomic molecules made of an atom bonded to two others, yet water is polar and CO2 is nonpolar overall. Explain why, in terms of molecular geometry and bond dipoles.",
+    "expected": "Both molecules have polar individual bonds (O-H and C=O) because oxygen is more electronegative than hydrogen or carbon. The difference is geometry. CO2 is linear (O=C=O, 180 degrees), so the two bond dipoles point in exactly opposite directions and cancel, giving zero net dipole, so CO2 is nonpolar. Water is bent (about 104.5 degrees) because oxygen has two lone pairs that push the bonds together; the two O-H bond dipoles do not cancel and add to a net dipole pointing toward the oxygen, making water polar.",
+    "rubric": [
+      "States both molecules have polar bonds (electronegativity difference)",
+      "Identifies CO2 as linear so bond dipoles cancel (net zero, nonpolar)",
+      "Identifies water as bent/angular so bond dipoles do not cancel (net dipole, polar)",
+      "Attributes water's bent shape to lone pairs on oxygen"
+    ]
+  },
+  {
+    "id": "science_explain_06",
+    "domain": "science_explain",
+    "subtype": "engineering_structures",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain why an arch can support a heavy load above an opening without a beam underneath, and why this requires the arch's supports to resist horizontal (sideways) forces.",
+    "expected": "An arch carries load by converting downward weight into compression that travels along the curved line of stones/voussoirs to the supports, rather than relying on the bending strength of a horizontal beam. Each wedge-shaped block pushes against its neighbors; masonry is strong in compression, so the arch can span an opening. As the compressive force follows the curve down to the base, it has a horizontal component (thrust) pushing the supports outward. The supports (abutments, buttresses, or a tie) must resist this horizontal thrust; otherwise the bases spread apart and the arch collapses.",
+    "rubric": [
+      "Explains the arch puts material in compression (load follows the curve), avoiding bending of a beam",
+      "Notes masonry/stone is strong in compression",
+      "Identifies the outward horizontal thrust at the supports and the need to resist it (abutment/buttress/tie)"
+    ]
+  },
+  {
+    "id": "science_explain_07",
+    "domain": "science_explain",
+    "subtype": "physics_quantum",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain quantum tunneling and why it is essential to how the Sun produces energy. In your answer, describe the classical barrier that protons face, what tunneling is, and how it makes fusion possible at the Sun's core temperature.",
+    "expected": "Two protons repel each other electrostatically (Coulomb barrier) because both are positively charged; to fuse they must get close enough for the short-range strong nuclear force to bind them. Classically, a proton needs enough kinetic energy to climb over this barrier, but the Sun's core temperature (about 15 million K) gives protons average energies far too low to surmount it. Quantum tunneling is the phenomenon that a particle, described by a wavefunction, has a nonzero probability of being found on the far side of an energy barrier even when it lacks the classical energy to go over it; the wavefunction decays inside the barrier but does not reach zero. So a small fraction of proton pairs tunnel through the Coulomb barrier and fuse. Although the probability per encounter is tiny, the enormous number of protons and frequent collisions in the core mean fusion proceeds steadily. Without tunneling, the Sun would not fuse hydrogen at its actual temperature and would not shine as it does.",
+    "rubric": [
+      "Identifies the Coulomb barrier: electrostatic repulsion between like-charged protons",
+      "Notes core temperature is too low for protons to classically overcome the barrier",
+      "Defines tunneling as nonzero probability of crossing a barrier despite insufficient classical energy (wavefunction penetration)",
+      "Explains tunneling lets a fraction of protons fuse, enabling sustained solar fusion",
+      "Mentions the strong nuclear force binds the protons once close enough"
+    ]
+  },
+  {
+    "id": "science_explain_08",
+    "domain": "science_explain",
+    "subtype": "biology_genetics",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A person has one copy of a recessive disease allele and one normal allele, so they are healthy carriers. Explain why they show no symptoms, and explain the probability that two such carriers have an affected child, showing the reasoning.",
+    "expected": "A recessive disease allele only causes the disease when both copies of the gene are the disease version (homozygous recessive). A carrier is heterozygous: their one normal (dominant) allele produces enough functional gene product to mask the recessive allele, so they have no symptoms. If two carriers (each Aa) have a child, a Punnett square gives offspring genotypes 1 AA : 2 Aa : 1 aa, i.e., 1/4 AA (unaffected, noncarrier), 1/2 Aa (unaffected carrier), 1/4 aa (affected). So there is a 1/4 (25%) chance each child is affected.",
+    "rubric": [
+      "Explains the recessive allele is masked because one dominant/normal allele provides enough function (heterozygous = no symptoms)",
+      "Sets up Aa x Aa cross correctly",
+      "States the 1/4 (25%) probability of an affected child",
+      "Shows the 1:2:1 genotype reasoning or equivalent"
+    ]
+  },
+  {
+    "id": "science_explain_09",
+    "domain": "science_explain",
+    "subtype": "cs_systems",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain what a CPU cache is and why it speeds up programs. Include the principle of locality and what a 'cache miss' means.",
+    "expected": "A CPU cache is a small, fast memory located close to the processor that stores copies of recently or frequently used data and instructions, so the CPU avoids the much slower trip to main memory (RAM). It works because of locality of reference: temporal locality (data used recently is likely to be used again soon) and spatial locality (data near recently used addresses is likely to be used soon, so caches load whole blocks/lines). When the CPU needs data, it checks the cache first; a cache hit returns it quickly, while a cache miss means the data is not in the cache and must be fetched from slower memory (and loaded into the cache). Because most accesses hit, average memory latency drops dramatically.",
+    "rubric": [
+      "Describes cache as small fast memory near the CPU holding copies of frequently/recently used data",
+      "Explains it avoids slower main-memory (RAM) access, speeding programs",
+      "Explains locality (temporal and/or spatial) as why caching works",
+      "Defines a cache miss (data not in cache, must fetch from slower memory)"
+    ]
+  },
+  {
+    "id": "science_explain_10",
+    "domain": "science_explain",
+    "subtype": "physics_thermo",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain briefly why blowing on a spoonful of hot soup cools it down faster than just letting it sit.",
+    "expected": "Hot soup loses heat partly through evaporation and partly to the air just above its surface. As that surface air warms and humidifies, it slows further cooling. Blowing sweeps away this warm, moisture-saturated boundary layer and replaces it with cooler, drier air, which increases the rate of evaporation (evaporative cooling removes heat) and convective heat transfer. Faster evaporation and convection mean faster cooling.",
+    "rubric": [
+      "Identifies that blowing removes the warm/humid air layer above the soup",
+      "Explains this increases evaporation and/or convective heat transfer",
+      "Connects increased evaporation/convection to faster cooling"
+    ]
+  },
+  {
+    "id": "science_explain_11",
+    "domain": "science_explain",
+    "subtype": "chemistry_kinetics",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain how a catalyst speeds up a chemical reaction without being consumed, and why it does not change the position of the reaction's equilibrium.",
+    "expected": "A catalyst provides an alternative reaction pathway with a lower activation energy than the uncatalyzed route. Because more colliding molecules have enough energy to surmount this lower barrier (or the catalyst binds/orients reactants favorably), the reaction rate increases. The catalyst participates in intermediate steps but is regenerated by the end, so it is not consumed overall. It lowers the activation energy for both the forward and reverse reactions by the same amount, so it speeds both equally; therefore it reaches equilibrium faster but does not shift the equilibrium position (the relative amounts of products and reactants at equilibrium, governed by thermodynamics/Gibbs free energy, are unchanged).",
+    "rubric": [
+      "States catalyst lowers activation energy / provides alternative pathway, increasing rate",
+      "Explains catalyst is regenerated, hence not consumed",
+      "Explains it speeds forward and reverse reactions equally, so equilibrium position is unchanged (only reached faster)"
+    ]
+  },
+  {
+    "id": "science_explain_12",
+    "domain": "science_explain",
+    "subtype": "biology_physiology",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain why people breathe faster and feel out of breath at high altitude, and why this is due to low oxygen partial pressure rather than a lack of oxygen percentage in the air.",
+    "expected": "The percentage of oxygen in air is essentially the same at high altitude as at sea level (about 21%), but atmospheric pressure is much lower, so the partial pressure of oxygen is reduced. Gas exchange in the lungs is driven by the partial pressure of oxygen, which determines how much oxygen diffuses into the blood. Lower oxygen partial pressure means less oxygen loads onto hemoglobin, so blood oxygen saturation falls. The body senses this (via chemoreceptors detecting low blood oxygen/CO2 changes) and responds by increasing breathing rate and depth (and heart rate) to take in more air and maintain oxygen delivery, which is felt as breathlessness.",
+    "rubric": [
+      "States oxygen percentage (~21%) is unchanged but total/atmospheric pressure is lower at altitude",
+      "Identifies reduced oxygen partial pressure as the key driver of reduced uptake/diffusion",
+      "Explains lower oxygen loading into blood (hemoglobin saturation drops)",
+      "Connects the body's compensatory faster/deeper breathing to maintaining oxygen delivery"
+    ]
+  },
+  {
+    "id": "science_explain_13",
+    "domain": "science_explain",
+    "subtype": "cs_networking",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain how the TCP three-way handshake establishes a reliable connection, and then explain how TCP detects and recovers from a lost packet during data transfer. Address sequence numbers, acknowledgments, and retransmission.",
+    "expected": "The three-way handshake sets up a connection and synchronizes initial sequence numbers. The client sends a SYN with its initial sequence number (ISN). The server replies with SYN-ACK: it acknowledges the client's SYN (ACK = client ISN+1) and includes its own ISN. The client replies with an ACK of the server's ISN+1. Now both sides know each other's starting sequence numbers and the connection is established. During data transfer, every byte stream is numbered with sequence numbers; the receiver sends acknowledgments indicating the next expected byte (cumulative ACK), confirming receipt of everything before it. If a packet (segment) is lost, the receiver does not get the expected bytes, so it keeps ACKing the last in-order byte it received (duplicate ACKs), and the sender's retransmission timer for the unacknowledged data eventually expires. On timeout (or after receiving several duplicate ACKs, i.e., fast retransmit), the sender retransmits the missing segment. Once the receiver gets it, it can acknowledge the now-complete in-order data. This sequence-number plus acknowledgment plus retransmission mechanism provides reliable, in-order delivery over an unreliable network.",
+    "rubric": [
+      "Describes the three steps: SYN, SYN-ACK, ACK with synchronization of initial sequence numbers",
+      "Explains data bytes/segments carry sequence numbers and receiver sends acknowledgments",
+      "Explains loss detection via missing/duplicate ACKs and/or retransmission timeout",
+      "Explains recovery by retransmitting the lost segment to restore in-order delivery"
+    ]
+  },
+  {
+    "id": "science_explain_14",
+    "domain": "science_explain",
+    "subtype": "physics_optics",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Explain in a few sentences why the sky appears blue during the day.",
+    "expected": "Sunlight contains all visible colors. As it passes through the atmosphere, it scatters off gas molecules, and this Rayleigh scattering is much stronger for shorter (bluer) wavelengths than longer (redder) ones (scattering scales roughly as 1/wavelength^4). Blue light is therefore scattered in all directions across the sky, so when you look up away from the Sun you see this scattered blue light. (Violet is scattered even more, but the Sun emits less violet and our eyes are less sensitive to it, so the sky looks blue.)",
+    "rubric": [
+      "States shorter/blue wavelengths scatter more than longer/red wavelengths (Rayleigh scattering)",
+      "Explains scattered blue light reaches the eye from all directions, making the sky look blue",
+      "Identifies the atmosphere's gas molecules (air) as the scatterers"
+    ]
+  },
+  {
+    "id": "science_explain_15",
+    "domain": "science_explain",
+    "subtype": "earth_science",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain how the greenhouse effect warms a planet's surface. Distinguish what happens to incoming sunlight versus the outgoing radiation the planet emits, and why greenhouse gases matter.",
+    "expected": "Incoming sunlight is mostly short-wavelength (visible) radiation, which passes largely unimpeded through the atmosphere and is absorbed by the surface, warming it. The warmed surface re-emits energy, but as longer-wavelength infrared (thermal) radiation. Greenhouse gases (like CO2, water vapor, methane) are relatively transparent to incoming visible light but absorb outgoing infrared. They absorb this infrared and re-radiate it in all directions, including back down to the surface. This trapping and back-radiation reduce the rate at which heat escapes to space, so the surface and lower atmosphere settle at a higher equilibrium temperature than they would without those gases.",
+    "rubric": [
+      "States incoming sunlight (visible/short-wave) passes through atmosphere and warms the surface",
+      "States the surface re-emits longer-wavelength infrared radiation",
+      "Explains greenhouse gases absorb outgoing infrared and re-radiate it (including back to surface)",
+      "Concludes this raises the surface equilibrium temperature / slows heat loss to space"
+    ]
+  },
+  {
+    "id": "science_explain_16",
+    "domain": "science_explain",
+    "subtype": "math_concept",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain intuitively why the derivative of a function at a point gives the slope of the tangent line, using the idea of a limit of secant lines.",
+    "expected": "The slope between two points on a curve is the slope of a secant line: (f(x+h) - f(x)) / h, the rise over run over an interval of width h. As you bring the second point closer to the first (let h approach 0), the secant line pivots toward the line that just touches the curve at the point: the tangent line. The derivative is defined as the limit of that difference quotient as h goes to 0, so it equals the slope the secant approaches, which is the instantaneous slope, i.e., the slope of the tangent line at that point.",
+    "rubric": [
+      "Describes the secant slope as the difference quotient (f(x+h)-f(x))/h over an interval",
+      "Explains taking the limit as h approaches 0 (second point approaches the first)",
+      "Concludes the limit is the tangent line's slope / instantaneous rate of change"
+    ]
+  },
+  {
+    "id": "science_explain_17",
+    "domain": "science_explain",
+    "subtype": "biology_evolution",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A common misconception is that organisms develop traits 'because they need them' and pass those on. Explain how natural selection actually produces adaptation, and explicitly contrast it with this Lamarckian-style misconception.",
+    "expected": "Natural selection does not work by individuals acquiring needed traits during life and passing them on. Instead, heritable variation already exists in a population due to random mutation and recombination; individuals differ in traits without regard to need. The environment then differentially affects survival and reproduction: individuals whose existing traits make them better suited (more fit) tend to survive and reproduce more, passing those heritable variants to offspring at higher rates. Over generations the favorable alleles become more common, so the population becomes better adapted. The key contrasts with the misconception: variation is undirected/random and pre-exists selection (not generated on demand by need), and it is differential reproduction across many generations, not effort or use within one lifetime, that drives adaptation; traits acquired during life are generally not heritable.",
+    "rubric": [
+      "States variation is random/heritable and pre-exists, not produced on demand by need",
+      "Explains differential survival/reproduction (fitness) favors better-suited variants",
+      "Explains allele frequencies shift over generations to produce adaptation",
+      "Explicitly contrasts with the Lamarckian misconception (acquired/needed traits within a lifetime are not the mechanism / not inherited)"
+    ]
+  },
+  {
+    "id": "science_explain_18",
+    "domain": "science_explain",
+    "subtype": "physics_electromagnetism",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain how an electric transformer changes voltage, why it only works with alternating current (AC) and not steady direct current (DC), and why (ideally) raising voltage lowers current.",
+    "expected": "A transformer has two coils (primary and secondary) wound on a shared magnetic core. AC in the primary creates a continually changing magnetic flux in the core; by Faraday's law, a changing flux induces a voltage in the secondary. The output-to-input voltage ratio equals the ratio of secondary to primary turns (Vs/Vp = Ns/Np), so more secondary turns step voltage up, fewer step it down. It needs AC because only a changing magnetic flux induces voltage; steady DC produces constant flux (after switch-on), so no sustained EMF is induced in the secondary and it does not work. Because an ideal transformer conserves power (Vp x Ip = Vs x Is), stepping voltage up by a factor must reduce current by the same factor, so high-voltage output carries proportionally lower current.",
+    "rubric": [
+      "Explains changing magnetic flux in a shared core induces voltage in the secondary (Faraday's law / mutual induction)",
+      "States the turns-ratio relationship determines step-up vs step-down",
+      "Explains AC is required because steady DC gives constant flux and no induced EMF",
+      "Explains power conservation means higher voltage implies lower current (ideal)"
+    ]
+  },
+  {
+    "id": "science_explain_19",
+    "domain": "science_explain",
+    "subtype": "cs_security",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain how public-key (asymmetric) cryptography lets two strangers who have never shared a secret communicate confidentially, and explain why knowing someone's public key does not let an attacker read messages encrypted to them.",
+    "expected": "In public-key cryptography each party has a mathematically linked key pair: a public key (shared openly) and a private key (kept secret). To send a confidential message, the sender encrypts it with the recipient's public key; only the matching private key can decrypt it. So two strangers can communicate without ever pre-sharing a secret: the recipient publishes their public key, anyone can encrypt to it, and only the recipient can decrypt. An attacker who has the public key still cannot read the message because decryption requires the private key, and deriving the private key from the public key relies on a computationally hard problem (e.g., factoring large numbers in RSA, or the discrete-log/elliptic-curve problem) that is infeasible to solve in practice. The public key is a one-way lock: it can lock but not unlock.",
+    "rubric": [
+      "Describes a public/private key pair: public shared, private secret, mathematically linked",
+      "Explains encrypting with the recipient's public key, decrypting only with the private key (no pre-shared secret needed)",
+      "Explains why the public key does not enable decryption (need private key)",
+      "Notes deriving the private key from the public key is computationally infeasible (hard problem)"
+    ]
+  },
+  {
+    "id": "science_explain_20",
+    "domain": "science_explain",
+    "subtype": "chemistry_acids",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain what the pH scale measures and why a solution of pH 3 is one hundred times more acidic than a solution of pH 5.",
+    "expected": "pH measures the acidity of a solution based on its hydrogen-ion (H+ or hydronium) concentration; specifically pH = -log10[H+]. The scale is logarithmic (base 10), so each whole-number drop in pH corresponds to a tenfold increase in H+ concentration. Going from pH 5 to pH 3 is a decrease of 2 pH units, which is 10 x 10 = 100 times higher H+ concentration, so the pH 3 solution is one hundred times more acidic.",
+    "rubric": [
+      "States pH measures hydrogen-ion (H+/hydronium) concentration / acidity",
+      "States the scale is logarithmic (each unit = 10x change in H+)",
+      "Computes that a 2-unit difference = 10^2 = 100x more acidic"
+    ]
+  },
+  {
+    "id": "science_explain_21",
+    "domain": "science_explain",
+    "subtype": "neuroscience",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain how a neuron transmits a signal, from an incoming stimulus to communication with the next neuron. Cover resting potential, the action potential (including threshold and the all-or-nothing property), and synaptic transmission.",
+    "expected": "At rest, a neuron maintains a resting membrane potential (about -70 mV), with the inside negative relative to outside, established by ion gradients (high K+ inside, high Na+ outside) maintained by the sodium-potassium pump and selective ion permeability. An incoming stimulus (e.g., neurotransmitter input) causes graded depolarization. If the membrane potential at the axon hillock reaches threshold (about -55 mV), voltage-gated sodium channels open, Na+ rushes in, and the membrane rapidly depolarizes, producing an action potential. This is all-or-nothing: below threshold nothing fires; at or above threshold a full-amplitude spike fires regardless of stimulus strength. Sodium channels then inactivate and voltage-gated potassium channels open, K+ flows out, repolarizing (and briefly hyperpolarizing) the membrane back toward rest; the pump restores gradients. The action potential propagates down the axon to the axon terminal, where depolarization opens voltage-gated calcium channels; Ca2+ influx triggers synaptic vesicles to release neurotransmitter into the synaptic cleft. The neurotransmitter diffuses across and binds receptors on the next neuron, generating a new graded potential there, continuing the signal.",
+    "rubric": [
+      "Describes resting potential (~ -70 mV, ion gradients, Na/K pump)",
+      "Explains threshold triggering and Na+ influx producing the action potential",
+      "States the all-or-nothing property (full spike if threshold reached, regardless of stimulus magnitude)",
+      "Describes repolarization via K+ efflux (and channel inactivation)",
+      "Describes synaptic transmission: Ca2+ influx, neurotransmitter release across the cleft, binding receptors on the next neuron"
+    ]
+  },
+  {
+    "id": "science_explain_22",
+    "domain": "science_explain",
+    "subtype": "engineering_signals",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain the Nyquist-Shannon sampling theorem in plain terms: why must you sample a signal at more than twice its highest frequency, and what is aliasing? Give the intuition for why undersampling causes aliasing.",
+    "expected": "To capture a signal digitally you take samples at a fixed rate. The Nyquist-Shannon theorem says that to reconstruct a signal containing frequencies up to a maximum f, you must sample at more than twice that highest frequency (sampling rate > 2f, the Nyquist rate). If you sample too slowly (undersample), high-frequency components are misrepresented: a fast oscillation, observed only at sparse sample instants, looks identical to a different, lower-frequency oscillation. This false low-frequency impostor is aliasing: two different frequencies become indistinguishable in the samples. Intuitively, you need at least two samples per cycle of the highest frequency to even register that an oscillation goes up and down; with fewer, the samples can be 'connected' by a slower wave, so the original high frequency is mistaken for (aliased to) a lower one. In practice an anti-aliasing low-pass filter removes frequencies above half the sampling rate before sampling.",
+    "rubric": [
+      "States sampling rate must exceed twice the highest frequency (Nyquist rate)",
+      "Defines aliasing as a high frequency masquerading as a different (lower) frequency in the samples",
+      "Gives intuition for why undersampling causes aliasing (too few samples per cycle / ambiguity between frequencies)",
+      "Optionally mentions anti-aliasing filtering or the need for >=2 samples per cycle"
+    ]
+  },
+  {
+    "id": "science_explain_23",
+    "domain": "science_explain",
+    "subtype": "biology_ecology",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain why energy transfer between trophic levels in a food chain is inefficient (roughly 10% passes up each level) and why this limits the number of trophic levels an ecosystem can support.",
+    "expected": "Only a small fraction of the energy at one trophic level becomes biomass available to the next. Most of the energy an organism takes in is lost: used in cellular respiration for metabolism, movement, and maintenance (released as heat), lost in undigested material (feces) and excretion, and not all of an organism is eaten or assimilated. As a rule of thumb only about 10% of the energy stored at one level is passed to the next (the rest is dissipated). Because energy diminishes roughly tenfold at each step, higher trophic levels have far less energy available; after a few levels there is too little energy to support a viable population of top predators. This limits food chains to typically about four or five trophic levels.",
+    "rubric": [
+      "Explains most energy is lost as heat through respiration/metabolism (and via egestion/excretion or not being consumed)",
+      "States roughly 10% passes to the next level",
+      "Connects the cumulative energy loss to a limited number of trophic levels (too little energy at the top)"
+    ]
+  },
+  {
+    "id": "science_explain_24",
+    "domain": "science_explain",
+    "subtype": "physics_relativity",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "GPS satellites must correct their clocks for relativistic effects or positioning would drift by kilometers per day. Explain the two relativistic effects involved (special and general relativity), state which way each shifts the satellite clock relative to ground clocks, and explain why the net effect is that satellite clocks run fast.",
+    "expected": "Two relativistic effects act on a GPS satellite clock relative to a clock on the ground. (1) Special relativity (time dilation due to relative velocity): the satellite moves fast in orbit (about 14,000 km/h / ~3.9 km/s), and moving clocks run slow, so this effect makes the satellite clock tick slower than ground clocks. (2) General relativity (gravitational time dilation): the satellite is high up where Earth's gravitational potential is weaker (gravity is weaker far from the mass), and clocks in weaker gravity run faster, so this effect makes the satellite clock tick faster than ground clocks. The gravitational (GR) speed-up is larger than the velocity (SR) slow-down at GPS altitude, so the net result is that the satellite clock runs fast relative to the ground (by roughly 38 microseconds per day). Without correcting for this net offset, the timing errors would translate into position errors of kilometers per day, so the satellite clocks are deliberately adjusted to compensate.",
+    "rubric": [
+      "Identifies special-relativity velocity time dilation making the satellite clock run slow",
+      "Identifies general-relativity gravitational time dilation (weaker gravity at altitude) making the satellite clock run fast",
+      "States the gravitational (GR) effect dominates so the net is that the satellite clock runs fast",
+      "Connects uncorrected offset to large positioning errors (km/day)"
+    ]
+  },
+  {
+    "id": "science_explain_25",
+    "domain": "science_explain",
+    "subtype": "materials_science",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain why metals can be bent and hammered into shape (they are malleable and ductile) whereas ionic crystals like table salt shatter when struck. Base your answer on the type of bonding and how the atoms/ions can move relative to each other.",
+    "expected": "In a metal, positive metal ions sit in a lattice surrounded by a 'sea' of delocalized electrons that are not tied to specific atoms. When force is applied, layers of metal ions can slide over one another, and because the electron sea remains and continues to bond the ions wherever they end up, the metal deforms without breaking; this gives malleability and ductility. In an ionic crystal, positive and negative ions alternate in a rigid lattice held by electrostatic attraction between opposite charges. When a layer is forced to shift, ions of the same charge become aligned next to each other; like charges repel, the bonds break along that plane, and the crystal cleaves or shatters rather than bending.",
+    "rubric": [
+      "Describes metallic bonding: positive ions in a sea of delocalized electrons",
+      "Explains layers of metal ions can slide while the electron sea keeps them bonded (so metals deform, not break)",
+      "Describes ionic bonding: alternating positive/negative ions held by electrostatic attraction",
+      "Explains shifting ionic layers brings like charges together, causing repulsion and shattering"
+    ]
+  }
+]

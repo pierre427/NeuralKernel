@@ -1,0 +1,396 @@
+[
+  {
+    "id": "analysis_argument_01",
+    "domain": "analysis_argument",
+    "subtype": "fallacy_identification",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Identify the logical fallacy in the following argument and explain in one or two sentences why it is fallacious:\n\n\"Every successful tech founder I've read about dropped out of college. So if you want to build a successful startup, you should drop out of college.\"",
+    "expected": "The argument commits survivorship bias (a form of selection bias / hasty generalization): it only considers the visible successes and ignores the far larger number of dropouts who failed, so it cannot establish that dropping out causes success.",
+    "rubric": [
+      "Names the fallacy as survivorship bias / selection bias (or hasty generalization based on a biased sample)",
+      "Explains that the unsuccessful dropouts (and successful graduates) are ignored, so the sample is not representative",
+      "Concludes that the causal claim about dropping out is unsupported"
+    ]
+  },
+  {
+    "id": "analysis_argument_02",
+    "domain": "analysis_argument",
+    "subtype": "hidden_assumption",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "State the key unstated assumption that the following argument depends on, and explain why the conclusion fails if that assumption is false:\n\n\"The new cafeteria menu must be healthier than the old one, because the average calorie count per meal dropped by 18%.\"",
+    "expected": "The argument assumes that lower average calories per meal equals healthier. This ignores nutritional quality (sugar, sodium, fat type, micronutrients, fiber), portion adequacy, and that fewer calories can be unhealthy (e.g., empty calories or undernutrition). If 'healthier' depends on factors other than calorie count, the conclusion does not follow.",
+    "rubric": [
+      "Identifies the assumption that 'fewer calories' is equivalent to (or sufficient for) 'healthier'",
+      "Notes at least one other dimension of health the calorie metric omits (e.g., nutrient quality, sodium, sugar)",
+      "Explains the conclusion fails if health is not solely determined by calorie count"
+    ]
+  },
+  {
+    "id": "analysis_argument_03",
+    "domain": "analysis_argument",
+    "subtype": "tradeoff_evaluation",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A mid-size company is choosing between two backup strategies for its customer database:\n\nOption A: Nightly full backups stored on-site only. Restore time ~1 hour. Cost $400/month. No off-site copy.\nOption B: Continuous replication to a geographically separate cloud region. Restore time ~5 minutes. Cost $2,100/month. Survives a building fire.\n\nThe company processes ~$50,000/day in transactions and has never had a disaster. Evaluate the trade-offs and recommend an option. State the key consideration that should drive the decision.",
+    "expected": "The decisive consideration is the cost of a disaster (especially a site-loss event) weighed against the premium of Option B. Option A is cheaper but has a single point of failure: an on-site-only backup is destroyed by the same fire/flood/theft that destroys the primary, risking total data loss of a database worth far more than the ~$1,700/month difference. Given ~$50k/day at stake and irreplaceable customer data, the off-site survivability of Option B (and its much shorter restore/RTO) justifies the cost; the extra ~$20k/year is small relative to even one day of lost transactions or a catastrophic loss. A correct answer recommends Option B (or a hybrid) and grounds the recommendation in disaster survivability and expected loss, not on the fact that no disaster has occurred yet.",
+    "rubric": [
+      "Identifies that Option A's on-site-only storage is a single point of failure (no disaster survivability)",
+      "Weighs the ~$1,700/month cost difference against the value at risk (~$50k/day, irreplaceable data)",
+      "Recommends Option B or a hybrid and justifies via expected loss / survivability, not the absence of past disasters",
+      "Notes that 'never had a disaster' is not evidence the risk is low (does not commit to that fallacy)"
+    ]
+  },
+  {
+    "id": "analysis_argument_04",
+    "domain": "analysis_argument",
+    "subtype": "compare_contrast",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Compare and contrast renting versus buying a home for a person who expects to relocate for work within 3 years. Give at least two factors favoring each option and conclude with which is generally more appropriate for this specific person.",
+    "expected": "Renting favored: lower upfront cost (no down payment, closing costs), flexibility to move without selling, no exposure to short-term market downturns or transaction costs on a quick sale, no maintenance liability. Buying favored: equity building, potential appreciation, stable housing costs, tax considerations in some jurisdictions. For someone relocating within 3 years, the high transaction costs of buying and selling (often 6-10% combined) plus the short horizon to build equity or recover from market dips make renting generally more appropriate.",
+    "rubric": [
+      "Gives at least two genuine factors favoring renting",
+      "Gives at least two genuine factors favoring buying",
+      "Concludes renting is generally more appropriate for a 3-year horizon",
+      "Justifies the conclusion using the short time horizon / transaction costs"
+    ]
+  },
+  {
+    "id": "analysis_argument_05",
+    "domain": "analysis_argument",
+    "subtype": "argument_critique",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Critique the following argument. Identify its logical structure, name any flaws (unstated premises, equivocation, invalid inferences, or unsupported claims), and assess whether the conclusion is adequately supported:\n\n\"Free speech means people can say whatever they want. The university's new policy bans hate speech on campus. Therefore the university's policy violates free speech. And since any violation of free speech is unconstitutional, the policy is unconstitutional and must be struck down.\"",
+    "expected": "A strong critique notes: (1) The first premise equivocates/oversimplifies 'free speech' as 'say whatever they want,' whereas legal free-speech protections (e.g., U.S. First Amendment) have recognized limits and apply to government, not necessarily to all institutions. (2) An unstated premise is that the university is a state actor bound by the constitution; private universities are not, so 'unconstitutional' may not apply. (3) The inference 'bans hate speech, therefore violates free speech' assumes hate speech is constitutionally protected speech, which is contested and context-dependent. (4) The premise 'any violation of free speech is unconstitutional' is an unsupported absolute. The chain of conditionals is only as strong as its weakest, undefended link, so the conclusion is not adequately supported as stated.",
+    "rubric": [
+      "Identifies the equivocation/oversimplification of 'free speech' as 'say whatever they want'",
+      "Flags the unstated assumption that the university is a government/state actor bound by the constitution",
+      "Challenges at least one inferential leap (e.g., that banning hate speech necessarily violates protected speech, or the absolute 'any violation is unconstitutional')",
+      "Concludes the argument's conclusion is not adequately supported given the undefended premises"
+    ]
+  },
+  {
+    "id": "analysis_argument_06",
+    "domain": "analysis_argument",
+    "subtype": "decision_under_constraints",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You must schedule three tasks on a single machine before a hard deadline of 10 hours from now. Task A takes 4 hours and unlocks $5,000 of value. Task B takes 3 hours and unlocks $3,000. Task C takes 5 hours and unlocks $4,500. Only one task can run at a time. You cannot exceed 10 hours total. Which subset of tasks should you run to maximize value, and what is the maximum value? Show your reasoning.",
+    "expected": "Feasible subsets within 10 hours: A+B = 7h, $8,000; A+C = 9h, $9,500; B+C = 8h, $7,500; A+B+C = 12h (infeasible, exceeds 10h). The best feasible choice is A+C = 9 hours for $9,500. Maximum value is $9,500 by running Tasks A and C.",
+    "rubric": [
+      "Correctly recognizes all three tasks (12h) exceed the 10h limit",
+      "Evaluates the feasible pairs and their values",
+      "Selects A+C as the optimum",
+      "States the maximum value as $9,500"
+    ]
+  },
+  {
+    "id": "analysis_argument_07",
+    "domain": "analysis_argument",
+    "subtype": "statistical_reasoning_critique",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A city reports: 'After installing red-light cameras at 12 intersections, total collisions at those intersections fell 22% the next year. The cameras clearly made our roads safer.' Critique this causal claim. Identify at least three confounds or methodological problems, and state what additional evidence would strengthen the conclusion.",
+    "expected": "Problems include: (1) Regression to the mean - cameras are often installed at intersections selected precisely because they had unusually high crash counts, which tend to fall toward average regardless of intervention. (2) No control/comparison group - collisions may have fallen city-wide (weather, traffic volume, fuel prices, general trends), so the drop may not be camera-specific. (3) Possible accident-type substitution - red-light cameras can reduce side-impact crashes but increase rear-end crashes from sudden braking; 'total collisions' may mask this. (4) Single year is a small/noisy sample; (5) other concurrent changes (signal retiming, road work, enforcement). Strengthening evidence: a difference-in-differences design with matched control intersections, multi-year before/after data, breakdown by crash type and severity, and accounting for baseline selection.",
+    "rubric": [
+      "Identifies regression to the mean from high-crash site selection",
+      "Notes the absence of a control/comparison group (city-wide trends could explain it)",
+      "Raises at least one additional confound (crash-type substitution, single-year noise, concurrent changes)",
+      "Proposes concrete stronger evidence (e.g., control group / difference-in-differences, multi-year data, crash-type breakdown)"
+    ]
+  },
+  {
+    "id": "analysis_argument_08",
+    "domain": "analysis_argument",
+    "subtype": "steelman",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A colleague argues: 'We should stop writing unit tests and rely only on integration tests, because integration tests catch real bugs that matter to users.' You disagree, but first construct the strongest possible version (steelman) of their position in 2-4 sentences, then give one reason it is still incomplete.",
+    "expected": "A good steelman: Integration tests exercise the system the way users actually use it, so they catch bugs in the interactions between components that unit tests miss; they are less coupled to implementation details, so they break less on refactors and give higher confidence per test that the product actually works end-to-end. A reason it is still incomplete: integration tests are slower, give imprecise failure localization (you know something broke but not where), and provide weaker coverage of edge cases and error paths in individual units, so dropping unit tests entirely sacrifices fast feedback and pinpoint debugging.",
+    "rubric": [
+      "Steelman is genuinely charitable and states a real strength of integration tests (e.g., user-relevant, refactor-resilient, tests real interactions)",
+      "Does not strawman or immediately attack the position in the steelman portion",
+      "Gives at least one valid limitation (slower feedback, poor failure localization, weaker edge-case/unit coverage)"
+    ]
+  },
+  {
+    "id": "analysis_argument_09",
+    "domain": "analysis_argument",
+    "subtype": "validity_vs_soundness",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Consider this syllogism:\n\nPremise 1: All birds can fly.\nPremise 2: A penguin is a bird.\nConclusion: Therefore, a penguin can fly.\n\nIs the argument valid? Is it sound? Explain the difference as it applies here.",
+    "expected": "The argument is valid (the conclusion follows logically from the premises - the form is correct). It is not sound, because soundness requires both validity AND all true premises, and Premise 1 ('All birds can fly') is false since penguins, ostriches, and others cannot fly. So a valid argument can still have a false conclusion when a premise is false.",
+    "rubric": [
+      "States the argument is valid",
+      "States the argument is not sound",
+      "Correctly explains that soundness = validity + all true premises, and identifies Premise 1 as false"
+    ]
+  },
+  {
+    "id": "analysis_argument_10",
+    "domain": "analysis_argument",
+    "subtype": "tradeoff_evaluation",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A SaaS startup must decide on a database architecture. They expect rapid growth but cannot predict whether load will be read-heavy or write-heavy. Constraints: a 4-person engineering team, a 6-month runway to product-market fit, and a requirement for ACID transactions on financial records.\n\nOption 1: A single managed PostgreSQL instance (vertical scaling).\nOption 2: A distributed NoSQL store (e.g., a wide-column database) tuned for horizontal scale.\n\nEvaluate the trade-offs against the stated constraints and recommend an option with justification. Address operational complexity, the ACID requirement, and the team's size and timeline.",
+    "expected": "Recommendation should be Option 1 (managed PostgreSQL), justified against the constraints: (1) ACID requirement - PostgreSQL provides strong ACID transactions natively for financial records, while many distributed NoSQL stores offer only eventual consistency or limited/partition-scoped transactions, making the financial requirement hard to meet. (2) Team size & timeline - a 4-person team with 6-month runway should minimize operational complexity; managed Postgres offloads ops and lets them ship features toward PMF, whereas operating a distributed NoSQL cluster adds significant complexity, tuning, and on-call burden they can't afford pre-PMF. (3) Uncertain read/write mix - premature horizontal scaling is a YAGNI risk; a single vertically scaled managed instance (plus read replicas later) handles early load and defers the scaling decision until real usage data exists. The trade-off acknowledged: Option 1 has a vertical scaling ceiling, but that ceiling is far beyond pre-PMF needs and can be addressed once the load profile is known. A correct answer recommends Postgres and grounds it in ACID + low ops + avoiding premature optimization.",
+    "rubric": [
+      "Recommends Option 1 (PostgreSQL / managed relational)",
+      "Ties the ACID financial requirement to relational/Postgres strengths vs NoSQL consistency limits",
+      "Argues low operational complexity is appropriate for a 4-person team on a 6-month runway",
+      "Identifies premature horizontal scaling as a risk given the unknown read/write mix (defer the scaling decision)",
+      "Acknowledges the vertical-scaling ceiling trade-off rather than ignoring it"
+    ]
+  },
+  {
+    "id": "analysis_argument_11",
+    "domain": "analysis_argument",
+    "subtype": "base_rate_reasoning",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A test for a rare disease is 99% accurate, meaning it correctly identifies 99% of people who have the disease (sensitivity) and correctly clears 99% of people who do not (specificity). The disease affects 1 in 10,000 people. A randomly selected person tests positive. A friend argues: 'The test is 99% accurate, so you almost certainly have the disease.' Evaluate this argument quantitatively and state the approximate probability the person actually has the disease.",
+    "expected": "The friend is wrong; this ignores the base rate. In a population of 1,000,000: ~100 have the disease, of whom 99 test positive (true positives). ~999,900 do not have it, of whom 1% = ~9,999 falsely test positive. Total positives ~10,098, of which only 99 are true. P(disease | positive) is approximately 99/10,098 is about 0.98%, i.e., roughly 1%. So despite the 99% accuracy, a positive result means only about a 1% chance of actually having the disease, because the disease is so rare. This is the base-rate fallacy.",
+    "rubric": [
+      "Identifies the base-rate fallacy / neglect of disease prevalence",
+      "Performs the calculation comparing true positives (~99) to false positives (~9,999)",
+      "States the posterior probability is roughly 1% (accepts ~0.98%-1%)",
+      "Concludes the friend's claim is wrong"
+    ]
+  },
+  {
+    "id": "analysis_argument_12",
+    "domain": "analysis_argument",
+    "subtype": "compare_contrast",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "In one short paragraph, compare a salaried full-time job with freelance contract work along the single dimension of income stability versus earning ceiling. State which suits a person with high risk tolerance and large fixed expenses.",
+    "expected": "A salaried job offers predictable, stable income (low variance) but typically a capped earning ceiling tied to a fixed salary. Freelance work has volatile, less predictable income but a higher potential earning ceiling since one can take on more clients or raise rates. A person with HIGH risk tolerance but LARGE FIXED EXPENSES faces a tension: their risk appetite favors freelancing, but large fixed expenses demand reliable cash flow, which favors salaried stability; on balance the large fixed obligations make the stable salaried income the safer fit, though the answer should note the tension between the two traits.",
+    "rubric": [
+      "Correctly characterizes salaried = stable income / lower ceiling and freelance = volatile income / higher ceiling",
+      "Recognizes the tension between high risk tolerance (favors freelance) and large fixed expenses (favors stability)",
+      "Reaches a defensible recommendation that addresses both traits"
+    ]
+  },
+  {
+    "id": "analysis_argument_13",
+    "domain": "analysis_argument",
+    "subtype": "argument_construction",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Construct a well-structured argument (with at least one explicit premise supporting the conclusion, and one acknowledged counterargument with a rebuttal) for the position: 'Public libraries should remain free at the point of use even as physical book borrowing declines.'",
+    "expected": "A strong answer presents a clear conclusion (libraries should stay free at point of use), at least one supporting premise (e.g., libraries provide non-book public goods: internet/computer access for those without it, community space, job-search and literacy programs, equitable access to information that a usage fee would gatekeep), AND addresses a counterargument (e.g., 'declining physical borrowing means libraries are obsolete or charging users would offset costs') with a rebuttal (e.g., usage has shifted to digital lending, programming, and access services rather than disappeared; charging fees would defeat the equity mission and exclude the people who most depend on the library). The structure - premise(s), conclusion, counterargument, rebuttal - must be present.",
+    "rubric": [
+      "States the conclusion clearly (libraries should remain free at point of use)",
+      "Provides at least one explicit, relevant supporting premise",
+      "Explicitly acknowledges a genuine counterargument",
+      "Provides a rebuttal that responds to that counterargument"
+    ]
+  },
+  {
+    "id": "analysis_argument_14",
+    "domain": "analysis_argument",
+    "subtype": "fallacy_identification",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Name the fallacy and explain it in one sentence:\n\n\"Senator Diaz says we should invest more in flood defenses. But Diaz owns a construction company that would profit from the contracts, so her proposal should be rejected.\"",
+    "expected": "This is an ad hominem (specifically a circumstantial ad hominem / poisoning the well via conflict of interest): it rejects the proposal by attacking the proposer's motives rather than evaluating the merits of investing in flood defenses. A conflict of interest is reason for scrutiny but not by itself a reason the proposal is wrong.",
+    "rubric": [
+      "Names the fallacy as ad hominem (circumstantial / conflict-of-interest attack)",
+      "Explains that the argument attacks the source's motives rather than the proposal's merits",
+      "Optionally notes the conflict of interest warrants scrutiny but does not refute the proposal"
+    ]
+  },
+  {
+    "id": "analysis_argument_15",
+    "domain": "analysis_argument",
+    "subtype": "decision_under_constraints",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A hospital has one operating room available for the next 8 hours and four patients awaiting surgery. Constraints: only one surgery at a time; total time available is 8 hours.\n\nPatient W: 2 hours, survival benefit 'high', will deteriorate severely if not operated within 4 hours.\nPatient X: 3 hours, survival benefit 'high', stable for 24 hours.\nPatient Y: 1 hour, survival benefit 'medium', stable for 12 hours.\nPatient Z: 4 hours, survival benefit 'very high', will die without surgery within 6 hours.\n\nRecommend an ordering and selection of surgeries that maximizes lives/benefit under the constraints, and explain the reasoning and any patient who must be deferred.",
+    "expected": "Key constraints: 8 hours total; Z (4h) must START and finish within 6h or the patient dies; W (2h) must be done within 4h or deteriorates severely. A workable plan: do W first (0-2h, satisfies W's 4h window), then Z (2-6h, finishes exactly at the 6h deadline and is highest benefit), leaving 2 hours (6-8h). In the remaining 2 hours you can do Y (1h, medium) and there is not enough time for X (3h), OR you could fit only X partially - X (3h) does not fit in the final 2h. So X must be deferred (X is stable for 24h, the safest to defer). Selection: W, Z, then Y; total = 2+4+1 = 7 hours, within 8. X is deferred because it is stable longest and does not fit. A correct answer must satisfy Z's 6-hour hard deadline AND W's 4-hour window simultaneously, and defer X (the most stable, longest-window patient). Alternative valid ordering: W (0-2), Z (2-6), Y (6-7) - any order that respects both deadlines and defers X is acceptable.",
+    "rubric": [
+      "Schedules Z to finish within its 6-hour survival deadline",
+      "Schedules W within its 4-hour deterioration window",
+      "Total scheduled time does not exceed 8 hours",
+      "Defers X (justified as the most stable / longest-window patient) and explains why it does not fit",
+      "Includes Y as well, or otherwise maximizes benefit in the remaining time"
+    ]
+  },
+  {
+    "id": "analysis_argument_16",
+    "domain": "analysis_argument",
+    "subtype": "argument_critique",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Critique the reasoning in this argument and identify whether the conclusion follows:\n\n\"Remote-work companies report higher employee satisfaction than office-based companies. Our company wants higher employee satisfaction. Therefore, if we switch to fully remote work, our satisfaction scores will rise.\"",
+    "expected": "The conclusion does not reliably follow. Flaws: (1) Correlation vs causation - remote companies may have higher satisfaction for confounded reasons (industry, pay, culture, self-selected workforce) rather than remote work itself. (2) Composition/selection effect - companies that are fully remote may attract employees who prefer remote work; the current company's employees may not have that preference. (3) Ignores transition costs and that satisfaction drivers differ by company. The premise is an aggregate cross-company comparison; it does not establish that switching a specific company will causally raise its own scores. A correct critique identifies the causal leap and at least one confound/selection issue.",
+    "rubric": [
+      "Identifies the correlation-to-causation leap",
+      "Names at least one confound or selection effect (self-selected remote workforce, industry, pay)",
+      "Concludes the conclusion does not reliably follow for this specific company"
+    ]
+  },
+  {
+    "id": "analysis_argument_17",
+    "domain": "analysis_argument",
+    "subtype": "tradeoff_evaluation",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "An engineering team is deciding whether to pay down a known piece of technical debt now (estimated 3 weeks of work, no new features) or defer it to ship a customer-requested feature first (the feature takes 3 weeks; the debt makes future features ~20% slower and occasionally causes production incidents). Evaluate the trade-off and describe what additional information would most change your recommendation.",
+    "expected": "Trade-off: Paying down debt now costs 3 weeks of feature delivery but removes a 20% drag on all future feature work and reduces incident risk (which has its own costs: downtime, on-call, reputation). Shipping the feature now delivers immediate customer value/revenue but compounds the debt's drag and incident exposure. The decision hinges on the volume/cadence of future feature work (the 20% tax only pays off if there's enough future work to amortize the 3-week cost), the severity/frequency of the production incidents, and the urgency/revenue impact of the customer feature. Most-decision-changing information: (a) the expected amount of future development the 20% penalty applies to (and thus the payback period), (b) the severity and frequency of the incidents, and (c) how time-critical or revenue-significant the requested feature is. A good answer weighs both sides and names concrete information (payback horizon, incident cost, feature urgency).",
+    "rubric": [
+      "Articulates the cost of paying down debt now (3 weeks of deferred features)",
+      "Articulates the compounding cost of deferring (20% future tax + incident risk)",
+      "Notes the decision depends on the volume of future work to amortize / payback period",
+      "Names additional information that would change the recommendation (e.g., incident severity, feature urgency, future workload)"
+    ]
+  },
+  {
+    "id": "analysis_argument_18",
+    "domain": "analysis_argument",
+    "subtype": "necessary_vs_sufficient",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A study concludes: 'Students who attended the after-school tutoring program scored higher on the final exam, so the tutoring is sufficient to improve scores.' Is 'sufficient' the right claim here? Distinguish necessary from sufficient and state what the evidence actually supports at most.",
+    "expected": "'Sufficient' is too strong. Attending tutoring being correlated with higher scores does not show it is sufficient (that tutoring alone guarantees improvement) nor necessary (that improvement requires tutoring). At most the observational evidence supports an association, not a causal sufficiency claim - and even causally it would suggest tutoring contributes to / helps improve scores, not that it is sufficient by itself. Confounds (motivated students self-select into tutoring) further weaken even the associational reading. Necessary = required for the outcome; sufficient = guarantees the outcome on its own; the evidence supports neither, only a positive association.",
+    "rubric": [
+      "Correctly defines necessary (required) vs sufficient (guarantees on its own)",
+      "Explains that the correlation does not establish sufficiency",
+      "States the evidence supports at most an association / contributing effect (and notes self-selection confound)"
+    ]
+  },
+  {
+    "id": "analysis_argument_19",
+    "domain": "analysis_argument",
+    "subtype": "weighing_evidence",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "You are evaluating whether to approve a new feature based on an A/B test. Data: Variant B increased click-through rate from 4.0% to 4.3% (a 7.5% relative lift). The test ran for 3 days with 2,000 users per arm. The p-value was 0.04. However, the 3 days included a holiday weekend, the increase was concentrated in one traffic source, and revenue per user was flat. Construct a reasoned recommendation about whether to ship, weighing the supporting and undermining evidence.",
+    "expected": "A reasoned answer should NOT ship on this evidence alone, or should recommend re-testing. Supporting: statistically significant lift (p=0.04) in the primary CTR metric, a meaningful relative lift. Undermining: (1) short 3-day window spanning a holiday weekend creates non-representative/seasonal behavior; (2) the effect is concentrated in one traffic source, suggesting it may not generalize (heterogeneous/possibly spurious); (3) revenue per user is flat - the CTR lift didn't translate to business value, raising whether CTR is the right success metric; (4) p=0.04 is borderline and with small sample (2,000/arm) and possible multiple looks, false-positive risk is real; (5) novelty effects over 3 days. Recommendation: defer/ship-no, run a longer test over a full representative period across traffic sources and track revenue as the decision metric. A correct answer weighs both sides and lands on 'do not ship yet / re-test' with justification, not a naive 'significant, so ship.'",
+    "rubric": [
+      "Acknowledges the supporting evidence (significant CTR lift, p=0.04)",
+      "Identifies the holiday/short-window representativeness problem",
+      "Notes the effect is concentrated in one traffic source (generalizability concern)",
+      "Flags that flat revenue per user undercuts the business case / questions the metric",
+      "Recommends not shipping yet / re-testing, justified by the weight of undermining evidence"
+    ]
+  },
+  {
+    "id": "analysis_argument_20",
+    "domain": "analysis_argument",
+    "subtype": "compare_contrast",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Compare two approaches to reducing a city's traffic congestion: (A) congestion pricing (charging a fee to drive into the city center) versus (B) building more road capacity (widening highways). Address effectiveness, equity, and long-run dynamics, then state which is generally better supported and why.",
+    "expected": "Effectiveness: Congestion pricing directly targets demand by pricing the externality, reliably reducing peak congestion; road widening tends to induce demand (the 'fundamental law of road congestion'), so added capacity fills up and congestion returns in the long run. Equity: Pricing can be regressive (burdens lower-income drivers more) but revenue can be recycled into transit or rebates to offset this; road widening is funded by general taxes and tends to benefit drivers. Long-run dynamics: pricing manages demand sustainably and funds alternatives; widening locks in car dependence, sprawl, and recurring congestion. On balance congestion pricing is generally better supported by evidence for durably reducing congestion, provided equity is addressed via revenue use. A correct answer covers all three dimensions and concludes for pricing (with the induced-demand point central).",
+    "rubric": [
+      "Addresses effectiveness, including induced demand undermining road widening",
+      "Addresses equity (pricing's regressivity and the offsetting role of revenue recycling)",
+      "Addresses long-run dynamics (durability of pricing vs recurring congestion from widening)",
+      "Concludes congestion pricing is generally better supported, with justification"
+    ]
+  },
+  {
+    "id": "analysis_argument_21",
+    "domain": "analysis_argument",
+    "subtype": "circular_reasoning",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Explain why the following argument is circular (begs the question):\n\n\"This contract is legally binding because it says so in clause 1, and we know clause 1 is authoritative because it is part of a legally binding contract.\"",
+    "expected": "The argument is circular because it uses its conclusion as a premise: it tries to prove the contract is legally binding by citing a clause, but the clause's authority is justified only by assuming the very thing in question (that the contract is legally binding). The conclusion 'the contract is binding' is smuggled into the premise that establishes it, so no independent support is given.",
+    "rubric": [
+      "Identifies that the conclusion (contract is binding) is assumed in the premise",
+      "Explains the reasoning loops back on itself / provides no independent support",
+      "Correctly labels it as circular / begging the question"
+    ]
+  },
+  {
+    "id": "analysis_argument_22",
+    "domain": "analysis_argument",
+    "subtype": "decision_under_constraints",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A nonprofit has a $60,000 grant that must be spent by year-end on exactly one program. Constraint: the chosen program must serve at least 200 people AND have measurable outcomes.\n\nProgram P: serves 500 people, cost $55,000, outcomes hard to measure (self-reported only).\nProgram Q: serves 220 people, cost $60,000, outcomes measurable via standardized pre/post assessment.\nProgram R: serves 180 people, cost $40,000, outcomes measurable via clinical metrics.\n\nWhich program should be chosen given the constraints? Identify any program that is disqualified and why.",
+    "expected": "Apply both hard constraints (>=200 people AND measurable outcomes). Program R is disqualified: it serves only 180 people, failing the >=200 requirement (even though outcomes are measurable). Program P is disqualified or at least fails the measurability constraint: outcomes are only self-reported / hard to measure, failing 'measurable outcomes.' Program Q satisfies both: 220 people (>=200) and standardized measurable outcomes, at $60,000 within budget. Therefore choose Program Q. A correct answer selects Q and explains R fails the headcount constraint and P fails the measurable-outcomes constraint.",
+    "rubric": [
+      "Disqualifies Program R for serving fewer than 200 people",
+      "Disqualifies Program P for lacking measurable outcomes",
+      "Selects Program Q as the only program meeting both constraints",
+      "Confirms Q is within the $60,000 budget"
+    ]
+  },
+  {
+    "id": "analysis_argument_23",
+    "domain": "analysis_argument",
+    "subtype": "false_dilemma",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Identify the flaw in this argument and provide at least one option it ignores:\n\n\"Either we cut the entire marketing budget, or we go bankrupt. We don't want to go bankrupt, so we must cut the entire marketing budget.\"",
+    "expected": "This is a false dilemma (false dichotomy): it presents only two options when more exist. Ignored alternatives include partially reducing the marketing budget, cutting costs elsewhere, raising prices, increasing revenue, renegotiating debt, or trimming the least effective marketing while keeping high-ROI spend. Because the two presented options are not exhaustive, the conclusion (must cut the entire budget) does not follow.",
+    "rubric": [
+      "Names the fallacy as false dilemma / false dichotomy",
+      "Explains that the two options are presented as exhaustive when they are not",
+      "Provides at least one realistic ignored alternative (partial cut, other cost cuts, raise revenue, etc.)"
+    ]
+  },
+  {
+    "id": "analysis_argument_24",
+    "domain": "analysis_argument",
+    "subtype": "argument_construction",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A school board is debating whether to replace letter grades (A-F) with a competency-based system (students must demonstrate mastery of specific skills to advance). Construct a balanced argumentative essay (roughly 200-300 words) that: (1) states a clear thesis recommending one system, (2) gives at least two supporting reasons with reasoning, (3) honestly addresses the strongest objection to your position, and (4) responds to that objection. Avoid logical fallacies.",
+    "expected": "A strong answer has all four required structural elements: (1) a clear thesis favoring one system (either is defensible if argued well - e.g., 'the board should adopt competency-based grading'); (2) at least two developed supporting reasons (e.g., for competency-based: it ties advancement to actual mastery rather than averaged performance that can hide gaps; it provides clearer feedback on specific skills; it reduces grade inflation and points-gaming. For letter grades: simplicity, comparability across schools, compatibility with college admissions, lower implementation cost); (3) an honest statement of the strongest opposing objection (e.g., competency systems are harder to implement, harder for colleges to interpret, and burden teachers with more assessment; or for letter grades, that they obscure what a student actually knows); (4) a genuine rebuttal to that objection (e.g., transcripts can translate competencies for admissions; phased rollout and rubrics mitigate teacher burden). The essay must be balanced, fallacy-free, and roughly within the length. Either thesis is acceptable; grading is on structure and reasoning quality, not which system is chosen.",
+    "rubric": [
+      "States a clear thesis recommending one specific system",
+      "Provides at least two distinct supporting reasons with actual reasoning (not bare assertions)",
+      "Honestly presents the strongest objection to the chosen position (genuine, not a strawman)",
+      "Responds to that objection with a substantive rebuttal",
+      "Avoids obvious logical fallacies and stays roughly within the requested length"
+    ]
+  },
+  {
+    "id": "analysis_argument_25",
+    "domain": "analysis_argument",
+    "subtype": "evaluate_analogy",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Evaluate the strength of the following argument by analogy. Identify the relevant similarities it relies on and at least two relevant disanalogies that weaken it:\n\n\"Running a country's economy is just like running a household budget. A family that spends more than it earns goes broke, so a government that spends more than it collects in taxes will inevitably go broke too. Therefore the government must always balance its budget.\"",
+    "expected": "The analogy relies on the similarity that both households and governments take in revenue and spend it, and that persistent overspending has consequences. But there are crucial disanalogies that weaken it: (1) A sovereign government that issues its own currency can create money and is not constrained like a household, which cannot print money. (2) Governments have effectively indefinite time horizons and can roll over / refinance debt continuously, whereas a household has a finite lifespan and must eventually repay. (3) Government spending can affect the size of its own future revenue base (fiscal multipliers, investment in growth) - household spending generally does not increase household income. (4) Governments borrow at scale and influence interest rates differently. Because these disanalogies bear directly on the conclusion (whether overspending leads to 'going broke'), the analogy is weak and the conclusion does not follow as stated. A strong answer names the surface similarity and at least two of these relevant disanalogies.",
+    "rubric": [
+      "Identifies the relevant similarity the analogy relies on (both have income and expenditure; overspending has consequences)",
+      "Gives at least two relevant disanalogies (e.g., currency issuance, indefinite time horizon/refinancing, spending affecting own revenue base)",
+      "Explains that the disanalogies bear on the conclusion, weakening the argument",
+      "Concludes the analogical argument is weak / the conclusion does not follow as stated"
+    ]
+  }
+]

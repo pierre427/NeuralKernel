@@ -1,0 +1,391 @@
+[
+  {
+    "id": "translation_language_01",
+    "domain": "translation_language",
+    "subtype": "translation_es_to_en",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Translate this Spanish sentence into natural English: \"El gato dormido no atrapa ratones.\"",
+    "expected": "The sleeping cat doesn't catch mice. (Acceptable variants: 'A sleeping cat catches no mice'; 'The sleeping cat catches no mice.')",
+    "rubric": [
+      "Conveys that a/the sleeping cat catches no mice / does not catch mice",
+      "Correctly translates 'gato' as cat and 'ratones' as mice",
+      "Grammatical, natural English"
+    ]
+  },
+  {
+    "id": "translation_language_02",
+    "domain": "translation_language",
+    "subtype": "translation_en_to_fr_formal",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Translate into French, using the formal 'vous' register: \"Could you please send me the report before noon?\"",
+    "expected": "Pourriez-vous m'envoyer le rapport avant midi, s'il vous plaît ? (Acceptable: 'Pouvez-vous m'envoyer le rapport avant midi, s'il vous plaît ?')",
+    "rubric": [
+      "Uses the formal 'vous' form (pourriez-vous / pouvez-vous), not 'tu'",
+      "Translates 'report' as 'rapport' and 'before noon' as 'avant midi'",
+      "Includes a politeness marker (s'il vous plaît)",
+      "Grammatically correct French"
+    ]
+  },
+  {
+    "id": "translation_language_03",
+    "domain": "translation_language",
+    "subtype": "grammar_correction",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Correct the grammar in this English sentence and return only the corrected sentence: \"She don't have no time for they're complaints.\"",
+    "expected": "She doesn't have any time for their complaints. (Acceptable: 'She has no time for their complaints.')",
+    "rubric": [
+      "Fixes subject-verb agreement: 'don't' -> 'doesn't' (or rewords)",
+      "Removes the double negative ('no time' for 'any time', or keeps single negative)",
+      "Fixes 'they're' -> 'their'"
+    ]
+  },
+  {
+    "id": "translation_language_04",
+    "domain": "translation_language",
+    "subtype": "register_shift_formal_to_casual",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Rewrite the following formal notice as a casual, friendly message to a roommate, keeping the same factual content: \"Please be advised that the kitchen will be inaccessible from 0900 to 1100 hours tomorrow owing to scheduled maintenance of the plumbing apparatus.\"",
+    "expected": "A casual paraphrase such as: 'Hey, just a heads up - the kitchen's going to be off-limits tomorrow from 9 to 11 because they're fixing the plumbing.' Tone is informal and friendly; content (kitchen unavailable 9-11 tomorrow, plumbing maintenance) preserved.",
+    "rubric": [
+      "Tone is clearly casual/friendly (contractions, informal greeting or phrasing)",
+      "Preserves the time window 9-11 (or 0900-1100) tomorrow",
+      "Preserves the reason: plumbing maintenance/repair",
+      "Drops bureaucratic phrasing like 'be advised' / 'plumbing apparatus'"
+    ]
+  },
+  {
+    "id": "translation_language_05",
+    "domain": "translation_language",
+    "subtype": "etymology",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain the etymology of the English word 'salary'. What is the historical origin and what does it have to do with salt?",
+    "expected": "'Salary' derives from Latin 'salarium', which referred to a soldier's allowance/stipend, ultimately from 'sal' (salt). The common explanation is that it was money given to Roman soldiers to buy salt (or an allowance connected to salt), passing into English via Anglo-French/Old French 'salarie'. The 'sal' = salt link is the key point.",
+    "rubric": [
+      "Traces the word to Latin 'salarium'",
+      "Connects it to Latin 'sal' meaning salt",
+      "Mentions the Roman soldiers' allowance/stipend association",
+      "No major false etymological claims"
+    ]
+  },
+  {
+    "id": "translation_language_06",
+    "domain": "translation_language",
+    "subtype": "pun_explanation",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Explain why this pun is funny: \"I used to be a banker, but I lost interest.\"",
+    "expected": "The pun is on 'interest', which means both (1) the money a bank pays/earns on deposits or loans (banking sense) and (2) curiosity or enthusiasm about something. 'Lost interest' literally means stopped caring, but in a banking context it humorously also evokes losing financial interest.",
+    "rubric": [
+      "Identifies that the joke hinges on the word 'interest'",
+      "Explains the financial/banking meaning of interest",
+      "Explains the 'enthusiasm/attention' meaning of losing interest",
+      "Connects both meanings to why it's funny"
+    ]
+  },
+  {
+    "id": "translation_language_07",
+    "domain": "translation_language",
+    "subtype": "translation_de_to_en_idiom",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Translate the German idiom into natural English and give its meaning: \"Ich verstehe nur Bahnhof.\" (Literal: 'I understand only train station.')",
+    "expected": "Idiomatic English equivalent: 'It's all Greek to me' or 'I don't understand a thing / I can't make heads or tails of it.' Meaning: the speaker doesn't understand anything being said.",
+    "rubric": [
+      "States the meaning: the speaker understands nothing / it makes no sense to them",
+      "Gives a natural English idiom or paraphrase (e.g. 'It's all Greek to me')",
+      "Does not translate it literally as the final answer"
+    ]
+  },
+  {
+    "id": "translation_language_08",
+    "domain": "translation_language",
+    "subtype": "translation_en_to_ja_romaji",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Translate \"Where is the train station?\" into Japanese. Provide the answer in both Japanese script and romaji.",
+    "expected": "Japanese: 駅はどこですか？ Romaji: Eki wa doko desu ka? (Acceptable variants include polite forms with 'sumimasen' prefix, or 'densha no eki'.)",
+    "rubric": [
+      "Includes the word for station (駅 / eki)",
+      "Includes question word for 'where' (どこ / doko)",
+      "Provides romaji transliteration",
+      "Forms a grammatical Japanese question (ends with か / ka or equivalent)"
+    ]
+  },
+  {
+    "id": "translation_language_09",
+    "domain": "translation_language",
+    "subtype": "false_friends",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A learner translated the Spanish sentence \"Estoy embarazada\" as \"I am embarrassed.\" Explain the error and give the correct translation.",
+    "expected": "'Embarazada' is a false friend (false cognate): it means 'pregnant', not 'embarrassed'. So 'Estoy embarazada' = 'I am pregnant.' To say 'I am embarrassed' in Spanish you'd use 'Tengo vergüenza' or 'Estoy avergonzado/a'.",
+    "rubric": [
+      "States that 'embarazada' means 'pregnant', not 'embarrassed'",
+      "Identifies this as a false friend / false cognate",
+      "Gives the correct way to say 'embarrassed' (e.g. tengo vergüenza / avergonzado/a)"
+    ]
+  },
+  {
+    "id": "translation_language_10",
+    "domain": "translation_language",
+    "subtype": "translation_it_to_en",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Translate this Italian passage into English: \"Domani mattina andremo al mercato per comprare frutta fresca e poi prenderemo un caffè in piazza.\"",
+    "expected": "Tomorrow morning we will go to the market to buy fresh fruit and then we'll have a coffee in the square. (Minor wording variants acceptable.)",
+    "rubric": [
+      "Correctly renders 'domani mattina' as tomorrow morning",
+      "Captures going to the market to buy fresh fruit",
+      "Captures having/getting a coffee in the square/piazza",
+      "Uses future or natural English tense"
+    ]
+  },
+  {
+    "id": "translation_language_11",
+    "domain": "translation_language",
+    "subtype": "tone_diplomatic_rewrite",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Rewrite this blunt email sentence to be diplomatic and professional while keeping the message: \"Your code is a mess and I'm not reviewing it until you fix it.\"",
+    "expected": "A polite, professional version such as: 'I think the code could use some cleanup before review - there are a few structural issues I'd like to see addressed first. Once those are sorted, I'd be happy to take a closer look.' Must keep the core ask: clean up the code before it gets reviewed.",
+    "rubric": [
+      "Tone is professional/diplomatic, not blunt or insulting",
+      "Preserves the request that the code be improved/fixed before review",
+      "Avoids harsh words like 'mess' or refusal phrasing",
+      "Reads as a coherent, polite sentence or two"
+    ]
+  },
+  {
+    "id": "translation_language_12",
+    "domain": "translation_language",
+    "subtype": "back_translation_consistency",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Translate the English sentence \"Time flies like an arrow\" into French, then explain one ambiguity in the original English sentence that a translator must resolve.",
+    "expected": "A natural French translation, e.g. 'Le temps file comme une flèche' (or 'Le temps passe comme une flèche'). Ambiguity: 'Time flies like an arrow' can be parsed multiple ways - the famous reading is the metaphor (time passes quickly like an arrow), but 'time' could be a verb (command to time flies) or 'time flies' could be a noun phrase (a species of fly that likes arrows). The translator must pick the metaphorical reading.",
+    "rubric": [
+      "Provides a grammatical French translation conveying time passing quickly like an arrow",
+      "Identifies at least one genuine syntactic/semantic ambiguity in the English",
+      "Explains that the translator must choose an interpretation"
+    ]
+  },
+  {
+    "id": "translation_language_13",
+    "domain": "translation_language",
+    "subtype": "grammar_correction_explained",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Correct this sentence and briefly explain each error: \"Between you and I, their going to the conference who's keynote was canceled.\"",
+    "expected": "Corrected: 'Between you and me, they're going to the conference whose keynote was canceled.' Errors: (1) 'you and I' -> 'you and me' (object of preposition 'between'); (2) 'their' -> 'they're' (contraction of 'they are'); (3) 'who's' -> 'whose' (possessive, not 'who is').",
+    "rubric": [
+      "Corrects 'you and I' to 'you and me'",
+      "Corrects 'their' to 'they're'",
+      "Corrects 'who's' to 'whose'",
+      "Gives a brief correct explanation for the errors"
+    ]
+  },
+  {
+    "id": "translation_language_14",
+    "domain": "translation_language",
+    "subtype": "translation_zh_to_en_pinyin",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Translate the Chinese sentence into English and provide its pinyin: \"我每天早上喝一杯茶。\"",
+    "expected": "English: 'I drink a cup of tea every morning.' Pinyin: Wǒ měitiān zǎoshang hē yì bēi chá. (Tone marks optional; toneless pinyin acceptable.)",
+    "rubric": [
+      "English conveys drinking a cup of tea every morning",
+      "Provides pinyin transliteration of the sentence",
+      "Pinyin reasonably matches the characters (wo, meitian, zaoshang, he, cha)"
+    ]
+  },
+  {
+    "id": "translation_language_15",
+    "domain": "translation_language",
+    "subtype": "wordplay_creation",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write an original pun about a librarian, then explain the double meaning that makes it work.",
+    "expected": "Any original, coherent pun involving a librarian plus a correct explanation of its double meaning. Example: 'The librarian was overdue for a vacation - she'd been booked solid for months.' Explanation: 'booked' means both 'fully scheduled' and 'full of books', and 'overdue' plays on library fines.",
+    "rubric": [
+      "Provides a pun that relates to librarians/libraries/books",
+      "The pun relies on a word or phrase with two genuine meanings",
+      "The explanation correctly identifies both meanings",
+      "The pun is coherent and not a non-sequitur"
+    ]
+  },
+  {
+    "id": "translation_language_16",
+    "domain": "translation_language",
+    "subtype": "translation_pt_to_en",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Translate this Brazilian Portuguese sentence into English: \"Apesar da chuva, decidimos caminhar até a praia para ver o pôr do sol.\"",
+    "expected": "Despite the rain, we decided to walk to the beach to see the sunset. (Variants: 'In spite of the rain...'; 'watch the sunset'.)",
+    "rubric": [
+      "Renders 'apesar da chuva' as 'despite/in spite of the rain'",
+      "Captures deciding to walk to the beach",
+      "Renders 'pôr do sol' as sunset",
+      "Grammatical English"
+    ]
+  },
+  {
+    "id": "translation_language_17",
+    "domain": "translation_language",
+    "subtype": "register_shift_archaic",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Rewrite this modern sentence in mock Early Modern English (Shakespearean/King-James style), keeping the meaning: \"Hey, can you turn off your phone? It's really distracting me.\"",
+    "expected": "An archaic-styled rewrite that preserves the meaning, e.g. 'Prithee, wilt thou silence thy device? It doth sorely distract me.' Should use archaic forms (thou/thy/thee, -eth/-est, prithee, doth/wilt) and keep the request to turn off the phone because it's distracting.",
+    "rubric": [
+      "Uses recognizable archaic/Early Modern English features (thou/thy/thee, doth, -eth/-est, prithee, etc.)",
+      "Preserves the request to turn off/silence the phone/device",
+      "Preserves the reason that it is distracting the speaker",
+      "Reads as a coherent sentence, not random archaic word salad"
+    ]
+  },
+  {
+    "id": "translation_language_18",
+    "domain": "translation_language",
+    "subtype": "idiom_localization",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The English idiom 'to kick the bucket' means 'to die'. You are localizing it for a French audience. Give a natural French idiom with the same meaning (not a literal translation), and state its literal English gloss.",
+    "expected": "A French idiom meaning 'to die', e.g. 'casser sa pipe' (literally 'to break one's pipe') or 'passer l'arme à gauche' (literally 'to pass the weapon to the left'). Must provide a French idiom plus its literal gloss, and the idiom must genuinely mean 'to die'.",
+    "rubric": [
+      "Provides a French idiom that genuinely means 'to die'",
+      "The French idiom is idiomatic, not a word-for-word translation of 'kick the bucket'",
+      "Provides a correct literal English gloss of the French idiom"
+    ]
+  },
+  {
+    "id": "translation_language_19",
+    "domain": "translation_language",
+    "subtype": "translation_long_paragraph",
+    "length_class": "long",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Translate the following French paragraph into fluent English: \"Le vieux marché du village ouvrait ses portes chaque samedi matin. Les marchands disposaient leurs étals avec soin, et l'odeur du pain frais se mêlait à celle des fleurs coupées. Les habitants venaient non seulement pour acheter, mais aussi pour bavarder avec leurs voisins et profiter de l'animation joyeuse de la place.\"",
+    "expected": "Fluent English such as: 'The old village market opened its doors every Saturday morning. The merchants laid out their stalls with care, and the smell of fresh bread mingled with that of cut flowers. The residents came not only to buy, but also to chat with their neighbors and enjoy the cheerful bustle of the square.'",
+    "rubric": [
+      "Conveys the market opening every Saturday morning",
+      "Captures merchants arranging stalls with care and smell of fresh bread mingling with cut flowers",
+      "Captures residents coming to buy, to chat with neighbors, and to enjoy the lively/cheerful square",
+      "Fluent, grammatical English with no major omissions"
+    ]
+  },
+  {
+    "id": "translation_language_20",
+    "domain": "translation_language",
+    "subtype": "etymology_compare",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The English words 'guardian' and 'warden' are doublets (they share a common origin but entered English by different routes). Explain their shared origin and why one starts with 'g' and the other with 'w'.",
+    "expected": "Both ultimately come from the same Germanic root (meaning to guard/watch). 'Warden' came via Norman French where the Germanic 'w-' was retained (Old Northern French 'wardein'), while 'guardian' came via Central/Parisian French where the same Germanic 'w-' had shifted to 'gu-' (garder/guarder). So the g/w split reflects two different French dialect treatments of the original Germanic 'w' sound; they are doublets.",
+    "rubric": [
+      "States the two words share a common (Germanic) origin / are doublets",
+      "Explains the 'w' vs 'gu/g' difference as due to different French dialects (Norman vs Central/Parisian French)",
+      "Connects both to the meaning of guarding/watching",
+      "No major false claims"
+    ]
+  },
+  {
+    "id": "translation_language_21",
+    "domain": "translation_language",
+    "subtype": "translation_en_to_ru_transliteration",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Translate \"Thank you very much\" into Russian, and provide a Latin-alphabet transliteration.",
+    "expected": "Russian: Большое спасибо. Transliteration: Bol'shoye spasibo. (Acceptable: 'Спасибо большое'; transliteration variants like 'bolshoe spasibo'.)",
+    "rubric": [
+      "Provides correct Russian (includes спасибо and большое)",
+      "Provides a Latin transliteration",
+      "Transliteration reasonably matches (spasibo, bolshoe/bolshoye)"
+    ]
+  },
+  {
+    "id": "translation_language_22",
+    "domain": "translation_language",
+    "subtype": "spot_the_mistranslation",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Here is a Spanish sentence and an English translation. Identify whether the translation is correct; if not, give the corrected translation.\nSpanish: \"Hace dos años que no veo a mi hermano.\"\nEnglish: \"I saw my brother two years ago.\"",
+    "expected": "The translation is incorrect. 'Hace dos años que no veo a mi hermano' means 'I haven't seen my brother in two years' (an ongoing situation - I still haven't seen him), not 'I saw my brother two years ago' (a completed past event). Corrected: 'I haven't seen my brother for/in two years.'",
+    "rubric": [
+      "States that the translation is incorrect",
+      "Explains the meaning is 'haven't seen him in two years' (ongoing negation), not a completed past sighting",
+      "Provides a correct translation"
+    ]
+  },
+  {
+    "id": "translation_language_23",
+    "domain": "translation_language",
+    "subtype": "translation_with_constraints",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Translate the English marketing slogan \"Taste the difference\" into German. Then explain in one sentence what makes slogan translation harder than literal translation.",
+    "expected": "A natural German rendering such as 'Schmecke den Unterschied' (or 'Schmecken Sie den Unterschied' for formal address). Explanation should note that slogans require preserving tone, brevity, rhythm/punchiness, and persuasive/emotional effect rather than just literal meaning - so a word-for-word translation may lose impact or sound awkward.",
+    "rubric": [
+      "Provides a grammatical German translation conveying 'taste the difference'",
+      "Explanation notes slogans must preserve tone/impact/brevity, not just literal meaning",
+      "Explanation is a coherent reason (e.g. rhythm, persuasion, cultural fit)"
+    ]
+  },
+  {
+    "id": "translation_language_24",
+    "domain": "translation_language",
+    "subtype": "grammar_register_combo",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The following customer message has grammar errors and an overly aggressive tone. (1) Correct the grammar, and (2) rewrite it in a calm, professional tone suitable for a support ticket. Provide both versions clearly labeled.\nMessage: \"You're product dont work and i wasted hole afternoon, me and my colleague is very angry, fix it now or we cancels.\"",
+    "expected": "(1) Grammar-corrected: 'Your product doesn't work and I wasted a whole afternoon. My colleague and I are very angry; fix it now or we will cancel.' (2) Professional rewrite, e.g.: 'Hello, we've been having trouble getting your product to work and unfortunately lost a good deal of time today. My colleague and I would really appreciate a prompt resolution, as we are considering whether to continue our subscription. Thank you.' Must show two labeled versions.",
+    "rubric": [
+      "Grammar version fixes 'You're'->'Your', 'dont'->'doesn't', 'hole'->'whole', subject-verb agreement (is->are, cancels->cancel), and 'me and my colleague'->'my colleague and I'",
+      "Provides a second version with a calm, professional, non-aggressive tone",
+      "Both versions preserve the core meaning (product broken, time lost, may cancel)",
+      "The two versions are clearly labeled/distinguished"
+    ]
+  },
+  {
+    "id": "translation_language_25",
+    "domain": "translation_language",
+    "subtype": "phonetic_wordplay_cross_language",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain this bilingual pun and why it works for someone who knows both Spanish and English: A teacher asks a student in Spanish how to say 'cheese' and the student answers \"Yes.\" Why is this a joke?",
+    "expected": "In Spanish, 'cheese' is 'queso'. The Spanish question 'how do you say cheese?' is '¿Cómo se dice cheese?' but the joke hinges on the word 'sí' (Spanish for 'yes') sounding like English 'see' / or the word 'queso' sounding like 'case-o'. The intended pun: the answer 'Yes' = Spanish 'sí', which sounds like English 'see' - or alternatively the photographer's 'say cheese'. A correct answer identifies that the humor comes from a cross-language sound similarity (Spanish 'sí' = 'yes' sounds like English 'see', or 'queso' resembling an English-sounding phrase). Accept any answer that correctly pinpoints the homophone/sound-overlap mechanism between the two languages.",
+    "rubric": [
+      "Identifies that 'cheese' in Spanish is 'queso' and 'yes' in Spanish is 'sí'",
+      "Explains the joke relies on a cross-language sound similarity (homophone), e.g. Spanish 'sí' sounding like English 'see'",
+      "Explanation makes clear why bilingual knowledge is required to get it"
+    ]
+  }
+]

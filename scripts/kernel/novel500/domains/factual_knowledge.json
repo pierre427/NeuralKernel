@@ -1,0 +1,374 @@
+[
+  {
+    "id": "factual_knowledge_01",
+    "domain": "factual_knowledge",
+    "subtype": "geography_capitals",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "What is the administrative capital of South Africa (the seat of the executive branch / where the President's office is based)?",
+    "expected": "Pretoria (Tshwane). South Africa has three capitals; Pretoria is the administrative/executive capital.",
+    "rubric": [
+      "Names Pretoria (or Tshwane) as the administrative/executive capital",
+      "Does not incorrectly give Cape Town or Bloemfontein as THE administrative capital",
+      "Credit if it notes South Africa has three capitals"
+    ]
+  },
+  {
+    "id": "factual_knowledge_02",
+    "domain": "factual_knowledge",
+    "subtype": "chemistry_elements",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Which chemical element has the symbol 'W', and why does its symbol differ from its English name?",
+    "expected": "Tungsten. Its symbol W comes from 'Wolfram', the German/historical name for the element.",
+    "rubric": [
+      "Identifies the element as tungsten",
+      "Explains W derives from 'wolfram'",
+      "Answer is factually consistent (does not name a different element)"
+    ]
+  },
+  {
+    "id": "factual_knowledge_03",
+    "domain": "factual_knowledge",
+    "subtype": "history_dates",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In what year did the Berlin Wall fall (i.e., the night the East German government opened the border crossings)?",
+    "expected": "1989 (the night of 9 November 1989).",
+    "rubric": [
+      "States the year 1989",
+      "Credit if it gives the date 9 November 1989",
+      "Does not give 1990 or 1991 as the fall"
+    ]
+  },
+  {
+    "id": "factual_knowledge_04",
+    "domain": "factual_knowledge",
+    "subtype": "astronomy",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Which planet in our solar system has the most extreme axial tilt, rotating essentially on its side at roughly 98 degrees, and what is one consequence of this for its seasons?",
+    "expected": "Uranus, with an axial tilt of about 98 degrees. A consequence: each pole experiences roughly 42 years of continuous sunlight followed by 42 years of darkness over its ~84-year orbit (extreme seasons).",
+    "rubric": [
+      "Identifies the planet as Uranus",
+      "Notes the tilt is roughly 90-98 degrees / 'on its side'",
+      "Gives a valid consequence (extreme seasons / long polar day and night)"
+    ]
+  },
+  {
+    "id": "factual_knowledge_05",
+    "domain": "factual_knowledge",
+    "subtype": "literature_authors",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Which Colombian author wrote the novel 'One Hundred Years of Solitude' and won the 1982 Nobel Prize in Literature?",
+    "expected": "Gabriel Garcia Marquez.",
+    "rubric": [
+      "Names Gabriel Garcia Marquez",
+      "Does not name a different author (e.g., Borges, Llosa)"
+    ]
+  },
+  {
+    "id": "factual_knowledge_06",
+    "domain": "factual_knowledge",
+    "subtype": "biology_anatomy",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "What is the largest organ of the human body?",
+    "expected": "The skin.",
+    "rubric": [
+      "Identifies the skin as the largest organ",
+      "Does not name liver or another internal organ as the largest"
+    ]
+  },
+  {
+    "id": "factual_knowledge_07",
+    "domain": "factual_knowledge",
+    "subtype": "sports_records",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Which country has won the most FIFA World Cup titles in men's football, and how many titles do they hold (as of 2024)?",
+    "expected": "Brazil, with five World Cup titles (1958, 1962, 1970, 1994, 2002).",
+    "rubric": [
+      "Identifies Brazil as the most successful nation",
+      "States the count as five (5)",
+      "Does not confuse with Germany or Italy (four each)"
+    ]
+  },
+  {
+    "id": "factual_knowledge_08",
+    "domain": "factual_knowledge",
+    "subtype": "geography_rivers",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Which river flows through Baghdad, the capital of Iraq?",
+    "expected": "The Tigris River.",
+    "rubric": [
+      "Names the Tigris",
+      "Does not give the Euphrates (which flows through Iraq but not through Baghdad)"
+    ]
+  },
+  {
+    "id": "factual_knowledge_09",
+    "domain": "factual_knowledge",
+    "subtype": "music_theory",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In standard Western music notation, how many semitones are there in one octave, and how many in a perfect fifth?",
+    "expected": "There are 12 semitones in an octave and 7 semitones in a perfect fifth.",
+    "rubric": [
+      "States 12 semitones for the octave",
+      "States 7 semitones for the perfect fifth",
+      "Both numbers correct"
+    ]
+  },
+  {
+    "id": "factual_knowledge_10",
+    "domain": "factual_knowledge",
+    "subtype": "history_figures",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Who was the first woman to win a Nobel Prize, and in which field was that first prize awarded to her?",
+    "expected": "Marie Curie, who won the 1903 Nobel Prize in Physics (shared with Pierre Curie and Henri Becquerel). She later won the 1911 Nobel Prize in Chemistry.",
+    "rubric": [
+      "Names Marie Curie",
+      "States the first prize was in Physics (1903)",
+      "Credit if it mentions her second prize in Chemistry"
+    ]
+  },
+  {
+    "id": "factual_knowledge_11",
+    "domain": "factual_knowledge",
+    "subtype": "physics_constants",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "What is the approximate speed of light in a vacuum, in meters per second? Give a value accurate to two significant figures.",
+    "expected": "Approximately 3.0 x 10^8 meters per second (about 300,000,000 m/s; exactly 299,792,458 m/s).",
+    "rubric": [
+      "Gives a value of roughly 3 x 10^8 m/s (299,792,458 m/s exact also correct)",
+      "Units are meters per second",
+      "Not off by an order of magnitude"
+    ]
+  },
+  {
+    "id": "factual_knowledge_12",
+    "domain": "factual_knowledge",
+    "subtype": "art_painters",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The painting 'The Garden of Earthly Delights', a famous triptych depicting paradise, an earthly scene, and hell, was created by which Early Netherlandish painter active around 1500?",
+    "expected": "Hieronymus Bosch.",
+    "rubric": [
+      "Names Hieronymus Bosch",
+      "Does not name Bruegel, van Eyck, or another painter"
+    ]
+  },
+  {
+    "id": "factual_knowledge_13",
+    "domain": "factual_knowledge",
+    "subtype": "geography_mountains",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "What is the highest mountain in Africa, what type of geological feature is it, and in which country is it located?",
+    "expected": "Mount Kilimanjaro, a dormant stratovolcano (composite volcano), located in Tanzania. Its highest point is Uhuru Peak on Kibo, around 5,895 meters.",
+    "rubric": [
+      "Names Mount Kilimanjaro",
+      "Identifies it as a volcano (stratovolcano / dormant volcano)",
+      "States it is in Tanzania"
+    ]
+  },
+  {
+    "id": "factual_knowledge_14",
+    "domain": "factual_knowledge",
+    "subtype": "language_etymology",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The English words 'salary' and 'salad' both ultimately derive from the Latin word for which substance, and what was the historical connection?",
+    "expected": "Salt (Latin 'sal'). 'Salary' relates to payments connected with salt (Roman soldiers' pay/allowance, 'salarium'); 'salad' comes from salted/seasoned vegetables ('herba salata').",
+    "rubric": [
+      "Identifies the substance as salt (Latin 'sal')",
+      "Gives a plausible historical link for at least one word (e.g., salarium for pay, salted greens for salad)",
+      "Does not claim a different root substance"
+    ]
+  },
+  {
+    "id": "factual_knowledge_15",
+    "domain": "factual_knowledge",
+    "subtype": "history_ancient",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Which ancient wonder of the world stood in the city of Alexandria, Egypt, and what was its primary function?",
+    "expected": "The Lighthouse of Alexandria (the Pharos of Alexandria). Its function was to guide ships into the harbor / serve as a navigational lighthouse.",
+    "rubric": [
+      "Names the Lighthouse / Pharos of Alexandria",
+      "States its function was as a lighthouse to guide ships",
+      "Does not name a different wonder (e.g., Hanging Gardens, Colossus of Rhodes)"
+    ]
+  },
+  {
+    "id": "factual_knowledge_16",
+    "domain": "factual_knowledge",
+    "subtype": "biology_classification",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Whales, dolphins, and porpoises belong to which order of marine mammals, and what is one trait that confirms they are mammals rather than fish?",
+    "expected": "The order Cetacea (cetaceans). A confirming mammalian trait: they breathe air with lungs (via blowholes), are warm-blooded, give live birth, and nurse their young with milk; any one suffices.",
+    "rubric": [
+      "Names the order Cetacea / cetaceans",
+      "Gives at least one valid mammalian trait (lungs/air-breathing, warm-blooded, live birth, nursing milk, hair)",
+      "Does not classify them as fish"
+    ]
+  },
+  {
+    "id": "factual_knowledge_17",
+    "domain": "factual_knowledge",
+    "subtype": "world_currencies",
+    "length_class": "short",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "What is the official currency of Japan, and what is its standard three-letter ISO 4217 code?",
+    "expected": "The Japanese yen; ISO code JPY.",
+    "rubric": [
+      "Names the yen as the currency",
+      "Gives the ISO code JPY"
+    ]
+  },
+  {
+    "id": "factual_knowledge_18",
+    "domain": "factual_knowledge",
+    "subtype": "computing_history",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Who is widely regarded as the first computer programmer for her work writing an algorithm intended for Charles Babbage's Analytical Engine in the 1840s?",
+    "expected": "Ada Lovelace (Augusta Ada King, Countess of Lovelace). She wrote notes including an algorithm to compute Bernoulli numbers for the Analytical Engine.",
+    "rubric": [
+      "Names Ada Lovelace",
+      "Associates her with Babbage's Analytical Engine",
+      "Credit if it mentions the Bernoulli numbers algorithm"
+    ]
+  },
+  {
+    "id": "factual_knowledge_19",
+    "domain": "factual_knowledge",
+    "subtype": "geography_borders",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Which two countries does the small landlocked country of Andorra border?",
+    "expected": "France and Spain.",
+    "rubric": [
+      "Names France",
+      "Names Spain",
+      "Does not add an incorrect bordering country"
+    ]
+  },
+  {
+    "id": "factual_knowledge_20",
+    "domain": "factual_knowledge",
+    "subtype": "food_origins",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "The spice saffron is harvested from the dried part of which flower, and specifically which part of that flower is collected?",
+    "expected": "The crocus flower (Crocus sativus, the saffron crocus). The collected parts are the stigmas (the threadlike red stigmas/styles of the flower).",
+    "rubric": [
+      "Identifies the flower as the crocus (saffron crocus / Crocus sativus)",
+      "States the harvested part is the stigma(s) (or styles/threads)",
+      "Does not name a different flower or part such as petals or roots"
+    ]
+  },
+  {
+    "id": "factual_knowledge_21",
+    "domain": "factual_knowledge",
+    "subtype": "physics_phenomena",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Explain why the sky appears blue during the day. Name the specific scattering phenomenon responsible and describe how it depends on the wavelength of light.",
+    "expected": "Rayleigh scattering: gas molecules in the atmosphere scatter sunlight, and scattering intensity is inversely proportional to the fourth power of wavelength (1/lambda^4), so shorter (blue/violet) wavelengths scatter much more strongly than longer (red) ones. The scattered blue light reaches the eye from all directions, making the sky look blue. (Violet scatters even more, but the sun emits less violet and our eyes are less sensitive to it.)",
+    "rubric": [
+      "Names Rayleigh scattering",
+      "States shorter/blue wavelengths scatter more than longer/red wavelengths",
+      "Mentions the strong wavelength dependence (1/lambda^4 or equivalent statement)",
+      "Conclusion that scattered short-wavelength light makes the sky appear blue"
+    ]
+  },
+  {
+    "id": "factual_knowledge_22",
+    "domain": "factual_knowledge",
+    "subtype": "history_treaties",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "The Treaty of Tordesillas (1494) divided newly discovered lands outside Europe between which two kingdoms, and who mediated/authorized the agreement?",
+    "expected": "Spain (the Crown of Castile) and Portugal, dividing the world along a meridian; it was sanctioned by the Pope (Pope Alexander VI's earlier bull preceded it, and the treaty itself was between the two crowns, later confirmed by the papacy).",
+    "rubric": [
+      "Identifies Spain (Castile) and Portugal as the two parties",
+      "Mentions papal authority / the Pope (Alexander VI) in sanctioning the division",
+      "Credit if it notes the dividing meridian/line concept"
+    ]
+  },
+  {
+    "id": "factual_knowledge_23",
+    "domain": "factual_knowledge",
+    "subtype": "mythology",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In Norse mythology, what is the name of the great tree that connects the nine worlds, and what type of tree is it traditionally said to be?",
+    "expected": "Yggdrasil, traditionally described as an immense ash tree (the World Tree / world ash).",
+    "rubric": [
+      "Names Yggdrasil",
+      "States it is an ash tree (world tree / world ash acceptable)",
+      "Does not name a different mythological tree"
+    ]
+  },
+  {
+    "id": "factual_knowledge_24",
+    "domain": "factual_knowledge",
+    "subtype": "science_units",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "In the International System of Units (SI), what is the base unit of electric current, and what is its symbol?",
+    "expected": "The ampere (amp); symbol A.",
+    "rubric": [
+      "Names the ampere as the base unit of electric current",
+      "Gives the symbol A",
+      "Does not give volt, coulomb, or ohm as the base unit of current"
+    ]
+  },
+  {
+    "id": "factual_knowledge_25",
+    "domain": "factual_knowledge",
+    "subtype": "geography_extremes",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Identify the lowest exposed land point on Earth's surface (the lowest dry land elevation, not an ocean trench), state roughly its elevation below sea level, and name the body of water associated with it.",
+    "expected": "The shore of the Dead Sea, the lowest exposed land/water surface on Earth, at roughly 430 meters (about 1,410-1,412 feet) below sea level. The associated body of water is the Dead Sea (bordered by Jordan, Israel, and the West Bank).",
+    "rubric": [
+      "Identifies the Dead Sea (its shore) as the lowest exposed land point",
+      "States an elevation of roughly 400-430 meters below sea level (or ~1,400 feet)",
+      "Does not name an ocean trench (e.g., Mariana Trench) as the answer",
+      "Credit if it names a bordering country (Jordan/Israel)"
+    ]
+  }
+]

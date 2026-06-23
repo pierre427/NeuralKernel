@@ -1,0 +1,27 @@
+{
+  "sites": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48
+  ],
+  "decode_n": 128,
+  "manual_parity": 0.0,
+  "multi_site_parity": 0.0,
+  "per_site_parity": {
+    "0": 0.0,
+    "8": 0.0,
+    "16": 0.0,
+    "24": 0.0,
+    "32": 0.0,
+    "40": 0.0,
+    "48": 0.0
+  },
+  "frame_live_null": true,
+  "decode_disarmed_eq": true,
+  "decode_armed_eq": true,
+  "RESULT": "PASS"
+}

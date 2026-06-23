@@ -1,0 +1,402 @@
+[
+  {
+    "id": "planning_procedure_01",
+    "domain": "planning_procedure",
+    "subtype": "ordering_dependencies",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "You want to make a cup of instant coffee. You have these actions in scrambled order: (a) pour hot water into the mug, (b) boil the water, (c) add a spoon of instant coffee to the mug, (d) stir. List the four actions in the correct order.",
+    "expected": "b (boil the water), c (add instant coffee to the mug), a (pour hot water into the mug), d (stir). Note: c and a may be swapped, but boil must come before pour, and stir must come last.",
+    "rubric": [
+      "Boil the water (b) comes before pouring hot water (a)",
+      "Stir (d) is the final step",
+      "All four actions are included exactly once"
+    ]
+  },
+  {
+    "id": "planning_procedure_02",
+    "domain": "planning_procedure",
+    "subtype": "troubleshooting_tree",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Write a short troubleshooting procedure for a laptop that will not turn on at all (no lights, no fan). Give an ordered sequence of checks/actions, starting with the cheapest/most likely cause first.",
+    "expected": "Ordered procedure: 1) Confirm the power outlet works (test with another device) and that the charger is plugged into both wall and laptop. 2) Check the charger cable/brick for damage and that the charge LED lights up. 3) Try a different charger or known-good outlet. 4) Remove the battery (if removable) and run on AC power only; or do a power/static drain by holding the power button 15-30s with charger disconnected. 5) Reseat the battery / try with battery only. 6) If still dead, conclude a hardware fault (motherboard/power circuit) and seek service. Steps must go from external/cheap (power source, cable) to internal/expensive (hardware service).",
+    "rubric": [
+      "Starts by checking the power source/outlet and charger connection before internal causes",
+      "Includes a power-drain / hold-power-button or battery-reseat step",
+      "Ends by escalating to hardware/professional service only after simpler checks fail",
+      "Steps are ordered cheapest/most-likely to most-expensive/least-likely"
+    ]
+  },
+  {
+    "id": "planning_procedure_03",
+    "domain": "planning_procedure",
+    "subtype": "recipe_steps",
+    "length_class": "medium",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Give a step-by-step procedure to cook a pot of plain white rice on a stovetop using the absorption method, for 1 cup of rice. Include water ratio, heat changes, and timing.",
+    "expected": "1) Rinse 1 cup of rice until water runs clearer (optional but recommended). 2) Add rice and ~2 cups water (about 2:1 water:rice) to a pot with a tight lid; add salt if desired. 3) Bring to a boil over high/medium-high heat uncovered. 4) Once boiling, reduce heat to low and cover with the lid. 5) Simmer covered, undisturbed (do not lift lid), for about 15-18 minutes until water is absorbed. 6) Remove from heat and let it rest covered ~5-10 minutes. 7) Fluff with a fork and serve.",
+    "rubric": [
+      "Uses roughly a 2:1 water-to-rice ratio",
+      "Bring to a boil first, then reduce heat to low and cover",
+      "Includes a covered simmer (~15-18 min) without lifting the lid",
+      "Includes a rest/steam step before fluffing and serving"
+    ]
+  },
+  {
+    "id": "planning_procedure_04",
+    "domain": "planning_procedure",
+    "subtype": "constraint_scheduling",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Plan the order of these morning tasks under their constraints. Tasks: (A) take a 10-min shower, (B) put laundry in the washer (45-min cycle), (C) eat breakfast (15 min), (D) hang the washed laundry, (E) iron a shirt (5 min). Constraints: D can only happen after B's wash cycle finishes; the shirt for E must be ironed before you leave; you have only 40 minutes of active time but can let the washer run in the background. You leave in 40 minutes and cannot wait for laundry to finish before leaving. Give a sensible ordering and explain which task cannot be completed before leaving and why.",
+    "expected": "Start B first (washer runs in background, 45 min). Then do active tasks within the 40 minutes: A (shower), C (breakfast), E (iron shirt) in any reasonable order. D (hang laundry) cannot be done before leaving because the 45-minute wash cycle finishes after the 40-minute departure, so the wash isn't done in time. So: B -> (A, C, E in any order) -> leave; D is deferred until you return. Key point: kick off B immediately so it runs in parallel, and recognize D is blocked by B's cycle time exceeding the 40-min window.",
+    "rubric": [
+      "Starts the washer (B) first so it runs in parallel/background",
+      "Schedules A, C, E within the 40-minute active window",
+      "Correctly identifies D (hang laundry) as not completable before leaving",
+      "Justifies D's impossibility by the 45-min cycle exceeding the 40-min window"
+    ]
+  },
+  {
+    "id": "planning_procedure_05",
+    "domain": "planning_procedure",
+    "subtype": "decision_tree_authoring",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A user reports their home Wi-Fi 'has no internet'. Author a decision tree (branching yes/no checks) that distinguishes among three root causes: (1) the device's Wi-Fi is off/wrong network, (2) the router/modem is down, (3) the ISP is down. Present it as ordered branching questions with the conclusion each branch reaches.",
+    "expected": "Q1: Is the device connected to the correct Wi-Fi network (not airplane mode / Wi-Fi on)? If NO -> cause (1) device Wi-Fi off/wrong network; fix connection. If YES -> Q2. Q2: Can OTHER devices on the same Wi-Fi reach the internet? If NO (all devices fail) -> Q3; if YES (only this device fails) -> cause (1) device-specific issue. Q3: Are the modem/router status lights normal (online/internet light solid)? If NO -> cause (2) router/modem down; power-cycle modem then router. If YES (router fine, can reach router admin but not internet) -> Q4. Q4: After power-cycling modem+router, is internet still down for all devices with router lights normal? If YES -> cause (3) ISP outage; contact ISP / check outage map. Tree must branch logically and map each leaf to one of the three causes.",
+    "rubric": [
+      "First distinguishes device-specific failure (only one device affected) from network-wide failure (all devices affected)",
+      "Checks router/modem status lights to identify a router/modem-down cause",
+      "Reaches an ISP-outage conclusion only after device and router/modem are ruled out",
+      "Each of the three root causes is reachable as a distinct leaf/conclusion"
+    ]
+  },
+  {
+    "id": "planning_procedure_06",
+    "domain": "planning_procedure",
+    "subtype": "project_breakdown",
+    "length_class": "long",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Break down the project 'launch a simple personal blog (static site)' into ordered phases with sub-tasks, from idea to live site. Cover at minimum: planning/content, building, and deployment. Indicate dependencies (which tasks must precede others).",
+    "expected": "Phase 1 Planning: pick a topic/audience, choose a domain name, outline initial posts, choose a static site generator/template (e.g., Hugo/Jekyll/plain HTML). Phase 2 Setup: install the generator/tooling, initialize the project repo (version control), pick and configure a theme. Phase 3 Content: write the first post(s), add an About page, add images/assets. Phase 4 Build & test locally: run the local dev server, preview, fix layout/links. Phase 5 Deploy: choose a host (GitHub Pages/Netlify/Vercel), connect the repo, configure build settings, deploy. Phase 6 Domain & polish: point the custom domain (DNS), enable HTTPS, add analytics/SEO basics. Dependencies: choose generator before setup; write content before build/test; build/test before deploy; deploy before pointing the custom domain. Order from planning -> setup -> content -> local test -> deploy -> domain.",
+    "rubric": [
+      "Includes planning/content, building, and deployment phases in a sensible order",
+      "Content creation precedes local build/test, which precedes deployment",
+      "Includes a deploy/host step and a custom-domain/DNS + HTTPS step after deploy",
+      "States at least one explicit dependency between tasks",
+      "Tasks are grouped into ordered phases rather than an unstructured list"
+    ]
+  },
+  {
+    "id": "planning_procedure_07",
+    "domain": "planning_procedure",
+    "subtype": "reverse_engineering_order",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Here are five steps from a procedure to change a flat car tire, but they are shuffled: (1) Lower the car and fully tighten the lug nuts in a star pattern. (2) Loosen the lug nuts slightly while the tire is still on the ground. (3) Jack up the car until the flat tire is off the ground. (4) Remove the lug nuts and the flat tire, then mount the spare. (5) Apply the parking brake and place wheel chocks. Put them in the correct order and give the sequence of numbers.",
+    "expected": "Correct order: 5, 2, 3, 4, 1. (Secure the car -> break loose lug nuts on the ground -> jack up -> remove flat and mount spare -> lower and fully tighten in a star pattern.)",
+    "rubric": [
+      "Sequence is 5, 2, 3, 4, 1",
+      "Lug nuts are loosened (2) before jacking (3) and fully tightened (1) only after lowering",
+      "Parking brake/chocks step (5) is first"
+    ]
+  },
+  {
+    "id": "planning_procedure_08",
+    "domain": "planning_procedure",
+    "subtype": "rollback_procedure",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "You deployed a new version of a web service to production and error rates spiked. Write an ordered incident-response and rollback procedure. Assume you have a previous known-good version, a load balancer, monitoring/alerts, and a database that received a forward migration in this release. Address the database migration risk explicitly.",
+    "expected": "1) Acknowledge the alert and declare an incident; notify the team and assign an incident lead. 2) Assess scope/severity from monitoring (error rate, affected endpoints, user impact). 3) Decide to roll back; stop further rollout/freeze new deploys. 4) Check whether the DB migration is backward-compatible with the previous app version. If the old version is compatible with the new schema (expand/contract done right), roll the app back to the known-good version (redeploy / shift traffic on the load balancer). If NOT backward-compatible, you must either roll back the migration (run the down-migration / restore) or fix-forward, since rolling back the app against an incompatible schema will break it. 5) Shift traffic to the rolled-back/healthy version via the load balancer (or canary back to 0%). 6) Verify error rates return to baseline via monitoring; confirm key flows. 7) Communicate resolution. 8) Post-incident: write a postmortem, root-cause, and add safeguards. The migration-compatibility check before app rollback is the critical ordering point.",
+    "rubric": [
+      "Begins with detect/acknowledge/assess before taking action",
+      "Explicitly checks whether the DB migration is backward-compatible BEFORE rolling back the app",
+      "Uses the load balancer / traffic shift to move users to the known-good version",
+      "Verifies recovery via monitoring after rollback",
+      "Includes a postmortem / root-cause follow-up step"
+    ]
+  },
+  {
+    "id": "planning_procedure_09",
+    "domain": "planning_procedure",
+    "subtype": "checklist_completeness",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Create a pre-flight-style checklist for safely shutting down and powering off a desktop Linux server before physically moving it. List the ordered steps; include data, services, and hardware considerations.",
+    "expected": "1) Notify users / schedule a maintenance window. 2) Stop application services gracefully (e.g., stop databases/app daemons so data flushes). 3) Ensure backups are current / data is saved. 4) Unmount or sync filesystems (run sync; cleanly unmount external/data volumes). 5) Issue a clean OS shutdown (shutdown -h now / poweroff) and wait for it to fully power down. 6) Switch off the power supply and unplug the power cable. 7) Disconnect peripherals/network cables, labeling them. 8) Allow components to settle; secure/cushion the unit for transport. Ordering: stop services and back up data before unmounting; clean OS shutdown before pulling power; power down before unplugging.",
+    "rubric": [
+      "Stops services / ensures data is saved or backed up before shutdown",
+      "Performs a clean OS shutdown (software) before removing power (hardware)",
+      "Unplugs/disconnects power and cables only after the machine is fully powered off",
+      "Steps are in a safe dependency order (no pulling power on a running system)"
+    ]
+  },
+  {
+    "id": "planning_procedure_10",
+    "domain": "planning_procedure",
+    "subtype": "critical_path",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A small dinner party requires these tasks with durations and dependencies: T1 Shop for groceries (60 min, no prereqs). T2 Marinate the chicken (must sit 90 min; can be unattended) requires T1. T3 Chop vegetables (20 min) requires T1. T4 Roast the chicken (45 min) requires T2 finished. T5 Cook the vegetables (25 min) requires T3. T6 Set the table (15 min, no prereqs). Assuming one cook (so attended tasks are sequential, but T2's 90-min marinate sit and T6 can overlap with other work), determine the minimum total time from start until both the chicken and vegetables are ready to serve, and describe the critical path.",
+    "expected": "Critical path is T1 -> T2 (sit) -> T4: 60 + 90 + 45 = 195 minutes. Explanation: Shop (60) must finish first. The marinate must sit 90 min (unattended), during which the cook can chop veg (T3, 20), set table (T6, 15), and cook veg (T5, 25) — all fit within the 90-min window with time to spare, so they are not on the critical path. After the 90-min marinate, roast the chicken 45 min. Total minimum = 60 + 90 + 45 = 195 minutes. The vegetables can be finished during the marinate/roast window, so they do not extend the total. Critical path: T1 -> T2 -> T4.",
+    "rubric": [
+      "Identifies the critical path as T1 -> T2 -> T4",
+      "Computes the minimum total time as 195 minutes (60 + 90 + 45)",
+      "Recognizes that T3, T5, and T6 fit within the marinate window and are not on the critical path",
+      "Treats T2's 90-min sit as unattended/overlapping rather than blocking the single cook"
+    ]
+  },
+  {
+    "id": "planning_procedure_11",
+    "domain": "planning_procedure",
+    "subtype": "spot_the_error",
+    "length_class": "short",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Here is a procedure for transferring money between two of your own bank accounts online. Identify the single ordering error and give the corrected sequence: (1) Log in to online banking. (2) Enter the transfer amount and recipient account. (3) Confirm and submit the transfer. (4) Select the source account. (5) Verify the confirmation/receipt.",
+    "expected": "The error: you should select the source account (4) before entering the amount/recipient (2); as written, step 2 comes before step 4. Corrected order: 1, 4, 2, 3, 5 (log in -> select source account -> enter amount and recipient -> confirm and submit -> verify receipt).",
+    "rubric": [
+      "Identifies that selecting the source account (4) must come before entering amount/recipient (2)",
+      "Gives corrected order 1, 4, 2, 3, 5",
+      "Keeps verify receipt (5) last and log in (1) first"
+    ]
+  },
+  {
+    "id": "planning_procedure_12",
+    "domain": "planning_procedure",
+    "subtype": "conditional_branching",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Write a procedure a person should follow when a kitchen grease (oil) fire starts on the stovetop. Make it explicit about what to do and what NOT to do, in priority order.",
+    "expected": "1) Do NOT throw water on it (water spreads burning grease and causes a flare-up). 2) Turn off the heat source/burner if safely reachable. 3) Smother the fire: cover the pan with a metal lid (or another pan/baking sheet) to cut off oxygen; leave it covered. 4) If you have a Class B / Class K or dry chemical fire extinguisher, you may use it; baking soda can smother a small fire (not flour). 5) Do not try to move or carry the burning pan. 6) If the fire grows, spreads, or you can't control it quickly, evacuate, close the door behind you, and call emergency services (e.g., 911) from outside. The key safety rules: never use water, smother and cut the oxygen, turn off heat, and evacuate + call for help if it's not immediately controllable.",
+    "rubric": [
+      "Explicitly says NOT to use water",
+      "Includes turning off the heat and smothering with a lid (cut off oxygen)",
+      "Says to evacuate and call emergency services if the fire cannot be quickly controlled",
+      "Does not recommend moving/carrying the burning pan"
+    ]
+  },
+  {
+    "id": "planning_procedure_13",
+    "domain": "planning_procedure",
+    "subtype": "git_workflow",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "Give the ordered git command-line procedure for contributing a bug fix to a project where you do not have push access to the main repository: from getting the code to opening a pull request. List the commands/steps in order.",
+    "expected": "1) Fork the repository on the hosting platform (e.g., GitHub). 2) git clone <your-fork-url> and cd into it. 3) Add the upstream remote: git remote add upstream <original-repo-url>. 4) Sync/create a branch: git fetch upstream && git checkout -b fix-branch upstream/main (or main). 5) Make the code changes and test them. 6) git add <files> and git commit -m \"message\". 7) git push origin fix-branch (push to your fork). 8) Open a pull request from your fork's branch to the upstream repository's main branch. Ordering: fork -> clone -> branch -> change -> commit -> push to fork -> open PR.",
+    "rubric": [
+      "Forks and clones (your fork) before making changes",
+      "Creates a feature/topic branch before committing",
+      "Commits then pushes to the fork (origin) before opening a PR",
+      "Opens the pull request as the final step, targeting upstream"
+    ]
+  },
+  {
+    "id": "planning_procedure_14",
+    "domain": "planning_procedure",
+    "subtype": "dependency_identification",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "To assemble a flat-pack bookshelf you must: (W) attach the back panel, (X) join the two side panels to the top and bottom panels to form the frame, (Y) insert and secure the shelves, (Z) lay out and identify all parts and hardware. Which step must come first, and which must come last? Briefly justify the dependency between forming the frame and inserting the shelves.",
+    "expected": "First: Z (lay out and identify all parts/hardware). Last: W (attach the back panel). The frame (X) must be formed before inserting/securing the shelves (Y), because the shelves slot into or attach to the assembled side/top/bottom frame; you cannot place shelves into a frame that doesn't exist yet. The back panel (W) is typically attached last to square and stabilize the assembled unit. Order: Z -> X -> Y -> W.",
+    "rubric": [
+      "Identifies Z (lay out/identify parts) as the first step",
+      "Identifies W (attach back panel) as the last step",
+      "Explains that the frame (X) must be assembled before shelves (Y) can be inserted"
+    ]
+  },
+  {
+    "id": "planning_procedure_15",
+    "domain": "planning_procedure",
+    "subtype": "safety_lockout",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Describe the correct ordered procedure for safely replacing a light fixture wired into household mains, following lockout/verification best practices. Emphasize the safety-critical ordering.",
+    "expected": "1) Turn off the power at the circuit breaker for that circuit (not just the wall switch). 2) Lock out / tag out the breaker or otherwise ensure it can't be switched back on (e.g., breaker lock, tape, tell others). 3) Verify the circuit is dead at the fixture using a non-contact voltage tester or multimeter before touching wires (test the tester on a known-live source first). 4) Remove the old fixture: support it, disconnect the wiring (note/label connections), and detach the mount. 5) Connect the new fixture per the wiring (match line/neutral/ground, use proper connectors), secure the mount. 6) Tuck wires and attach the fixture body/cover. 7) Restore power at the breaker. 8) Test the new fixture with the switch. The safety-critical ordering: breaker off -> lockout/tagout -> verify dead with a tester BEFORE touching wires; power is restored only after work is complete and wiring is secured.",
+    "rubric": [
+      "Turns off power at the breaker (not just the switch) as the first action",
+      "Includes a lockout/tagout step to prevent re-energizing",
+      "Verifies the circuit is de-energized with a voltage tester BEFORE touching wires",
+      "Restores power only after the new fixture is fully wired and secured"
+    ]
+  },
+  {
+    "id": "planning_procedure_16",
+    "domain": "planning_procedure",
+    "subtype": "parallelization",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Two people are preparing pasta with sauce for dinner. Tasks: boil water (10 min, unattended once on), cook pasta in the boiling water (10 min), chop onions and garlic (8 min), simmer the sauce (20 min, mostly unattended, needs the chopped onions/garlic to start), grate cheese (5 min), set the table (6 min). Allocate tasks between Person A and Person B to minimize total wall-clock time, respecting dependencies (pasta needs boiling water; sauce needs the chopped aromatics). Give the timeline and the minimum total time.",
+    "expected": "Dependencies: cook pasta needs boiling water (10 min boil first); simmer sauce (20) needs chopping (8) first. The sauce chain is the longest: chop 8 + simmer 20 = 28 min, which is the critical path. Sample allocation: Person A: start boiling water (t0), chop onions/garlic (8 min, t0-8) while water heats; Person B: set the table (6) and grate cheese (5) early. At t=8, start the sauce simmer (20 min) -> done at t=28. Water boils at t=10; cook pasta t=10-20 (done at 20, well within 28). So minimum total wall-clock time = 28 minutes, set by chop (8) + simmer (20). Everything else (boil+pasta = 20, cheese 5, table 6) fits inside the 28-minute window.",
+    "rubric": [
+      "Identifies chop (8) + simmer sauce (20) = 28 min as the critical path / minimum time",
+      "States minimum total wall-clock time of 28 minutes",
+      "Respects dependencies: pasta after boiling water, sauce after chopping",
+      "Distributes tasks so boil+pasta, cheese, and table all fit within the 28-min window"
+    ]
+  },
+  {
+    "id": "planning_procedure_17",
+    "domain": "planning_procedure",
+    "subtype": "migration_plan",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Plan a zero-downtime procedure to rename a column 'usr_name' to 'username' in a production relational database that a live application reads and writes. Give the ordered steps using an expand/contract (parallel-change) approach, including the application deployment ordering.",
+    "expected": "Use expand/contract (parallel change): 1) EXPAND schema: add the new column 'username' (nullable) alongside 'usr_name'; do not drop the old one. 2) Backfill: copy existing usr_name values into username (in batches to avoid locking). 3) Keep them in sync: add a trigger or have the app write to BOTH columns during the transition. 4) Deploy app version that WRITES to both columns and still READS the old one (or reads new with fallback). 5) Once new column is fully populated/synced, deploy app version that READS from 'username'. 6) Stop writing to the old column (remove dual-write / trigger). 7) Verify nothing references usr_name. 8) CONTRACT: drop the old 'usr_name' column. Ordering is critical: add+backfill+dual-write before switching reads; only drop the old column after all code reads/writes the new one. Each step keeps the app working with no downtime.",
+    "rubric": [
+      "Adds the new column and backfills data before removing the old column",
+      "Uses a dual-write / sync (trigger or app-level) so both columns stay consistent during transition",
+      "Switches reads to the new column only after it is fully populated/synced",
+      "Drops the old column (contract) as the final step, after no code references it",
+      "Sequences app deployments so the app never breaks (no downtime)"
+    ]
+  },
+  {
+    "id": "planning_procedure_18",
+    "domain": "planning_procedure",
+    "subtype": "minimal_steps",
+    "length_class": "short",
+    "difficulty": "easy",
+    "web_required": false,
+    "prompt": "Give the minimal ordered steps to safely cross a street at a signalized pedestrian crosswalk. Keep it to 4-5 steps.",
+    "expected": "1) Go to the crosswalk and press the pedestrian button if present. 2) Wait for the WALK / green pedestrian signal. 3) Before stepping off, look left, right, and left again (check for turning vehicles). 4) Cross promptly within the crosswalk, continuing to watch for traffic. 5) Reach the other side / curb. Key ordering: wait for the walk signal AND look both ways before stepping into the street.",
+    "rubric": [
+      "Waits for the WALK/green pedestrian signal before crossing",
+      "Looks both ways (checks for traffic) before stepping off the curb",
+      "Crosses within the crosswalk and reaches the far side",
+      "Steps are in a logical, safe order"
+    ]
+  },
+  {
+    "id": "planning_procedure_19",
+    "domain": "planning_procedure",
+    "subtype": "troubleshooting_isolation",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A string of holiday lights has one half lit and the other half dark. Write an ordered troubleshooting procedure to find and fix the cause, explaining the isolation logic for why half is out.",
+    "expected": "Half-out usually means a broken/loose bulb or socket in the dark half of a series-wired string (the dark segment lost continuity). Procedure: 1) Unplug the lights for safety before handling. 2) Confirm the lit half works, isolating the fault to the dark half (the break is somewhere in that segment). 3) Inspect the dark half: look for an obviously broken, blackened, loose, or missing bulb. 4) Reseat/wiggle bulbs in the dark section, one at a time, to find a loose connection. 5) Replace any burnt-out bulb with a working spare; check that all bulbs are fully seated. 6) Check the fuse in the plug if the whole string was suspect (not just half). 7) Plug back in and test. Isolation logic: because one half lights, power reaches the string; the dark half indicates a continuity break (bad bulb/socket) within that series segment.",
+    "rubric": [
+      "Unplugs the lights before handling them",
+      "Isolates the fault to the dark half (continuity break in that series segment)",
+      "Inspects/reseats/replaces bulbs in the dark section to find the break",
+      "Explains the series-circuit reasoning for why half goes dark"
+    ]
+  },
+  {
+    "id": "planning_procedure_20",
+    "domain": "planning_procedure",
+    "subtype": "contingency_planning",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "You are organizing an outdoor company picnic in 3 weeks. Produce an ordered plan that includes a contingency (Plan B) for bad weather, and specify the decision point (when and how you decide to switch to Plan B).",
+    "expected": "Plan: 1) Set date, headcount, and budget. 2) Book the outdoor venue/park AND reserve a backup indoor location or a tent rental as Plan B (do this early; backups get booked). 3) Arrange catering, activities, and equipment compatible with both venues where possible. 4) Send invitations noting the weather-contingency and that a final location confirmation will come. 5) Define the decision point: e.g., check a reliable weather forecast 48 hours before and again the morning of; if forecast shows rain/storms above an agreed threshold (e.g., >60% chance or severe weather), trigger Plan B. 6) Communicate the final decision to attendees and vendors by a set time (e.g., 24 hours prior, or by 7am day-of for morning calls). 7) Execute chosen plan; have day-of coordinator. The plan must name a clear, time-bound trigger and a communication step for switching to Plan B.",
+    "rubric": [
+      "Reserves/identifies a concrete Plan B (indoor venue or tent) in advance",
+      "Specifies a clear weather-based decision point with timing (e.g., 24-48 hours before)",
+      "Includes communicating the final decision to attendees/vendors by a deadline",
+      "Steps are in a sensible chronological planning order"
+    ]
+  },
+  {
+    "id": "planning_procedure_21",
+    "domain": "planning_procedure",
+    "subtype": "ordering_with_idempotency",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Write an ordered procedure to set up SSH key-based authentication to a remote Linux server and then disable password login, in a safe order that avoids locking yourself out. List the steps and explain the safety-critical ordering.",
+    "expected": "1) On your local machine, generate an SSH key pair if you don't have one (ssh-keygen). 2) Copy the public key to the server (ssh-copy-id user@host, or manually append to ~/.ssh/authorized_keys with correct perms: 700 ~/.ssh, 600 authorized_keys). 3) TEST key-based login in a NEW session (ssh user@host) and confirm it works WITHOUT a password BEFORE changing server config. 4) Keep your current session open while editing. 5) Edit /etc/ssh/sshd_config: set PasswordAuthentication no (and PubkeyAuthentication yes). 6) Validate config (sshd -t) and reload/restart sshd. 7) In a SEPARATE new session, verify you can still log in with the key and that password login is now refused. 8) Only then close the old session. Safety-critical ordering: verify key login works before disabling passwords, keep an existing session open during the change, and confirm in a new session before logging out — this prevents lockout.",
+    "rubric": [
+      "Copies the public key and verifies key-based login works BEFORE disabling password auth",
+      "Keeps an existing session open while editing/restarting sshd",
+      "Disables PasswordAuthentication and reloads/restarts sshd only after key login is confirmed",
+      "Verifies access in a new session before closing the original (lockout avoidance)"
+    ]
+  },
+  {
+    "id": "planning_procedure_22",
+    "domain": "planning_procedure",
+    "subtype": "recipe_scaling_procedure",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": false,
+    "prompt": "A pancake recipe for 4 servings uses 200 g flour, 2 eggs, 300 ml milk, and 1 tsp baking powder, cooked in batches on a griddle. Give the ordered procedure to make enough for 10 servings, including the scaled ingredient amounts and the correct mixing order.",
+    "expected": "Scale factor = 10/4 = 2.5. Scaled ingredients: flour 200 x 2.5 = 500 g, eggs 2 x 2.5 = 5 eggs, milk 300 x 2.5 = 750 ml, baking powder 1 x 2.5 = 2.5 tsp. Procedure: 1) Whisk together the dry ingredients (500 g flour + 2.5 tsp baking powder). 2) In a separate bowl, beat the 5 eggs and mix in the 750 ml milk. 3) Pour the wet into the dry and whisk to a smooth batter (don't overmix); rest briefly if desired. 4) Heat and lightly grease the griddle. 5) Cook in batches: pour portions, flip when bubbles form and edges set, cook the other side. 6) Keep cooked pancakes warm while finishing remaining batches. Key points: scale every ingredient by 2.5 and combine dry then wet then mix.",
+    "rubric": [
+      "Uses a scale factor of 2.5 (10/4)",
+      "Correctly scales all four ingredients: 500 g flour, 5 eggs, 750 ml milk, 2.5 tsp baking powder",
+      "Mixes dry ingredients and wet ingredients separately, then combines",
+      "Cooks in batches with a flip-when-bubbles-form cue"
+    ]
+  },
+  {
+    "id": "planning_procedure_23",
+    "domain": "planning_procedure",
+    "subtype": "research_procedure",
+    "length_class": "medium",
+    "difficulty": "medium",
+    "web_required": true,
+    "prompt": "Today you need to plan a same-day outdoor 5 km run for a specific city this afternoon. Describe the ordered procedure for deciding the best 2-hour window to run, and state which step genuinely requires a live web lookup and why.",
+    "expected": "Procedure: 1) Identify the city and today's date. 2) Look up today's hour-by-hour weather forecast for that city (temperature, precipitation chance, wind, and air-quality index) — this step REQUIRES a live web lookup because current/forecast conditions and AQI are time-sensitive and cannot be known from static knowledge. 3) Check sunset time / daylight hours for safety/visibility (also a live/location lookup). 4) Identify constraints (your free time blocks this afternoon). 5) Cross-reference: pick the 2-hour window with the lowest precipitation chance, comfortable temperature, acceptable AQI, and adequate daylight that fits your free time. 6) Decide the window and plan the route. The live-web-required step is fetching today's hourly forecast (and AQI/sunset) for the specific city, since these change daily and are not derivable offline.",
+    "rubric": [
+      "Includes fetching today's hour-by-hour weather forecast (and ideally AQI/sunset) for the city",
+      "Explicitly identifies the live forecast lookup as the step requiring the web and explains it is time-sensitive",
+      "Cross-references weather/daylight against the user's available time to pick the window",
+      "Steps are in a logical decision order"
+    ]
+  },
+  {
+    "id": "planning_procedure_24",
+    "domain": "planning_procedure",
+    "subtype": "fault_isolation_binary_search",
+    "length_class": "medium",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "A build that worked last week now fails, and there are about 200 commits since the last known-good commit. Describe the most efficient ordered procedure to find the exact commit that introduced the failure, name the technique, and state roughly how many build/test iterations it should take.",
+    "expected": "Technique: git bisect (a binary search over commit history). Procedure: 1) Identify a known-good commit (last week's working one) and a known-bad commit (current HEAD). 2) Start: git bisect start; mark git bisect bad (current) and git bisect good <known-good-commit>. 3) Git checks out a commit halfway between; build and run the test. 4) Mark the result: git bisect good or git bisect bad depending on whether the failure is present. 5) Repeat — each step halves the remaining range — until git bisect reports the first bad commit. 6) git bisect reset to return to your branch; inspect/fix that commit. Iteration count: binary search over ~200 commits takes about log2(200) ≈ 8 build/test iterations. Optionally automate with git bisect run <test-script>.",
+    "rubric": [
+      "Names git bisect / binary search as the technique",
+      "Sets a known-good and known-bad endpoint, then tests the midpoint and marks good/bad each iteration",
+      "States roughly log2(200) ≈ 7-8 iterations",
+      "Includes resetting/cleaning up (git bisect reset) or identifying the offending commit at the end"
+    ]
+  },
+  {
+    "id": "planning_procedure_25",
+    "domain": "planning_procedure",
+    "subtype": "multi_constraint_packing",
+    "length_class": "long",
+    "difficulty": "hard",
+    "web_required": false,
+    "prompt": "Plan a procedure to pack a single carry-on bag for a 4-day trip with these constraints: airline limit is 7 kg; you must bring a laptop and charger (1.5 kg total), 4 days of clothes, toiletries (liquids must be in containers <=100 ml in a clear bag), and one pair of dress shoes for an evening event. You will wear your heaviest items (jacket and boots) on the plane to save weight. Give the ordered packing/decision procedure and the key constraint-satisfaction reasoning (do not compute an exact final weight; focus on the method and ordering).",
+    "expected": "Procedure: 1) List required items and group by category (electronics, clothes, toiletries, shoes, documents). 2) Apply the 'wear the heaviest' rule: plan to wear the jacket and boots on the plane to keep them off the 7 kg bag weight. 3) Triage clothes for 4 days: choose mix-and-match, layerable items and plan to re-wear/launder rather than one outfit per day; prioritize lighter fabrics. 4) Handle the liquids rule FIRST for toiletries: decant liquids into <=100 ml containers, place them together in a clear resealable bag (so it passes security and is accessible). 5) Place the laptop+charger and the clear liquids bag where they're easy to remove for security screening. 6) Pack heavy/dense items (dress shoes, electronics) near the bag's base/back/wheels for balance; stuff socks inside the dress shoes to use dead space. 7) Roll clothes to save space; fill gaps. 8) Weigh the bag; if over 7 kg, remove or wear more items (iterate) until under the limit. Key reasoning: keep heaviest worn items off the bag, satisfy the 100 ml/clear-bag liquids constraint, and iterate against the 7 kg limit by weighing and adjusting.",
+    "rubric": [
+      "Plans to wear the heaviest items (jacket/boots) to keep them off the 7 kg bag weight",
+      "Satisfies the liquids rule: <=100 ml containers in a clear resealable bag",
+      "Includes a weigh-and-iterate step against the 7 kg limit (remove/wear more if over)",
+      "Uses space-saving/triage methods (mix-and-match clothes, rolling, shoes stuffed) and keeps laptop+liquids accessible for security",
+      "Steps are in a coherent ordered procedure"
+    ]
+  }
+]
